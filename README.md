@@ -20,33 +20,33 @@ Download or clone this repository to your local machine
 ## Create your scratch org
 
  - Open your terminal and navigate to the repositories base directory.
- - Make sure the scripts are executable (chmod +x scripts/*.sh)
- - run scripts/createScrachOrg.sh
+ - Make sure the scripts are executable `chmod +x scripts/*.sh`
+ - run `scripts/createScrachOrg.sh`
  - Wait for the scratch org to build
 
 
 ## Create the GDS experience cloud
  
- - run scripts/createCommunity.sh
+ - run `scripts/createCommunity.sh`
  - Wait for the community to build (you can run the command listed in the output of the previous command to check the status)
  - It should take no longer than 1 min to create the community
 
 
 ## Deploy your source code
 
- - run scripts/deploySource.sh
+ - run `scripts/deploySource.sh`
  - Wait for the command to complete
 
 
 ## Deploy your source code
 
- - run scripts/publishCommunity.sh
+ - run `scripts/publishCommunity.sh`
  - Wait for the command to complete
 
 
 ## Open your org
 
- - run scripts/openOrg.sh
+ - run `scripts/openOrg.sh`
  - The org will now open in your default browser window
  - Goto Setup -> All Communities to see the GDS Demo Community
 
