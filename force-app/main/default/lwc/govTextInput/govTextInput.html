@@ -1,0 +1,39 @@
+<template>
+    <div class="govuk-width-container ">
+        <div class={groupClass} aria-describedby="hint-text error-text">
+            <div class={textInput}>
+                <div class="govuk-label-wrapper">
+                    <label class={labelClass} for="input-text">
+                        {label} <span class="govuk-visually-hidden">{label}</span>
+                    </label>
+                </div>
+                <div id="hint-text" class="govuk-hint" if:true={hintText}>
+                    {hintText}
+                </div>
+                <span class="govuk-error-message" if:true={hasErrors} id="error-text">
+                    <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
+                </span>
+                <div class="govuk-input-wrapper">
+                    <div class="govuk-input__wrapper">
+                        <div class="govuk-input__prefix" if:true={prefix}>{prefix}</div>
+                        <input class={inputClass}
+                               id="input-text"
+                               name="input-text"
+                               type="text"
+                               spellcheck="false"
+                               value={value}
+                               onkeyup={handleKeyUp}
+                               maxlength={maxCharacterCount}>
+                        <div class="govuk-input__suffix" if:true={suffix}>{suffix}</div>
+                    </div>
+                    <div id="character-count-text"
+                         class="govuk-hint govuk-character-count__message"
+                         aria-live="polite"
+                         if:true={showCharacterCount}>
+                        {characterCountText}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

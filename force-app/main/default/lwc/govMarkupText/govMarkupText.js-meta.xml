@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>Display GDS compliant HTML text</description>
+    <masterLabel>Gov UK Markup Text</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-gov-markup-text-editor">
+            <property name="markupText" type="String" label="HTML" description="The HTML to display"/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="markupText" type="String" label="HTML" description="The HTML to display"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <description>Displays text in the details component</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Details</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__AppPage,lightning__HomePage,lightning__FlowScreen">
+            <property name="summaryText" type="String" label="Summary" description="The summary for the details"/>
+            <property name="detailsText" type="String" label="Details" description="The details of the details"/>
+        </targetConfig>
+
+    </targetConfigs>
+</LightningComponentBundle>

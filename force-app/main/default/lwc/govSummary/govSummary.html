@@ -1,0 +1,39 @@
+<template>
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-l">{title}</h1>
+
+                    <!-- start of a section -->
+                    <dl key={sectionName}  class="govuk-summary-list">
+                        <template for:each={sectionFields} for:item="sectionField">
+                            <div key={sectionField.key} class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    {sectionField.label}
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {sectionField.value}
+                                </dd>
+                                <template if:true={sectionField.destination}>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" data-destination={sectionField.destination} onclick={handleChange}>
+                                            Change<span class="govuk-visually-hidden"> {sectionField.label}</span>
+                                        </a>
+                                    </dd>
+                                </template>
+                                <template if:false={sectionField.destination}>
+                                    <dd class="govuk-summary-list__actions">
+                                        <span class="govuk-visually-hidden"> {sectionField.label}</span>
+                                    </dd>
+                                </template>
+                            </div>
+                        </template>
+                    </dl>
+
+                    <div class="html-element" lwc:dom="manual"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+</template>

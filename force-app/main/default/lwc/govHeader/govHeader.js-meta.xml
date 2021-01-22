@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <description>Shows a header on the community using the default menu to provide links if available</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Header</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="serviceName" type="String" description="The Service Name to display in the header" default="Service Name"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

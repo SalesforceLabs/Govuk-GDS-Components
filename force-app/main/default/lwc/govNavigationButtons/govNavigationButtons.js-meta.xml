@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <description>Navigation Buttons</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Navigation Buttons</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="buttonLabelsString" type="String" label="Labels" description="Comma separated list of labels"></property>
+            <property name="buttonActionsString" type="String" label="Actions" description="Comma separated list of actions - Back will go back, everything else goes forward (These will be capitalised on output)"></property>
+            <property name="buttonVariantsString" type="String" label="Variants" description="Comma separated list of SLDS compliant (green,grey)"></property>
+            <property name="buttonAlignmentsString" type="String" label="Positions" description="Comma separated list of positions - Left, center or right"></property>
+            <property name="action" type="String" label="Action (Output Only)" description="Action (Output Only)"></property>
+            <property name="fullWidth" type="Boolean" label="Full Width?" description="Should the full width container be used? (false is 2/3s)"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

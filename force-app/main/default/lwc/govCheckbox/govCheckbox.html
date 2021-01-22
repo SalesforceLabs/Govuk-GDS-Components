@@ -1,0 +1,24 @@
+<!--
+ - Created by simon.cook on 23/09/2020.
+ -->
+
+<!-- Confirmation Checkbox -->
+<template>
+    <div class="govuk-width-container ">
+        <div class={groupClass}>
+            <div class="govuk-checkboxes">
+                <template if:true={hasErrors}>
+                    <span class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
+                    </span>
+                </template>
+                <div class="govuk-checkboxes__item" style="margin-bottom: 30px;">
+                    <input class="govuk-checkboxes__input" id="checkbox" name="checkbox" type="checkbox" checked={checked} onclick={handleClick}>
+                    <label class="govuk-label govuk-checkboxes__label" for="checkbox">
+                        <span class="label-text" lwc:dom="manual"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
