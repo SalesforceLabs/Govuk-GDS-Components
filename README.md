@@ -8,6 +8,10 @@ A repository of UK government GDS UI components in SFDX format
 You will need the latest version of the sfdx cli (https://developer.salesforce.com/tools/sfdxcli) and a hub org configured.  This repository is designed to be deployed to a Scratch Org.  It is possible to create the sfdx components into org metadata and deploy using the sfdx cli to a non-scratch org.  Please see the documentation for deploying metadata using sfdx (https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_mdapi.htm).
 
 
+Please make sure you are running the latest version
+
+`sfdx update`
+
 ## Getting started
 
 Download or clone this repository to your local machine
