@@ -6,6 +6,7 @@ export default class GovMarkupTextEditor extends LightningElement {
     @api builderContext = {};
 
     showModal = false;
+    showPreview = false;
 
     connectedCallback() {
     }
@@ -15,18 +16,36 @@ export default class GovMarkupTextEditor extends LightningElement {
         return param && param.value;
     }
 
-    // handleMarkupChange(event) {
-    //     console.log(event.detail.value);
-    //     this.handleChange('markupText', 'String', event.detail.value);
-    // }
+    insertTags(textArea, startTag, endTag) {
+        // is there any text selected?
+        const start = textArea.selectionStart;
+        const end = textArea.selectionEnd;
+        const text = textArea.value;
 
-    handleMarkupChange(event) {
-        const element = this.template.querySelector(".markupTextarea");
-        const value = element.value;
-        this.handleChange('markupText', 'String', value);
+        if(start === end) {
+            // No text selected
+            textArea.setRangeText(`${startTag}${endTag}`);            
+        } else {
+            //text selected
+            const selectedText = text.substring(start, end);
+            textArea.setRangeText(`${startTag}${selectedText}${endTag}`,start,end);            
+        }
+    }
+
+    handleInsertHeader(event) {
+        // insert the heading tag
+        const textArea = this.template.querySelector(".markupTextarea");
+        this.insertTags(textArea,"<div class='govuk-heading-l'>","</div>");
+    }
+
+    handleInsertBody(event) {
+        // insert the body tags
+        const textArea = this.template.querySelector(".markupTextarea");
+        this.insertTags(textArea,"<p class='govuk-body'>","</p>");
     }
 
     handleChange(fieldName, fieldType, fieldValue) {
+        // tell the flow engine about the updated value
         const valueChangedEvent = new CustomEvent(
             'configuration_editor_input_value_changed',  {
                 bubbles: true,
@@ -43,12 +62,61 @@ export default class GovMarkupTextEditor extends LightningElement {
     }
 
     handleShowModal(event) {
+        // show the edit modal
         this.showModal = true;
     }
 
+    handleDone(event) {
+        // get the value from the text area
+        const element = this.template.querySelector(".markupTextarea");
+        const value = element.value;
+        this.handleChange('markupText', 'String', value);
+
+        // close the modal
+        this.handleCloseModal(event);
+    }
+
     handleCloseModal(event) {
+        // hide the edit modal
         this.showModal = false;
     }
+
+    handleTogglePreview(event) {
+        console.log("handleTogglePreview called");
+        const textArea = this.template.querySelector(".markupTextarea");
+        if(textArea) {
+            // get the value from the text area
+            const value = textArea.value;
+            this.handleChange('markupText', 'String', value);
+
+            // update the preview text
+            const previewElement = this.template.querySelector(".preview");
+            if(previewElement) {
+                previewElement.innerHTML = value;
+            }
+        }
+
+        // toggle the preview mode
+        this.showPreview = !this.showPreview;
+    }
+
+
+    get previewClass() {
+        if(this.showPreview) {
+            return "row";
+        } else {
+            return "row preview-hidden";
+        }
+    }
+
+    get textAreaClass() {
+        if(this.showPreview) {
+            return "row text-area-hidden";
+        } else {
+            return "row";
+        }
+    }
+
 
     @api
     validate() {

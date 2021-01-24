@@ -1,4 +1,15 @@
+/* import the Salesforce Org version of the css */
+@import 'c/govCssOrg';
+
 .heading {
     background-color: black;
     color: white;
+}
+
+.preview-hidden {
+    display: none;
+}
+
+.text-area-hidden {
+    display: none;
 }
