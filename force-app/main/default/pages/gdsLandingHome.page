@@ -67,7 +67,7 @@
                 </noscript>
 
                 <script>
-                    document.write('<p class="govuk-body">Your browser <strong>does</strong> support JavaScript and has it enabled.  You are able to use the advanced versions of our services.  Press the start button below to continue.</p>');
+                    document.write('<p class="govuk-body">Your browser <strong>does</strong> support JavaScript and has it enabled.  You are able to use the advanced versions of our services.  Select the link below to continue.</p>');
                     document.write('<a href="/gdsdemo" class="govuk-link">Apply for a juggling license</a>');
                     document.write('<p class="govuk-body govuk-!-padding-bottom-9"></p>');
                 </script>
