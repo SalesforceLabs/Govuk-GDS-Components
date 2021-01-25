@@ -1,10 +1,17 @@
+/*
+ Developed by The Boost Team (Salesforce)
+
+ Simon Cook & Jeremy Pritchard
+ */
+
+
 public with sharing class govComponentHelper {
 
     @AuraEnabled
     public static List<NavigationMenuItem> getDefaultMenuItems() {
         try {
             // get the default menu id
-            Id defaultMenuId = [SELECT Id FROM NavigationLinkSet WHERE DeveloperName = 'Default_Navigation' LIMIT 1].id;
+            Id defaultMenuId = [SELECT Id FROM NavigationLinkSet WHERE DeveloperName = 'Default_Navigation' LIMIT 1].Id;
 
             // get the menu items
             return [SELECT Id,Label,Target FROM NavigationMenuItem WHERE NavigationLinkSetId = :defaultMenuId AND Status = 'Live' ORDER BY Position ASC NULLS FIRST];
