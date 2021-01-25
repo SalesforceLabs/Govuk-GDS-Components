@@ -23,15 +23,19 @@ body > div.siteforceStarterBody > div.cCenterPanel.slds-m-top--x-large.slds-p-ho
 
 body > div.siteforceStarterBody > div.cCenterPanel.slds-m-top--x-large.slds-p-horizontal--medium > div > div.slds-col--padded.comm-content-header.comm-layout-column {
     margin: 0px !important;
-    padding: 0px !important; 
+    padding: 0px !important;
 }
 
 
 body > div.siteforceStarterBody > div.cCenterPanel.slds-m-top--x-large.slds-p-horizontal--medium > div > div.slds-col--padded.comm-content-footer.comm-layout-column {
     margin: 0px !important;
-    padding: 0px !important; 
+    padding: 0px !important;
 }
 
 .forceCommunityFlowCommunity, .slds-card {
     border: none !important;
+}
+
+body > div.siteforceStarterBody > div.cCenterPanel.slds-m-top--x-large.slds-p-horizontal--medium > div > div.slds-col--padded.comm-content-header.comm-layout-column > div > div:nth-child(1) {
+    margin-bottom: 0px !important;
 }

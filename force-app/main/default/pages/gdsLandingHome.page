@@ -58,16 +58,20 @@
                     </span>
                     </p>
                 </div>
-                <h1 class="govuk-heading-xl govuk-!-padding-top-9">Welcome to Salesforce</h1>
-                <p class="govuk-body">We are testing to see if you can use our Javascript enabled services.</p>
+
+                <h2 class='govuk-heading-l govuk-!-margin-top-9'>Welcome to Salesforce Service Flows</h2>
+                <p class='govuk-body'>We are testing to see if you can use our Javascript enabled services.</p>
+
                 <noscript>
                     <p class="govuk-body">Unfortunately, your browser <strong>does not</strong> support JavaScript and or has it diabled.  Please enable it to use the advanced version of our services.</p>
                 </noscript>
+
                 <script>
                     document.write('<p class="govuk-body">Your browser <strong>does</strong> support JavaScript and has it enabled.  You are able to use the advanced versions of our services.  Press the start button below to continue.</p>');
                     document.write('<a href="/gdsdemo" class="govuk-link">Apply for a juggling license</a>');
                     document.write('<p class="govuk-body govuk-!-padding-bottom-9"></p>');
                 </script>
+
             </div>
         </div>
 
