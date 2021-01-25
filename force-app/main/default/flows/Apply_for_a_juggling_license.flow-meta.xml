@@ -852,7 +852,7 @@
             <inputParameters>
                 <name>instructionsHTML</name>
                 <value>
-                    <stringValue>&lt;h2 class=&quot;govuk-heading-l&quot; style=&quot;padding-top:20px;&quot;&gt;Check you answers&lt;/h2&gt; &lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;Thank you for all the information. Please check your answers and     click the change link if the information is not correct. Click submit to create your juggling application.&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&quot;govuk-heading-l&quot;&gt;Check you answers&lt;/h2&gt; &lt;p class=&quot;govuk-body&quot; style=&quot;padding-bottom:20px;&quot;&gt;Thank you for all the information. Please check your answers and     click the change link if the information is not correct. Click submit to create your juggling application.&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1657,8 +1657,8 @@
             <inputParameters>
                 <name>markupText</name>
                 <value>
-                    <stringValue>&lt;h2 class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;When did you start juggling?&lt;/h2&gt;
-&lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;It is great that you can already juggle. When did you start?&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&quot;govuk-heading-l&quot;&gt;When did you start juggling?&lt;/h2&gt;
+&lt;p class=&quot;govuk-body&quot; style=&quot;padding-bottom:20px;&quot;&gt;It is great that you can already juggle. When did you start?&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
