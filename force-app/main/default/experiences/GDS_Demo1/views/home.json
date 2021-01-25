@@ -13,6 +13,16 @@
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "bodyText" : "This is not a real service. It is a technology demonstration. Do not enter any real information.",
+        "phaseText" : "alpha"
+      },
+      "componentName" : "c:govPhaseBanner",
+      "id" : "6f417146-48ea-4bfb-8c78-90beed87cb06",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
     } ],
     "id" : "86098a54-9d8e-4f12-b125-2739bfd75da7",
     "regionName" : "header",
@@ -20,7 +30,7 @@
   }, {
     "components" : [ {
       "componentAttributes" : {
-        "markupText" : "<div class=\"govuk-heading-xl\" style=\"padding-top:20px;\">     Salesforce Flows Demo Service </div> <p class=\"govuk-body-l\" style=\"padding-bottom:20px;\">     Welcome to the Salesforce GDS components demonstration. This shows how GDS components can be used to build citizen     facing services using Salesforce technologies.     <br><br>     Press the start button to apply for a juggling license. </p>"
+        "markupText" : "<h2 class=\"govuk-heading-l\">     Salesforce Flows Demo Service </h2> <p class=\"govuk-body\" style=\"padding-bottom:20px;\">     Welcome to the Salesforce GDS components demonstration. This shows how GDS components can be used to build citizen     facing services using Salesforce technologies.     <br><br>     Press the start button to apply for a juggling license.</p>"
       },
       "componentName" : "c:govMarkupText",
       "id" : "af0bcc48-7b1a-412e-8a88-1da64c31af7d",

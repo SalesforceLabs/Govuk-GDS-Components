@@ -4,8 +4,8 @@
     <assignments>
         <name>Address_Variables</name>
         <label>Address Variables</label>
-        <locationX>750</locationX>
-        <locationY>416</locationY>
+        <locationX>759</locationX>
+        <locationY>305</locationY>
         <assignmentItems>
             <assignToReference>varAddressLine1</assignToReference>
             <operator>Assign</operator>
@@ -282,8 +282,8 @@
     <assignments>
         <name>Assign_Personal_Details</name>
         <label>Assign Personal Details</label>
-        <locationX>452</locationX>
-        <locationY>416</locationY>
+        <locationX>443</locationX>
+        <locationY>305</locationY>
         <assignmentItems>
             <assignToReference>varForename</assignToReference>
             <operator>Assign</operator>
@@ -312,8 +312,8 @@
     <assignments>
         <name>Assign_Planning_to_Start</name>
         <label>Assign Planning to Start</label>
-        <locationX>1864</locationX>
-        <locationY>258</locationY>
+        <locationX>1756</locationX>
+        <locationY>261</locationY>
         <assignmentItems>
             <assignToReference>varPlanningToStartDate</assignToReference>
             <operator>Assign</operator>
@@ -357,8 +357,8 @@
     <assignments>
         <name>Number_of_balls_assignment</name>
         <label>Number of balls</label>
-        <locationX>1047</locationX>
-        <locationY>416</locationY>
+        <locationX>1071</locationX>
+        <locationY>303</locationY>
         <assignmentItems>
             <assignToReference>varNumberOfBalls</assignToReference>
             <operator>Assign</operator>
@@ -373,8 +373,8 @@
     <decisions>
         <name>Can_they_juggle</name>
         <label>Can they juggle?</label>
-        <locationX>1215</locationX>
-        <locationY>418</locationY>
+        <locationX>1242</locationX>
+        <locationY>394</locationY>
         <defaultConnector>
             <targetReference>Planning_To_Start_0</targetReference>
         </defaultConnector>
@@ -398,8 +398,8 @@
     <decisions>
         <name>Change_Required</name>
         <label>Change Required?</label>
-        <locationX>1246</locationX>
-        <locationY>1084</locationY>
+        <locationX>1244</locationX>
+        <locationY>994</locationY>
         <defaultConnector>
             <targetReference>Confirmation</targetReference>
         </defaultConnector>
@@ -529,8 +529,8 @@
     <screens>
         <name>Address</name>
         <label>Address</label>
-        <locationX>610</locationX>
-        <locationY>416</locationY>
+        <locationX>600</locationX>
+        <locationY>305</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -570,9 +570,9 @@
             <inputParameters>
                 <name>markupText</name>
                 <value>
-                    <stringValue>&lt;div class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;Where do you live?&lt;/div&gt;
-&lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;We need to know which juggling community to add you to. Please let
-    us know what your current address is.&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&apos;govuk-heading-l&apos;&gt;Where do you live?&lt;/h2&gt;
+&lt;p class=&apos;govuk-body&apos;&gt;We need to know which juggling community to add you to. Please let us know what your current address is.&lt;/p&gt;
+</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -801,7 +801,7 @@
         <name>Check_Answers</name>
         <label>Check Answers</label>
         <locationX>1946</locationX>
-        <locationY>952</locationY>
+        <locationY>951</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -852,7 +852,7 @@
             <inputParameters>
                 <name>instructionsHTML</name>
                 <value>
-                    <stringValue>&lt;div class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;Check you answers&lt;/div&gt; &lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;Thank you for all the information. Please check your answers and     click the change link if the information is not correct. Click submit to create your juggling application.&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&quot;govuk-heading-l&quot; style=&quot;padding-top:20px;&quot;&gt;Check you answers&lt;/h2&gt; &lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;Thank you for all the information. Please check your answers and     click the change link if the information is not correct. Click submit to create your juggling application.&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1021,8 +1021,8 @@
             <inputParameters>
                 <name>markupText</name>
                 <value>
-                    <stringValue>&lt;div class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;Most impressive trick&lt;/div&gt;
-&lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;Please let us know what your most impressive juggling trick is.&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&apos;govuk-heading-l&apos;&gt;Most impressive trick&lt;/h2&gt;
+&lt;p class=&apos;govuk-body&apos;&gt;Please let us know what your most impressive juggling trick is.&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -1108,8 +1108,8 @@
     <screens>
         <name>Number_of_balls</name>
         <label>Number of balls</label>
-        <locationX>901</locationX>
-        <locationY>416</locationY>
+        <locationX>913</locationX>
+        <locationY>304</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1149,9 +1149,8 @@
             <inputParameters>
                 <name>markupText</name>
                 <value>
-                    <stringValue>&lt;div class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;How well can you juggle?&lt;/div&gt;
-&lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;It is important that we know how well you can juggling. Please let
-    us know how many balls you can currently juggle.&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&apos;govuk-heading-l&apos;&gt;How well can you juggle?&lt;/h2&gt;
+&lt;p class=&apos;govuk-body&apos;&gt;It is important that we know how well you can juggling. Please let us know how many balls you can currently juggle.&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -1302,10 +1301,9 @@
             <inputParameters>
                 <name>markupText</name>
                 <value>
-                    <stringValue>
-&lt;div class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;Personal details&lt;/div&gt;
-&lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;Enter your name and contact details so we can keep you updated with
-    the progress of your application.&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&apos;govuk-heading-l&apos;&gt;Personal Details&lt;/h2&gt;
+
+&lt;p class=&apos;govuk-body&apos;&gt;We will use your personal details to contact you about the progress of your juggling license application.  We do not share your information with any other individual or organisation.&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -1502,8 +1500,8 @@
     <screens>
         <name>Planning_To_Start</name>
         <label>Planning To Start</label>
-        <locationX>1574</locationX>
-        <locationY>257</locationY>
+        <locationX>1526</locationX>
+        <locationY>261</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1543,9 +1541,8 @@
             <inputParameters>
                 <name>markupText</name>
                 <value>
-                    <stringValue>&lt;div class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;When are you planning to start?&lt;/div&gt;
-&lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;We are please to hear you are interesting in learning to juggle.
-    When do you plan to start?&lt;/p&gt;</stringValue>
+                    <stringValue>&lt;h2 class=&apos;govuk-heading-l&apos;&gt;When are you planning to start?&lt;/h2&gt;
+&lt;p class=&apos;govuk-body&apos;&gt;We are pleased to hear you are interesting in learning to juggle.  When do you plan to start?&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -1619,8 +1616,8 @@
     <screens>
         <name>Planning_To_Start_0</name>
         <label>When started</label>
-        <locationX>1487</locationX>
-        <locationY>523</locationY>
+        <locationX>1456</locationX>
+        <locationY>503</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1660,7 +1657,7 @@
             <inputParameters>
                 <name>markupText</name>
                 <value>
-                    <stringValue>&lt;div class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;When did you start juggling?&lt;/div&gt;
+                    <stringValue>&lt;h2 class=&quot;govuk-heading-xl&quot; style=&quot;padding-top:20px;&quot;&gt;When did you start juggling?&lt;/h2&gt;
 &lt;p class=&quot;govuk-body-l&quot; style=&quot;padding-bottom:20px;&quot;&gt;It is great that you can already juggle. When did you start?&lt;/p&gt;</stringValue>
                 </value>
             </inputParameters>

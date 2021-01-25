@@ -3,7 +3,7 @@
   "appPageId" : "1fd68437-6b02-455d-8071-3ca3439c3808",
   "id" : "7f0d9886-a975-47df-b47b-f80b38668c69",
   "label" : "Juggling Application",
-  "pageAccess" : "UseParent",
+  "pageAccess" : "RequiresLogin",
   "routeType" : "custom-juggling-application",
   "type" : "route",
   "urlPrefix" : "juggling-application"

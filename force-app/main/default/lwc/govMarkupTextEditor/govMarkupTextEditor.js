@@ -35,7 +35,7 @@ export default class GovMarkupTextEditor extends LightningElement {
     handleInsertHeader(event) {
         // insert the heading tag
         const textArea = this.template.querySelector(".markupTextarea");
-        this.insertTags(textArea,"<div class='govuk-heading-l'>","</div>");
+        this.insertTags(textArea,"<h2 class='govuk-heading-l'>","</h2>");
     }
 
     handleInsertBody(event) {
