@@ -28,12 +28,13 @@ Download or clone this repository to your local machine
 ## Create the GDS experience cloud
  
  - run `scripts/createCommunity.sh`
- - Wait for the community to build (you can run the command listed in the output of the previous command to check the status)
+ - Wait for the community to build (you can run the command listed in the output of the previous command to check the 
+   status)
  - It should take no longer than 1 min to create the community
 
 Note: This script builds two communities.  A lightning community that is the bulk of the demo and an optional
-VisualForce community if the customer wants to see progressive enhancement.  This shows the concept of what can be 
-done when JavaScript is disabled.
+VisualForce community if the customer wants to see progressive enhancement.  This shows what can be done when JavaScript
+is disabled.
 
 
 ## Deploy your source code
