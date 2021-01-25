@@ -51,6 +51,20 @@ Download or clone this repository to your local machine
  - Goto Setup -> All Communities to see the GDS Demo Community
 
 
+## Configure Theme CSS (optional)
+
+The standard community css includes border padding which is not present in GDS.  Remove these borders to improve the 
+look of the site.  There are CSS overrides provided as part of this repository.
+
+To override the CSS:
+ - Open Experience Builder
+ - Select the Theme Menu (pencil icon)
+ - Select the small down arrow menu on the top right of the menu
+ - Choose 'Edit CSS'
+ - Dimiss the modal if it appears
+ - If required, copy the CSS from this repository (scripts->notes->community.css)
+ - Save the css
+
 ## Configure Navigation (optional)
  
 If you would like the Juggling license application page to appear in the main header bar as a navigatable page option then you'll need to add the page to the default community menu.
