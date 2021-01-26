@@ -526,7 +526,7 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-    <runInMode>SystemModeWithoutSharing</runInMode>
+    <runInMode>DefaultMode</runInMode>
     <screens>
         <name>Address</name>
         <label>Address</label>
