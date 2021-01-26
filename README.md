@@ -27,7 +27,7 @@ Download or clone this repository to your local machine
 
 ## Create the GDS experience cloud
  
- - run `scripts/createCommunity.sh`
+ - run `scripts/createCommunities.sh`
  - Wait for the community to build (you can run the command listed in the output of the previous command to check the 
    status)
  - It should take no longer than 1 min to create the community
@@ -84,5 +84,5 @@ To do this:
  - Name Juggling license
  - Type Community Page
  - Page Juggling license
- - Check Publically available
+ - Check Public available
  - Click Save Menu
