@@ -45,7 +45,7 @@ is disabled.
 
 ## Deploy your source code
 
- - run `scripts/publishCommunity.sh`
+ - run `scripts/publishCommunities.sh`
  - Wait for the command to complete
 
 
