@@ -56,6 +56,13 @@ is disabled.
  - Goto Setup -> All Communities to see the GDS Demo Community
 
 
+## Open your community in a browser
+ - The `publishCommunity.sh` script will return a URL wit the gdsdemo community full path in
+ - The first part of this url is the community url that can be used to open the VisualForce landing community  
+ - Replace gdsdemo with gdslanding in the url and paste to your browser URL bar
+
+
+
 ## Configure Theme CSS (optional)
 
 The standard community css includes border padding which is not present in GDS.  Remove these borders to improve the 
