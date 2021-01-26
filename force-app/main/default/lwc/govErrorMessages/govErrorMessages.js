@@ -69,10 +69,8 @@ export default class ErrorMessages extends LightningElement {
         console.log(`ERROR_MESSAGES: components are ${JSON.stringify(this.components)}`);
     }
 
-
     // called at the start of validation to remove existing errors
     handleValidateMessage(message) {
         this.components = [];
     }
-
 }

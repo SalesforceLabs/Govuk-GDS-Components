@@ -7,7 +7,6 @@ A repository of UK government GDS UI components in SFDX format
 
 You will need the latest version of the sfdx cli (https://developer.salesforce.com/tools/sfdxcli) and a hub org configured.  This repository is designed to be deployed to a Scratch Org.  It is possible to create the sfdx components into org metadata and deploy using the sfdx cli to a non-scratch org.  Please see the documentation for deploying metadata using sfdx (https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_mdapi.htm).
 
-
 Please make sure you are running the latest version
 
 `sfdx update`
@@ -25,16 +24,13 @@ Download or clone this repository to your local machine
  - Wait for the scratch org to build
 
 
-## Create the GDS experience cloud
+## Create the GDS experience clouds
  
  - run `scripts/createCommunities.sh`
- - Wait for the community to build (you can run the command listed in the output of the previous command to check the 
+ - Wait for the experience to build (you can run the command listed in the output of the previous command to check the 
    status)
- - It should take no longer than 1 min to create the community
-
-Note: This script builds two communities.  A lightning community that is the bulk of the demo and an optional
-VisualForce community if the customer wants to see progressive enhancement.  This shows what can be done when JavaScript
-is disabled.
+ - It should take no longer than 1 min to create each of the experiences.
+ - The VisualForce experience is to demonstrate progressive enhancement and is therefore optional
 
 
 ## Deploy your source code
@@ -43,7 +39,7 @@ is disabled.
  - Wait for the command to complete
 
 
-## Publish your community (only required for the Lightning Community)
+## Publish your experience (only required for the Lightning Experience)
 
  - run `scripts/publishCommunities.sh`
  - Wait for the command to complete
@@ -61,6 +57,7 @@ is disabled.
  - The first part of this url is the community url that can be used to open the VisualForce landing community  
  - Replace gdsdemo with gdslanding in the url and paste to your browser URL bar
 
+**Note:** Unauthenticated access to the experience is only supported in Spring '21 and greater.
 
 
 ## Configure Theme CSS (optional)
@@ -76,6 +73,7 @@ To override the CSS:
  - Dimiss the modal if it appears
  - If required, copy the CSS from this repository (scripts->notes->community.css)
  - Save the css
+
 
 ## Configure Navigation (optional)
  

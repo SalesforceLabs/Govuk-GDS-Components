@@ -1,6 +1,7 @@
 {
   "orgName": "simon.cook company",
   "edition": "Developer",
+  "release": "Preview",
   "features": ["Communities"],
   "settings": {
     "orgPreferenceSettings": {
