@@ -16,11 +16,16 @@ Please make sure you are running the latest version
 Download or clone this repository to your local machine
 
 
+## One script to rule them
+
+If you want to build everything, simply run `scripts/buildAll.sh` (making sure it is executable first)
+
+
 ## Create your scratch org
 
  - Open your terminal and navigate to the repositories base directory.
  - Make sure the scripts are executable `chmod +x scripts/*.sh`
- - run `scripts/createScrachOrg.sh`
+ - run `scripts/createScratchOrg.sh`
  - Wait for the scratch org to build
 
 
@@ -58,21 +63,6 @@ Download or clone this repository to your local machine
  - Replace gdsdemo with gdslanding in the url and paste to your browser URL bar
 
 **Note:** Unauthenticated access to the experience is only supported in Spring '21 and greater.
-
-
-## Configure Theme CSS (optional)
-
-The standard community css includes border padding which is not present in GDS.  Remove these borders to improve the 
-look of the site.  There are CSS overrides provided as part of this repository.
-
-To override the CSS:
- - Open Experience Builder
- - Select the Theme Menu (pencil icon)
- - Select the small down arrow menu on the top right of the menu
- - Choose 'Edit CSS'
- - Dimiss the modal if it appears
- - If required, copy the CSS from this repository (scripts->notes->community.css)
- - Save the css
 
 
 ## Configure Navigation (optional)
