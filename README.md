@@ -43,7 +43,7 @@ is disabled.
  - Wait for the command to complete
 
 
-## Deploy your source code
+## Publish your community (only required for the Lightning Community)
 
  - run `scripts/publishCommunities.sh`
  - Wait for the command to complete
