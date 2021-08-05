@@ -1,7 +1,3 @@
-/**
- * Created by simon.cook on 17/11/2020.
- */
-
 import {LightningElement, api, track, wire} from 'lwc';
 import { FlowNavigationBackEvent, FlowNavigationNextEvent, FlowNavigationFinishEvent } from 'lightning/flowSupport';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
@@ -74,15 +70,14 @@ export default class GovNavigationButtons extends LightningElement {
                 button.class = 'govuk-button govuk-button--warning govuk-!-margin-1';
             } else if(button.variant.toUpperCase() === 'DISABLED'){
                 button.class = 'govuk-button govuk-button--disabled govuk-!-margin-1';
+            } else {
+                button.class = 'govuk-button govuk-!-margin-1';
             }
             if(buttonAlignments[i].toUpperCase() === 'LEFT') {
-               // button.class += " slds-float_left";
                 this.leftButtons.push(button);
             } else if(buttonAlignments[i].toUpperCase() === 'CENTER') {
-              //  button.class += " slds-align_absolute-center";
                 this.centerButtons.push(button);
             } else if(buttonAlignments[i].toUpperCase() === 'RIGHT') {
-               // button.class += " slds-float_right";
                 this.rightButtons.push(button);
             }
         }
@@ -92,21 +87,10 @@ export default class GovNavigationButtons extends LightningElement {
         this.unsubscribeMCs();
     }
 
+
     // class related functions
     get containerWidthClass() {
         return (this.fullWidth) ? "" : "govuk-grid-column-two-thirds";
-    }
-
-    get alignmentClass() {
-        if(this.alignment.toUpperCase() === 'CENTER') {
-            return "slds-align_absolute-center";
-        }
-        if(this.alignment.toUpperCase() === 'LEFT') {
-            return 'slds-float_left';
-        }
-        if(this.alignment.toUpperCase() === 'RIGHT') {
-            return 'slds-float_right';
-        }
     }
 
     // Event handlers functions

@@ -2,8 +2,8 @@
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
             <div class={containerWidthClass}>
-                <div class="navigation-buttons slds-clearfix">
-                    <div class="left-buttons slds-float_left">
+                <div style="display:flex; justify-content: space-between;" >
+                    <div >
                         <template for:each={leftButtons} for:item="button">
                             <button key={button.id}
                                     class={button.class}
@@ -13,7 +13,7 @@
                             </button>
                         </template>
                     </div>
-                    <div class="center-buttons slds-align_absolute-center">
+                    <div>
                         <template for:each={centerButtons} for:item="button">
                             <button key={button.id}
                                     class={button.class}
@@ -23,7 +23,7 @@
                             </button>
                         </template>
                     </div>
-                    <div class="right-buttons slds-float_right">
+                    <div>
                         <template for:each={rightButtons} for:item="button">
                             <button key={button.id}
                                     class={button.class}
