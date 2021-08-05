@@ -1,63 +1,36 @@
-<!--
- - Created by simon.cook on 30/09/2020.
- -->
-
-<!-- Radios -->
 <template>
-
-    <div class="govuk-width-container ">
+    <div class="govuk-width-container">
         <div class={groupClass} if:true={isInitialised}>
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" if:true={label}>
-                    <label class={labelClass}>
-                        {label}
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" if:true={questionLabel}>
+                    <label class={questionLabelClass}>
+                        {questionLabel}
                     </label>
                 </legend>
-                <div id="changed-name-hint" class="govuk-hint" if:true={hint}>
-                    {hint}
+                <div id="changed-name-hint" class="govuk-hint" if:true={questionHint}>
+                    {questionHint}
                 </div>
-
                 <span class="govuk-error-message" if:true={hasErrors}>
                     <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
                 </span>
-
-                <template if:false={isStacked}>
-                    <div class="govuk-radios govuk-radios--inline">
-                        <template for:each={radioOptions} for:item="option">
-                            <div class="govuk-radios__item"
-                                 key={option.key}>
-                                <input class="govuk-radios__input"
-                                       id={option.key}
-                                       name={fieldId}
-                                       type="radio"
-                                       value={option.value}
-                                       checked={option.checked}
-                                       onchange={handleValueChanged}>
-                                <label class="govuk-label govuk-radios__label"
-                                       for={option.key}>
-                                    {option.label}
-                                </label>
-                            </div>
-                        </template>
-                    </div>
-                </template>
-
-                <template if:true={isStacked}>
-                    <div class="govuk-radios">
-                        <div class="govuk-radios">
-                            <template for:each={radioOptions} for:item="option">
-                                <div class="govuk-radios__item" key={option.key}>
-                                    <input class="govuk-radios__input" id={option.key} name={fieldId} type="radio" value={option.value} checked={option.checked} onchange={handleValueChanged}>
-                                    <label class="govuk-label govuk-radios__label" for={option.key}>
-                                        {option.label}
-                                    </label>
-                                </div>
-                            </template>
+                <div class={radioClass}>
+                    <template for:each={radioOptions} for:item="option">
+                        <div class="govuk-radios__item" key={option.key}>
+                            <input class="govuk-radios__input"
+                                   id={option.key}
+                                   name={uniqueFieldId}
+                                   type="radio"
+                                   value={option.value}
+                                   checked={option.checked}
+                                   onchange={handleValueChanged}>
+                            <label class="govuk-label govuk-radios__label"
+                                   for={option.key}>
+                                {option.label}
+                            </label>
                         </div>
-                    </div>
-                </template>
+                    </template>
+                </div>
             </fieldset>
         </div>
     </div>
-
 </template>

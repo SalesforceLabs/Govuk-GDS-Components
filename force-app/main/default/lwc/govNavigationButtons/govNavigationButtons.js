@@ -66,16 +66,23 @@ export default class GovNavigationButtons extends LightningElement {
             button.label = buttonLabels[i];
             button.action = buttonActions[i];
             button.variant = buttonVariant[i];
-            if(button.variant.toUpperCase() === 'GREEN') {
+            if(button.variant.toUpperCase() === 'BRAND') {
                 button.class = 'govuk-button govuk-!-margin-1';
-            } else {
+            } else if(button.variant.toUpperCase() === 'SECONDARY') {
                 button.class = 'govuk-button govuk-button--secondary govuk-!-margin-1';
+            } else if(button.variant.toUpperCase() === 'WARNING') {
+                button.class = 'govuk-button govuk-button--warning govuk-!-margin-1';
+            } else if(button.variant.toUpperCase() === 'DISABLED'){
+                button.class = 'govuk-button govuk-button--disabled govuk-!-margin-1';
             }
             if(buttonAlignments[i].toUpperCase() === 'LEFT') {
+               // button.class += " slds-float_left";
                 this.leftButtons.push(button);
             } else if(buttonAlignments[i].toUpperCase() === 'CENTER') {
+              //  button.class += " slds-align_absolute-center";
                 this.centerButtons.push(button);
             } else if(buttonAlignments[i].toUpperCase() === 'RIGHT') {
+               // button.class += " slds-float_right";
                 this.rightButtons.push(button);
             }
         }
@@ -85,9 +92,7 @@ export default class GovNavigationButtons extends LightningElement {
         this.unsubscribeMCs();
     }
 
-
     // class related functions
-
     get containerWidthClass() {
         return (this.fullWidth) ? "" : "govuk-grid-column-two-thirds";
     }
@@ -104,9 +109,7 @@ export default class GovNavigationButtons extends LightningElement {
         }
     }
 
-
     // Event handlers functions
-
     handleClick(event) {
         // get the action for the data-action attribute
         this.action = event.target.getAttribute('data-action').toUpperCase();
@@ -144,7 +147,6 @@ export default class GovNavigationButtons extends LightningElement {
 
 
     // Messaging related functions
-
     subscribeMCs() {
         if (this.registrationSubscription) {
             return;

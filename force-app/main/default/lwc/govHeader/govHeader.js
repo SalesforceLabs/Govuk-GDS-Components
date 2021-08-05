@@ -1,17 +1,26 @@
-import {LightningElement,api, track} from 'lwc';
-import BASEPATH from '@salesforce/community/basePath';
-import getDefaultMenuItems from '@salesforce/apex/govComponentHelper.getDefaultMenuItems';
+import {LightningElement, api, track} from 'lwc';
+import {NavigationMixin} from "lightning/navigation";
+import communityBasePath from '@salesforce/community/basePath';
 import CROWN_LOGO from '@salesforce/resourceUrl/govuklogotypecrown';
+import getDefaultMenuItems from '@salesforce/apex/govComponentHelper.getDefaultMenuItems';
 
-export default class GovHeader extends LightningElement {
+export default class GovHeader extends LightningElement(NavigationMixin) {
+    
     crownLogo = CROWN_LOGO;
 
+    @api headerLabel = "Header Label Goes Here";
+    @api headerURL = "Header URL Goes Here";
     @api serviceName = "Service Name Goes Here";
-
+    @api serviceURL = "Service URL Goes Here";
+    @api menuLabel = "Menu Label Goes Here";
+    @api navigationMenuDevName = "Navigation Menu Developer Name Goes Here";
+    
     @track menuItems = [];
-
+    
     connectedCallback() {
-        getDefaultMenuItems()
+        getDefaultMenuItems({
+            strNavigationMenuDevName: this.navigationMenuDevName
+        })
             .then(menuItems => {
                 try {
                     // get the page title
@@ -19,17 +28,15 @@ export default class GovHeader extends LightningElement {
                     let pageTarget = `/${urlParts.pop()}`;
                     pageTarget = pageTarget.split('#')[0];
 
-                    // put the home in
-                    menuItems.splice(0,0,{Label:"Home",Target:"/",Id:"Home"});
-
-                    // update the url for this community's base path
-                    menuItems.forEach( menuItem => {
-                        menuItem.class = (menuItem.Target === pageTarget) ? "govuk-header__navigation-item govuk-header__navigation-item--active": "govuk-header__navigation-item";
-                        menuItem.FullTarget = BASEPATH + menuItem.Target;
+                    // update the menu item's url for this community's base path and activate the target page menu item
+                    menuItems.forEach(menuItem => {
+                        menuItem.class = (menuItem.Target === pageTarget) ? "govuk-header__navigation-item govuk-header__navigation-item--active" : "govuk-header__navigation-item";
+                        menuItem.fullTarget = (menuItem.Type === "InternalLink") ? (communityBasePath + menuItem.Target) : (menuItem.Target);
+                        menuItem.targetPref = (menuItem.Type === "ExternalLink" &&  menuItem.TargetPrefs === "None") ? "_blank"  : "_self";
                     });
                     this.menuItems = menuItems;
-                    }
-                catch(err) {
+                    
+                } catch (err) {
                     console.error(err);
                 }
             })
@@ -37,4 +44,5 @@ export default class GovHeader extends LightningElement {
                 console.error(`Could not load menu items due to ${JSON.stringify(error)}`);
             })
     }
+
 }

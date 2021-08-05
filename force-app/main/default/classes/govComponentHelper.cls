@@ -1,20 +1,13 @@
-/*
- Developed by The Boost Team (Salesforce)
-
- Simon Cook & Jeremy Pritchard
- */
-
-
 global without sharing class govComponentHelper {
 
     @AuraEnabled
-    public static List<NavigationMenuItem> getDefaultMenuItems() {
+    public static List<NavigationMenuItem> getDefaultMenuItems(String strNavigationMenuDevName) {
         try {
-            // get the default menu id
-            Id defaultMenuId = [SELECT Id FROM NavigationLinkSet WHERE DeveloperName = 'Default_Navigation' LIMIT 1].Id;
-
-            // get the menu items
-            return [SELECT Id,Label,Target FROM NavigationMenuItem WHERE NavigationLinkSetId = :defaultMenuId AND Status = 'Live' ORDER BY Position ASC NULLS FIRST];
+            List<NavigationMenuItem> lstNavigationItems = new List<NavigationMenuItem>();
+            if(String.isNotBlank(strNavigationMenuDevName)) {
+                lstNavigationItems = [SELECT Label, Target, TargetPrefs, Type FROM NavigationMenuItem WHERE NavigationLinkSet.DeveloperName = :strNavigationMenuDevName AND Status = 'Live' ORDER BY Position ASC];
+            }
+            return lstNavigationItems;
         }
         catch(Exception e) {
             throw new AuraHandledException('Could not get default menu items due to ' + e.getMessage());
@@ -22,16 +15,20 @@ global without sharing class govComponentHelper {
     }
 
     @AuraEnabled
-    public static List<String> getPicklistValuesByObjectField(String field){
-        List<String> splitString = field.split('\\.');
-        List<String> values= new List<String>();
-        Schema.SobjectField theField = Schema.getGlobalDescribe().get(splitString[0]).getDescribe().fields.getMap().get(splitString[1]);
-        Schema.DescribeFieldResult theFieldDescription= theField.getDescribe();
-        List<Schema.PicklistEntry> ple = theFieldDescription.getPicklistValues();
-        for( Schema.PicklistEntry pickListVal : ple){
-            values.add(pickListVal.getLabel());
+    public static List<String> getPicklistValuesByObjectField(String strSObjectFieldName){
+        List<String> lstPicklistValues = new List<String>();
+        if(String.isNotBlank(strSObjectFieldName)) { 
+            List<String> lstSplitStrings = strSObjectFieldName.split('\\.');
+            if(!lstSplitStrings.isEmpty()) {
+                Schema.SobjectField theField = Schema.getGlobalDescribe().get(lstSplitStrings[0]).getDescribe().fields.getMap().get(lstSplitStrings[1]);
+                Schema.DescribeFieldResult theFieldDescription = theField.getDescribe();
+                List<Schema.PicklistEntry> ple = theFieldDescription.getPicklistValues();
+                for( Schema.PicklistEntry pickListVal : ple) {
+                    lstPicklistValues.add(pickListVal.getLabel());
+                }
+            }  
         }
-        return values;
+        return lstPicklistValues;
     }
     
 }
