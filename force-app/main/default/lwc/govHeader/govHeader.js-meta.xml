@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <description>Shows a header on the community using the default menu to provide links if available</description>
     <isExposed>true</isExposed>
     <masterLabel>Gov UK Header</masterLabel>
