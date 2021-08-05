@@ -1,22 +1,13 @@
 {
-  "orgName": "simon.cook company",
+  "orgName": "UK GDS AppEx Project",
   "edition": "Developer",
-  "release": "Preview",
   "features": ["Communities"],
   "settings": {
-    "orgPreferenceSettings": {
-      "networksEnabled": true
+    "communitiesSettings": {
+      "enableNetworksEnabled": true
     },
     "experienceBundleSettings": {
       "enableExperienceBundleMetadata": true
-    },
-    "lightningExperienceSettings": {
-      "enableS1DesktopEnabled": true
-    },
-    "securitySettings": {
-      "passwordPolicies": {
-        "enableSetPasswordInApi": true
-      }
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
