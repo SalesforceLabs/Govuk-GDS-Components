@@ -34,13 +34,13 @@ export default class GovRadios extends LightningElement {
     get questionLabelClass() {
         let questionLabelClass;
         switch(this.questionFontSize.toLowerCase()) {
-            case "Small":
+            case "small":
                 questionLabelClass = "govuk-label govuk-label--s";
                 break;
-            case "Medium":
+            case "medium":
                 questionLabelClass = "govuk-label govuk-label--m";
                 break;
-            case "Large":
+            case "large":
                 questionLabelClass = "govuk-label govuk-label--l";
                 break;
             default:

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <description>A GDS text input control</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Text Input</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="fieldId" type="String" label="Field Id" description="Field Id - must be unique to this process"/>
+            <property name="label" type="String" label="Label" description="The label to display"/>
+            <property name="labelFontSize" type="String" label="Label Font Size" default="Medium" description="Label Font Size - Small, Medium or Large"/>
+            <property name="widthLengthWise" type="String" label="Fixed Width Display Length (Known case)" default="20" description="The length of the text field based on character count - 2, 3, 4, 5, 10 or 20"/>
+            <property name="widthQuarterWise" type="String" label="Fixed Width Display Length (Unknown case)" description="The length of the text field based on assumption - one-quarter, one-third, one-half, two-thirds, three-quarters or full"/>
+            <property name="hintText" type="String" label="Hint Text" description="Hint Text - appears below the label giving the user a hint"/>
+            <property name="regexPattern" type="String" label="Regular Expression" description="The regular expression the field should conform to"/>
+            <property name="prefix" type="String" label="Value Prefix" description="The prefix before the value"/>
+            <property name="suffix" type="String" label="Value Suffix" description="The suffix after the value"/>
+            <property name="autocompleteType" type="String" label="Autocomplete Type?" description="The Autocomplete Type value is required to use autocomplete functionality, give values based on WCAG 2.1 Level AA."/>
+            <property name="spellcheckRequired" type="Boolean" label="Spellcheck Required?" description="The Spellcheck function is required or not on the field"/>
+            <property name="errorMessage" type="String" label="Error Message" description="Error Message"/>
+            <property name="value" type="String" label="Value" description="The Value"/>
+            <property name="required" type="Boolean" label="Required" description="Required"/>
+            <property name="maxCharacterCount" type="Integer" label="Maximum Character Count" description="The maximum length of the string in the field"/>
+            <property name="showCharacterCount" type="Boolean" label="Show Character Count" description="Shows the user the character count and the maximum character count"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

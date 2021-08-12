@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <description>Provides a GDS Panel</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Panel</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__AppPage,lightning__HomePage,lightning__FlowScreen">
+            <property name="titleText" type="String" label="Title" description="The title text"/>
+            <property name="bodyText" type="String" label="Body" description="Enter body text in normal text format or html format"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

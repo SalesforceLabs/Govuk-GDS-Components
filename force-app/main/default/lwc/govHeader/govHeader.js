@@ -16,7 +16,7 @@ export default class GovHeader extends LightningElement(NavigationMixin) {
     @api navigationMenuDevName = "Navigation Menu Developer Name Goes Here";
     
     @track menuItems = [];
-    
+  
     connectedCallback() {
         getDefaultMenuItems({
             strNavigationMenuDevName: this.navigationMenuDevName

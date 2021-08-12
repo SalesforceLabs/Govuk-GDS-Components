@@ -1,0 +1,35 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container">
+        <div class={groupClass}>
+            <h1 class="govuk-label-wrapper" if:true={label}>
+                <label class={labelClass} for="text-area">
+                    {label}
+                </label>
+            </h1>
+            <div id="more-detail-hint" class="govuk-hint" if:true={hint}>
+                {hint}
+            </div>
+            <span class="govuk-error-message" if:true={hasErrors}>
+                <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
+            </span>
+            <div class="govuk-grid-column-two-thirds govuk-!-padding-left-0 govuk-!-padding-right-0">
+                <textarea class={inputClass}
+                          id="text-area"
+                          name="text-area"
+                          rows={rowCount}
+                          aria-describedby="text-area"
+                          onkeyup={handleKeyUp}
+                          maxlength={maxCharacterCount}>
+                    {value}
+                </textarea>
+                <div id="character-count-text"
+                     class="govuk-hint govuk-character-count__message"
+                     aria-live="polite"
+                     if:true={showCharacterCount}>
+                    {characterCountText}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

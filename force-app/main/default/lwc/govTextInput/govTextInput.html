@@ -1,0 +1,39 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container ">
+        <div class={groupClass} aria-describedby="hint-text error-text character-count-text">
+            <div class="govuk-label-wrapper">
+                <label class={labelClass} for="input-text">
+                    {label} <span class="govuk-visually-hidden">{label}</span>
+                </label>
+            </div>
+            <div id="hint-text" class="govuk-hint slds-hyphenate" if:true={hintText}>
+                {hintText}
+            </div>
+            <span id="error-text" class="govuk-error-message slds-hyphenate" if:true={hasErrors}>
+                <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
+            </span>
+            <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" if:true={prefix}>{prefix}</div>
+                <input class={inputClass}
+                        id="input-text"
+                        name="input-text"
+                        type="text"
+                        pattern={regularExpression}
+                        autocomplete={autocompleteType}
+                        spellcheck={spellcheckRequired}
+                        required={required}
+                        value={value}
+                        maxlength={maxCharacterCount}
+                        onkeyup={handleKeyUp}>
+                <div class="govuk-input__suffix" if:true={suffix}>{suffix}</div>
+            </div>
+            <div id="character-count-text"
+                    class="govuk-hint govuk-character-count__message"
+                    aria-live="polite"
+                    if:true={showCharacterCount}>
+                {characterCountText}
+            </div>
+        </div>
+    </div>
+</template>
