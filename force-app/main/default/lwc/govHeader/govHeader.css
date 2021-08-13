@@ -1,0 +1,21 @@
+.govuk-header__menu-button {
+    display: block;
+}
+
+.govuk-header__navigation {
+    display: none;
+}
+
+.govuk-header__navigation--open {
+    display: block;
+}
+
+@media (min-width: 48.0625em) {
+    .govuk-header__menu-button {
+        display: none;
+    }
+    .govuk-header__navigation {
+        display: block;
+    }
+}
+

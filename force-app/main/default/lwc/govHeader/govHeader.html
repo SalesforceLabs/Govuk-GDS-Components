@@ -24,7 +24,7 @@
                     {serviceName}
                 </a>
                 <button type="button" class="govuk-header__menu-button govuk-js-header-toggle"
-                    aria-controls="navigation" aria-label="Show or hide navigation menu">{menuLabel}</button>
+                    aria-controls="navigation" aria-label="Show or hide navigation menu" onclick={toggleButton}>{menuLabel}</button>
                 <nav>
                     <ul id="navigation" class="govuk-header__navigation" aria-label="Navigation menu">
                         <template for:each={menuItems} for:item="menuItem">

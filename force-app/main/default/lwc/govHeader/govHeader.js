@@ -16,6 +16,7 @@ export default class GovHeader extends LightningElement(NavigationMixin) {
     @api navigationMenuDevName = "Navigation Menu Developer Name Goes Here";
     
     @track menuItems = [];
+    @track showMenuInMobile = false;
   
     connectedCallback() {
         getDefaultMenuItems({
@@ -43,6 +44,17 @@ export default class GovHeader extends LightningElement(NavigationMixin) {
             .catch(error => {
                 console.error(`Could not load menu items due to ${JSON.stringify(error)}`);
             })
+    }
+
+    toggleButton(event) {
+        if(this.showMenuInMobile) {
+            this.showMenuInMobile = false;
+            this.template.querySelector('.govuk-header__navigation').classList.remove('govuk-header__navigation--open');
+        } else {
+            this.showMenuInMobile = true;
+            this.template.querySelector('.govuk-header__navigation').classList.add('govuk-header__navigation--open');
+        }
+        
     }
 
 }
