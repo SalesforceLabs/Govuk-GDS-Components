@@ -79,6 +79,8 @@ export default class GovNavigationButtons extends LightningElement {
                 this.centerButtons.push(button);
             } else if(buttonAlignments[i].toUpperCase() === 'RIGHT') {
                 this.rightButtons.push(button);
+            } else {
+                this.rightButtons.push(button);
             }
         }
     }
