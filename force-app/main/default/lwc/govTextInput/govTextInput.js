@@ -7,13 +7,13 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 
 export default class GovTextInput extends LightningElement {
     
-    @api fieldId;
+    @api fieldId = '';
     @api label = '';
     @api labelFontSize = '';
     @api widthLengthWise = '';
     @api widthQuarterWise = '';
     @api hintText = '';
-    @api regexPattern;
+    @api regexPattern = '';
     @api prefix = '';
     @api suffix = '';
     @api autocompleteType = '';
@@ -22,7 +22,7 @@ export default class GovTextInput extends LightningElement {
     @api required = false;
     @api value = '';
     @api maxCharacterCount = 255;
-    @api showCharacterCount;
+    @api showCharacterCount = false;
 
     @track charCount;
     @track hasErrors = false;
@@ -43,7 +43,6 @@ export default class GovTextInput extends LightningElement {
         if(this.regexPattern) {
             this.regularExpression = new RegExp(this.regexPattern);
         }
-
         // set the char count based on value length
         this.charCount = (this.value) ? this.value.length : 0;
 
@@ -161,7 +160,7 @@ export default class GovTextInput extends LightningElement {
         if (this.required && this.value === '') {
             this.hasErrors = true;
         } else {
-            if (this.regularExpression !== '' && this.value !== '') {
+            if (this.regularExpression !== undefined && this.regularExpression !== '' && this.value !== '') {
                 if (!this.regularExpression.test(this.value)) {
                     this.hasErrors = true;
                 }
