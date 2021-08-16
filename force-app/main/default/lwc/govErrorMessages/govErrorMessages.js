@@ -7,7 +7,7 @@ export default class ErrorMessages extends LightningElement {
 
     @track components = [];
 
-    errorPrefix = 'There is a proble';
+    errorPrefix = 'There is a problem';
     
     // messaging attributes
     @wire(MessageContext) messageContext;
