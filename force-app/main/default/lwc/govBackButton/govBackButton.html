@@ -1,0 +1,8 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container ">
+        <template if:true={isVisible}>
+            <a href="#" class="govuk-back-link" onclick={handleBack}>{backButtonLabel}</a>
+        </template>
+    </div>
+</template>
