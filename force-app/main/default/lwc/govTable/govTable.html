@@ -1,0 +1,29 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container ">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--l">{captionText}</caption>
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <template for:each={columns} for:item="column" for:index="index">
+                    <th key={column.index} scope="col" class={column.class}>{column.colHeader}</th>
+                </template>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <template for:each={rows} for:item="row" for:index="rowIndex">
+                    <tr key={row.index} class="gov-table__row">
+                        <template for:each={row.rowData} for:item="data" for:index="dataIndex">
+                            <template if:true={data.isBold}>
+                                <th if:true={data.hasData} scope="row" class="govuk-table__header" key={data.dataIndex}>{data.text}</th>
+                            </template>
+                            <template if:false={data.isBold}>
+                                <td if:true={data.hasData} scope="row" class="govuk-table__cell" key={data.dataIndex}>{data.text}</td>
+                            </template>
+                        </template>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>
