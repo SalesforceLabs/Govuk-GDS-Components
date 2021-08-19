@@ -21,7 +21,6 @@ export default class GovFooter extends LightningElement {
     @track isNavLLinksPresent = false;
 
     connectedCallback(){
-
         //splitting all comma seperated values to form an array
         let sectionNamesList = this.sectionNames ? this.sectionNames.split(';') : [];
         let navigationNamesList = this.navigationNames ? this.navigationNames.split(';') : [];
@@ -51,6 +50,7 @@ export default class GovFooter extends LightningElement {
         for(let i=0; i<navigationNamesList.length;i++){
             jsonData.sectionName = sectionNamesList[i];
             jsonData.twoColumnType = columnTypeList[i] == 2 ? true : false;
+            jsonData.sectionClass = columnTypeList[i] == 2 ? "two-column-section" : "one-column-section";
             if(navigationNamesList[i].includes('|')){
                 let navNames = navigationNamesList[i]?navigationNamesList[i].split('|'):[];
                 let navLinks = navigationLinksList[i]?navigationLinksList[i].split('|'):[];

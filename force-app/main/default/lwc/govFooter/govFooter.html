@@ -5,33 +5,34 @@
             <template if:true={secondaryNavigationRequired}>
                 <div class="govuk-footer__navigation">
                     <template for:each={finalNavData} for:item="opt">
-                        <div class="govuk-footer__section" key = "{opt.sectionName}">
-                            <h2 class="govuk-footer__heading govuk-heading-m">{opt.sectionName}</h2>
-                            <template if:true={opt.twoColumnType}>
-                                <ul class="govuk-footer__list govuk-footer__list--columns-2" aria-label="Navigation menu">
-                                    <template for:each={opt.relatedNavItems} for:item="childOpt">
-                                    <li class="govuk-footer__list-item" key={childOpt.navLinkName}>
-                                        <a class="govuk-footer__link" style="text-decoration: underline;" href={childOpt.navLinkURL}>
-                                        {childOpt.navLinkName}
-                                        </a>
-                                    </li>
+                        <div key={opt.sectionName} class={opt.sectionClass}>
+                            <div class="govuk-footer__section" key = "{opt.sectionName}">
+                                <h2 class="govuk-footer__heading govuk-heading-m">{opt.sectionName}</h2>
+                                <template if:true={opt.twoColumnType}>
+                                    <ul class="govuk-footer__list govuk-footer__list--columns-2" aria-label="Navigation menu">
+                                        <template for:each={opt.relatedNavItems} for:item="childOpt">
+                                        <li class="govuk-footer__list-item" key={childOpt.navLinkName}>
+                                            <a class="govuk-footer__link" style="text-decoration: underline;" href={childOpt.navLinkURL}>
+                                            {childOpt.navLinkName}
+                                            </a>
+                                        </li>
+                                    </template>
+                                    </ul>
                                 </template>
-                                </ul>
-                            </template>
-                            <template if:false={opt.twoColumnType}>
-                                <ul class="govuk-footer__list" aria-label="Navigation menu">
-                                    <template for:each={opt.relatedNavItems} for:item="childOpt">
-                                    <li class="govuk-footer__list-item" key={childOpt.navLinkName}>
-                                        <a class="govuk-footer__link" style="text-decoration: underline;" href={childOpt.navLinkURL}>
-                                        {childOpt.navLinkName}
-                                        </a>
-                                    </li>
+                                <template if:false={opt.twoColumnType}>
+                                    <ul class="govuk-footer__list" aria-label="Navigation menu">
+                                        <template for:each={opt.relatedNavItems} for:item="childOpt">
+                                        <li class="govuk-footer__list-item" key={childOpt.navLinkName}>
+                                            <a class="govuk-footer__link" style="text-decoration: underline;" href={childOpt.navLinkURL}>
+                                            {childOpt.navLinkName}
+                                            </a>
+                                        </li>
+                                    </template>
+                                    </ul>
                                 </template>
-                                </ul>
-                            </template>
+                            </div>
                         </div>
                     </template>
-                
                 </div>
                 <hr class="govuk-footer__section-break">
             </template>
