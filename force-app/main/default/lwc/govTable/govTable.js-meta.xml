@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <description>A table that can render up to 4 columns</description>
     <isExposed>true</isExposed>
     <masterLabel>Gov UK Table</masterLabel>
@@ -18,7 +18,7 @@
             <property name="columnHeaders" type="String" label="Column Headers" description="A comma separated list of column headings"/>
             <property name="columnTypes" type="String" label="Column Types" description="A comma seperated list of data type for columns accepted values are string, numeric"/>
             <property name="columnWeights" type="String" label="Column Font Weight" description="A comma separated list of column weights accepted values are bold or normal"/>
-            <property name="columnSizes" type="String" label="Column sizes" description="A comma separated list of column sizes accepted values are three-quarters, two-thirds, one-half, one-third, one-quarter"/> 
+            <property name="columnSizes" type="String" label="Column sizes" description="A comma separated list of column sizes accepted values are three-quarters, two-thirds, one-half, one-third, one-quarter or any integer values"/> 
             <property name="columnData" type="String" label="Column Data" description="The data for rows seperated by ; and for columns in a row seperated by | "/>
         </targetConfig>
     </targetConfigs>

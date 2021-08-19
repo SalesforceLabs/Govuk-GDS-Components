@@ -16,7 +16,7 @@ export default class GovTable extends LightningElement {
     get captionClass() {
         let captionClass = "govuk-table__caption";
         if(this.captionTextFontSize) {
-            switch(this.captionTextFontSize.toLowerCase()) {
+            switch(this.captionTextFontSize.toLowerCase().trim()) {
                 case "small":
                     captionClass = captionClass + " govuk-table__caption--s";
                     break;
@@ -53,9 +53,13 @@ export default class GovTable extends LightningElement {
             // create the column headings
             this.columns = [];
             for (let i = 0; i < colHeaders.length; i++) {
+                let colStyle = (colSizes[i] !== undefined && ! isNaN(colSizes[i])) ? `width: ${colSizes[i]}%`: "";
+                let colClass = (colTypes[i] !== undefined && colTypes[i].toLowerCase().trim() === "numeric") ? "govuk-table__header govuk-table__header--numeric" : "govuk-table__header";
+                colClass = (colStyle === "" && colSizes[i] !== undefined) ? colClass + ` govuk-input--width-${colSizes[i]}` : colClass;
                 this.columns.push({
                     colHeader: colHeaders[i],
-                    class: (colTypes[i] !== undefined && colTypes[i].toLowerCase() === "numeric") ? `govuk-table__header govuk-table__header--numeric govuk-!-width-${colSizes[i]}` : `govuk-table__header govuk-!-width-${colSizes[i]}`
+                    colstyle: colStyle,
+                    colClass: colClass
                 });
             }
 
@@ -65,10 +69,12 @@ export default class GovTable extends LightningElement {
                 let row = [];
                 let colData = colsData[i].split("|");
                 for (let j = 0; j < colData.length; j++) {
+                    let rowClass = (colWeights[j] !== undefined && colWeights[j].toLowerCase().trim() === "bold") ? "govuk-table__header" : "govuk-table__cell";
+                    rowClass = (colTypes[j] !== undefined && colTypes[j].toLowerCase().trim() === "numeric") ? rowClass + " govuk-table__cell--numeric" : rowClass;
                     row.push({
                         text: colData[j],
                         hasData: (colData[j] !== undefined && colData[j] !== '') ? true : false,
-                        isBold: (colWeights[j] !== undefined && colWeights[j].toLowerCase() === "bold") ? true : false
+                        rowClass: rowClass
                     });
                 }
                 rowsData.push({
