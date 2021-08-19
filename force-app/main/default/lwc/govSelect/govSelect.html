@@ -1,0 +1,30 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <template if:true={selectOptions}>
+        <div class="govuk-width-container ">
+            <div class={groupClass}>
+                <label class={labelClass} for="select">
+                    {label}
+                </label>
+                <template if:true={hasErrors}>
+                    <span class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
+                    </span>
+                </template>
+                <div id="hint-text" class="govuk-hint slds-hyphenate" if:true={hintText}>
+                    {hintText}
+                </div>
+                <select class="govuk-select"
+                        id="select"
+                        name="select"
+                        onchange={handleOnChange}>
+                    <template for:each={selectOptions} for:item="option">
+                        <option key={option.key}
+                                value={option.value}
+                                selected={option.selected}>{option.label}</option>
+                    </template>
+                </select>
+            </div>
+        </div>
+    </template>
+</template>

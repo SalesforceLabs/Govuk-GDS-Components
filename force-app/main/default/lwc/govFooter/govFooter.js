@@ -51,9 +51,9 @@ export default class GovFooter extends LightningElement {
         for(let i=0; i<navigationNamesList.length;i++){
             jsonData.sectionName = sectionNamesList[i];
             jsonData.twoColumnType = columnTypeList[i] == 2 ? true : false;
-            if(navigationNamesList[i].includes(',')){
-                let navNames = navigationNamesList[i]?navigationNamesList[i].split(','):[];
-                let navLinks = navigationLinksList[i]?navigationLinksList[i].split(','):[];
+            if(navigationNamesList[i].includes('|')){
+                let navNames = navigationNamesList[i]?navigationNamesList[i].split('|'):[];
+                let navLinks = navigationLinksList[i]?navigationLinksList[i].split('|'):[];
                 for(let j=0; j<navNames.length;j++){
                     innerObj.navLinkName = navNames[j];
                     innerObj.navLinkURL = navLinks[j];

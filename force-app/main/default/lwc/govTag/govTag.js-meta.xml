@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Tag</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="tagText" type="String" label="Tag Text" description="Text to be given within the tag"/>
+            <property name="tagTextColour" type="String" label="Tag Colour" description="Colour of the tag : Provide value from these options only : Default,Grey,Green,Turquoise,Blue,Purple,Pink,Red,Orange,Yellow"/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="tagText" type="String" label="Tag Text" description="Text to be given within the tag" />
+            <property name="tagTextColour" type="String" label="Tag Colour" description="Colour of the tag" datasource="Default,Grey,Green,Turquoise,Blue,Purple,Pink,Red,Orange,Yellow" default="Default"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

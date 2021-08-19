@@ -11,7 +11,7 @@
                                 <ul class="govuk-footer__list govuk-footer__list--columns-2" aria-label="Navigation menu">
                                     <template for:each={opt.relatedNavItems} for:item="childOpt">
                                     <li class="govuk-footer__list-item" key={childOpt.navLinkName}>
-                                        <a class="govuk-footer__link" href={childOpt.navLinkURL}>
+                                        <a class="govuk-footer__link" style="text-decoration: underline;" href={childOpt.navLinkURL}>
                                         {childOpt.navLinkName}
                                         </a>
                                     </li>
@@ -19,11 +19,10 @@
                                 </ul>
                             </template>
                             <template if:false={opt.twoColumnType}>
-                                <ul class="govuk-footer__list" aria-label="Navigation menu"
-                                >
+                                <ul class="govuk-footer__list" aria-label="Navigation menu">
                                     <template for:each={opt.relatedNavItems} for:item="childOpt">
                                     <li class="govuk-footer__list-item" key={childOpt.navLinkName}>
-                                        <a class="govuk-footer__link" href={childOpt.navLinkURL}>
+                                        <a class="govuk-footer__link" style="text-decoration: underline;" href={childOpt.navLinkURL}>
                                         {childOpt.navLinkName}
                                         </a>
                                     </li>
@@ -43,7 +42,7 @@
                         <ul class="govuk-footer__inline-list" >
                             <template for:each={finalMetaLinkData} for:item="option">
                             <li class="govuk-footer__inline-list-item"  key={option.metaLinkName}>
-                              <a class="govuk-footer__link" href={option.metaLinkURL}>
+                              <a class="govuk-footer__link" style="text-decoration: underline;" href={option.metaLinkURL}>
                                 {option.metaLinkName}
                               </a>
                             </li>
@@ -55,11 +54,11 @@
                     </svg>
                     <span class="govuk-footer__licence-description">
                       All content is available under the 
-                      <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"> Open Government Licence v3.0</a>, except where otherwise stated
+                      <a class="govuk-footer__link" style="text-decoration: underline;" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"> Open Government Licence v3.0</a>, except where otherwise stated
                     </span>
                 </div>
                 <div class="govuk-footer__meta-item">
-                    <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+                    <a class="govuk-footer__link govuk-footer__copyright-logo" style="text-decoration: underline;" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
                 </div>
             </div>
         </div>

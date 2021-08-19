@@ -1,0 +1,52 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container">
+        <div class={groupClass}>
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="hint error">
+                <div class="govuk-label-wrapper">
+                    <label class={labelClass} for="hint">
+                        {label}
+                    </label>
+                </div>
+                <div id="hint" class="govuk-hint" if:true={hintText}>
+                    {hintText}
+                </div>
+                <template id="error" if:true={hasErrors}>
+                    <template for:each={errorMessages} for:item="pageError">
+                        <div key={pageError.key}>
+                            <span class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> {pageError.detail}
+                            </span>
+                        </div>
+                    </template>
+                </template>
+                <div class="govuk-date-input" id="date-input">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="date-input-day">
+                                Day
+                            </label>
+                            <input class={dayClass} id="date-input-day" name="date-input-day" type="text" value={dayValue} pattern="[0-9]*" inputmode="numeric"  onkeyup={handleDayChange}>
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="date-input-month">
+                                Month
+                            </label>
+                            <input class={monthClass} id="date-input-month" name="date-input-month" type="text" value={monthValue} pattern="[0-9]*" inputmode="numeric"  onkeyup={handleMonthChange}>
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="date-input-year">
+                                Year
+                            </label>
+                            <input class={yearClass} id="date-input-year" name="date-input-year" type="text" value={yearValue} pattern="[0-9]*" inputmode="numeric"  onkeyup={handleYearChange}>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</template>

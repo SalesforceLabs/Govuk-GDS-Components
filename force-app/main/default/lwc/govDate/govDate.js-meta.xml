@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <description>A GDS date component with three separate fieds for day, month and year</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Date</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="fieldId" type="String" label="Field Id" description="The Field Id to display"/>
+            <property name="label" type="String" label="Label" description="The label text"/>
+             <property name="fontSize" type="String" label="Label Font Size" description="The font size for the label (i.e. Small,Medium,Large"/>
+            <property name="hintText" type="String" label="Hint" description="The hint text"/>
+            <property name="value" type="String" label="Value" description="The date as a string (dd/mm/yyyy)"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
