@@ -26,7 +26,7 @@
                             <label class="govuk-label govuk-date-input__label" for="date-input-day">
                                 Day
                             </label>
-                            <input class={dayClass} id="date-input-day" name="date-input-day" type="text" value={dayValue} pattern="[0-9]*" inputmode="numeric"  onkeyup={handleDayChange}>
+                            <input class={dayClass} id="date-input-day" name="date-input-day" type="text" value={dayValue} pattern="[0-9]*" autocomplete="bday-day" inputmode="numeric" onkeyup={handleDayChange}>
                         </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -34,7 +34,7 @@
                             <label class="govuk-label govuk-date-input__label" for="date-input-month">
                                 Month
                             </label>
-                            <input class={monthClass} id="date-input-month" name="date-input-month" type="text" value={monthValue} pattern="[0-9]*" inputmode="numeric"  onkeyup={handleMonthChange}>
+                            <input class={monthClass} id="date-input-month" name="date-input-month" type="text" value={monthValue} pattern="[0-9]*" autocomplete="bday-month" inputmode="numeric" onkeyup={handleMonthChange}>
                         </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -42,7 +42,7 @@
                             <label class="govuk-label govuk-date-input__label" for="date-input-year">
                                 Year
                             </label>
-                            <input class={yearClass} id="date-input-year" name="date-input-year" type="text" value={yearValue} pattern="[0-9]*" inputmode="numeric"  onkeyup={handleYearChange}>
+                            <input class={yearClass} id="date-input-year" name="date-input-year" type="text" value={yearValue} pattern="[0-9]*" autocomplete="bday-year" inputmode="numeric" onkeyup={handleYearChange}>
                         </div>
                     </div>
                 </div>
