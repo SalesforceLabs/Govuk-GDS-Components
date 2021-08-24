@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>The tabs component lets users navigate between related sections of content, displaying one section at a time.</description>
+    <masterLabel>Gov UK Tabs</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="title" type="String" label="Tab Panel Title" description="Title for the tab panel"/>
+            <property name="titleSize" type="String" label="Title font Size" description="Tabs Panel Title Font Size" default="Large" datasource="Small,Medium,Large"/>
+            <property name="tabNames" type="String" label="Tab Names" description="Tab names seperated by | oerator"/>
+            <property name="tabData" type="String" label="Tabs Data" description="Rich Text formatted tabs data sepereated by | operator for different tabs"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

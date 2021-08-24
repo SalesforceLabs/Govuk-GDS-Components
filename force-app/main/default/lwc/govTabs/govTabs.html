@@ -1,0 +1,24 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container js-enabled">
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class={titleClass} if:true={title}>{title}</h2>
+        <template if:true={tabNames}>
+          <ul class="govuk-tabs__list">
+            <template for:each={data} for:item="dt">
+              <li key={dt.heading} data-id={dt.heading} class={dt.headerClass}>
+                <div class="govuk-tabs__tab" data-id={dt.heading} onclick={handleTabSelection}>
+                  {dt.heading}
+                </div>
+              </li>
+            </template>
+          </ul>
+          <template for:each={data} for:item="dt">
+            <div key={dt.heading} data-id={dt.heading} class={dt.bodyClass}>
+              <lightning-formatted-rich-text key={dt.heading} if:true={dt.bodyText} value={dt.bodyText}></lightning-formatted-rich-text>
+            </div>
+          </template>
+        </template>
+      </div>  
+    </div>
+</template>
