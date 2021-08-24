@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>The accordion component lets users show and hide sections of related content on a page.</description>
+    <masterLabel>Gov UK Accordion</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="sectionLabels" type="String" label="Section Labels" description="Please provide semi colon seperated Labels for each accordion section"/>
+            <property name="sectionLabelSummarys" type="String" label="Section Label Summarys" description="Please provide semi colon seperated Label Summarys for each accordion section"/>
+            <property name="sectionContents" type="String" label="Section Content" description="Please provide Pipe (|) seperated content for each accordion section in either text or html format"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

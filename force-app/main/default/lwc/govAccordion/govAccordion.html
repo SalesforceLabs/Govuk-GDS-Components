@@ -1,0 +1,27 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container js-enabled">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <template for:each={sectionArray} for:item="opt">
+            <div class="govuk-accordion__section " data-id={opt.secContentId} key={opt.secId}>
+            <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                    <button type="button" data-id={opt.secId} aria-controls="accordion-with-summary-sections-content-1" class="govuk-accordion__section-button" aria-describedby="accordion-with-summary-sections-summary-1" aria-expanded="false" onclick={handleclick}>
+                        {opt.secLabel}
+                      <span class="govuk-accordion__icon" aria-hidden="true"></span>
+                </button>
+                </h2>
+                <div class="govuk-accordion__section-summary govuk-body">
+                    {opt.secSummary}
+                </div>
+            </div>
+            <div key={opt.secId}  class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                <p class='govuk-body'>
+                    <lightning-formatted-rich-text if:true={opt.secContent} value={opt.secContent}></lightning-formatted-rich-text>    
+                </p>
+            </div>
+            </div>
+        </template>
+        </div>
+    </div>
+</template>
