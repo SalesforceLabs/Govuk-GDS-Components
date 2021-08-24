@@ -38,7 +38,7 @@ export default class GovTabs extends LightningElement {
                     heading: tabs[i],
                     bodyText: data[i],
                     headerClass: (i === 0) ? "govuk-tabs__list-item govuk-tabs__list-item--selected" : "govuk-tabs__list-item",
-                    tabClass: (i === 0) ? "govuk-tabs__tab" : "govuk-tabs__tab govuk-tabs_underline", 
+                    tabClass: (i === 0) ? "govuk-tabs__tab govuk-tabs_focus" : "govuk-tabs__tab govuk-tabs_underline", 
                     bodyClass: (i === 0) ? "govuk-tabs__panel" : "govuk-tabs__panel--hidden"
                 });
             }
@@ -53,6 +53,7 @@ export default class GovTabs extends LightningElement {
         });
         
         this.template.querySelectorAll('.govuk-tabs__tab').forEach(element => {
+            element.classList.remove("govuk-tabs_focus");
             element.classList.add("govuk-tabs_underline");
         });
 
@@ -67,7 +68,8 @@ export default class GovTabs extends LightningElement {
                 element.classList.add("govuk-tabs__list-item--selected");    
             }
             if(element.classList[0] === "govuk-tabs__tab") {
-                element.classList.remove("govuk-tabs_underline");    
+                element.classList.remove("govuk-tabs_underline"); 
+                element.classList.add("govuk-tabs_focus");  
             }
         });
     
