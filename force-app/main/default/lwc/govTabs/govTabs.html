@@ -7,7 +7,7 @@
           <ul class="govuk-tabs__list">
             <template for:each={data} for:item="dt">
               <li key={dt.heading} data-id={dt.heading} class={dt.headerClass}>
-                <div class="govuk-tabs__tab" data-id={dt.heading} onclick={handleTabSelection}>
+                <div data-id={dt.heading} class={dt.tabClass} style="cursor: pointer;" onclick={handleTabSelection}>
                   {dt.heading}
                 </div>
               </li>

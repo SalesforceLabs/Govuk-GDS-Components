@@ -1,0 +1,7 @@
+.govuk-tabs_underline {
+    text-decoration: underline;
+}
+
+.govuk-tabs_underline:hover {
+    text-decoration: underline 3.5px;
+}
