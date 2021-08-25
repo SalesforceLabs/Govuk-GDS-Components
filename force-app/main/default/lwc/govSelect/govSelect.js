@@ -1,7 +1,3 @@
-/**
- * Created by simon.cook on 21/09/2020.
- */
-
 import {LightningElement, api, track, wire} from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import getPicklistValuesByObjectField from '@salesforce/apex/govComponentHelper.getPicklistValuesByObjectField';
