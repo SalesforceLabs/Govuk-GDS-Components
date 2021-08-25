@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>This help users select and upload a file.</description>
+    <masterLabel>Gov UK File Upload</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+</LightningComponentBundle>

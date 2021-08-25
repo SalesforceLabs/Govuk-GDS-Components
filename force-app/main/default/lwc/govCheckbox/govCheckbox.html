@@ -1,0 +1,37 @@
+<!--
+ - Created by simon.cook on 23/09/2020.
+ -->
+
+<!-- Confirmation Checkbox -->
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container ">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <label class={headingLabelClass}>
+                  {headinglabel}
+                </label>
+              </legend>
+            <div id="waste-hint" class="govuk-hint">
+                {headinghint}
+              </div>
+            <div class={checkboxClass}>
+                <template if:true={hasErrors}>
+                    <span class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
+                    </span>
+                </template>
+                <template for:each={checkboxArray} for:item="opt">
+                    <div class="govuk-checkboxes__item" key={opt.checkboxName} style="margin-bottom: 30px;">
+                        <input class="govuk-checkboxes__input" data-id={opt.checkboxName} name={opt.checkboxName} type="checkbox" checked={opt.checkboxValue} onclick={handleClick}>
+                        <label class="govuk-label govuk-checkboxes__label" for=opt.checkboxName}>
+                            {opt.checkboxLabel}
+                        </label>
+                    </div>
+                </template>
+            </div>
+            </fieldset>
+        </div>
+    </div>
+</template>
