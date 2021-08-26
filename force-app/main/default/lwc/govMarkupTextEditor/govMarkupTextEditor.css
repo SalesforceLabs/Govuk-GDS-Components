@@ -1,0 +1,12 @@
+.heading {
+    background-color: black;
+    color: white;
+}
+
+.preview-hidden {
+    display: none;
+}
+
+.text-area-hidden {
+    display: none;
+}

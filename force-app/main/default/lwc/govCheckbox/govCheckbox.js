@@ -100,8 +100,6 @@ export default class GovCheckbox extends LightningElement {
                 checkboxValue : false
             };
         }
-        console.log('here');
-        console.log(this.checkboxArray);
 
         let checkedCount = 0;
         let outputString = '';
@@ -114,8 +112,7 @@ export default class GovCheckbox extends LightningElement {
                 outputString = '';
             }
         }
-        console.log('Output Value',this.outputValue);
-        console.log(checkedCount);
+
         if(checkedCount>0){
             this.checked = true;
             this.dispatchCheckboxEvent();
@@ -123,8 +120,7 @@ export default class GovCheckbox extends LightningElement {
         }else{
             this.checked = false;
         }
-        console.log('this.checked',this.checked);
-        console.log(this.checkboxArray);
+
     }
 
     disconnectedCallback() {
@@ -149,11 +145,9 @@ export default class GovCheckbox extends LightningElement {
         let outputString = '';
 
         let checkboxId = event.target.dataset.id;
-        console.log('checkboxID: ',checkboxId);
         let checkedCount = 0;
 
         for(var i=0; i<this.checkboxArray.length; i++){
-            console.log('inside for');
             if(this.checkboxArray[i].checkboxName == checkboxId){
                 this.checkboxArray[i].checkboxValue = event.target.checked;
             }
@@ -164,15 +158,12 @@ export default class GovCheckbox extends LightningElement {
                 outputString = '';
             }
         }
-        console.log(checkedCount);
         if(checkedCount>0){
             this.checked = true;
             
         }else{
             this.checked = false;
         }
-        console.log('this.checked',this.checked);
-        console.log(this.checkboxArray);
 
         this.dispatchCheckboxEvent();
     }
