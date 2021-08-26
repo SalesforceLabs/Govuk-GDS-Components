@@ -8,7 +8,7 @@
             <span id="file-upload-error" class="govuk-error-message slds-hyphenate" if:true={hasErrors}>
                 <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
             </span>
-            <input class={inputClass} id="file-upload" name="file-upload" type="file" multiple onchange={handleFilesChange} aria-describedby="file-upload-error">
+            <input class={inputClass} id="file-upload" name="file-upload" type="file" accept={acceptedFormats} multiple onchange={handleFilesChange} aria-describedby="file-upload-error">
             <div if:true={fileNames} class="slds-text-body_medium slds-text-color_success">
                 {fileNames} 
             </div>
