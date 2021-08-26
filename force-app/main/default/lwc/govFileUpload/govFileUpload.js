@@ -8,11 +8,11 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 export default class GovFileUpload extends LightningElement {
     
     @api fieldId = "";
-    @api fileUploadLabel = "";
-    @api acceptedFormats = "";
-    @api maxFileSizeInMB = 0;
+    @api fileUploadLabel = "Upload a file";
+    @api acceptedFormats = "image/png, image/jpg, .pdf, .doc, .docx, .zip";
+    @api maxFileSizeInMB = 2;
     @api required = false;
-    @api errorMessage = ""; 
+    @api errorMessage = "Select a file"; 
 
     @api filesUploaded = []; 
 
