@@ -8,7 +8,7 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 
 export default class GovRadios extends LightningElement {
 
-    @api uniqueFieldId;
+    @api uniqueFieldId = "radioField";
     @api questionLabel;
     @api questionFontSize;
     @api questionHint;

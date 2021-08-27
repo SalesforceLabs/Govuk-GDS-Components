@@ -6,7 +6,7 @@ import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
 
 export default class GovTextArea extends LightningElement {
-    @api fieldId;
+    @api fieldId = "textAreaField";
     @api label;
     @api hint;
     @api value = '';

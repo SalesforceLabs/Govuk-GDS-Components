@@ -7,7 +7,7 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 
 export default class GovCheckbox extends LightningElement {
     // flow inputs and outputs
-    @api fieldId;
+    @api fieldId = "checkboxField";
     @api errorMessage;
     @api headinglabel;
     @api headinghint;

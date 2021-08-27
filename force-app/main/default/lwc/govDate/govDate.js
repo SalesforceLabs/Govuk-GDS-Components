@@ -7,7 +7,7 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 
 export default class GovDate extends LightningElement {
     
-    @api fieldId = "";
+    @api fieldId = "dateField";
     @api label = "";
     @api fontSize = "";
     @api hintText = "";

@@ -7,7 +7,7 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 
 export default class GovTextInput extends LightningElement {
     
-    @api fieldId = '';
+    @api fieldId = 'textField';
     @api label = '';
     @api labelFontSize = '';
     @api widthLengthWise = '';

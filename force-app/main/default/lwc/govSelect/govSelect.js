@@ -7,7 +7,7 @@ import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
 
 export default class GovSelect extends LightningElement {
-    @api fieldId;
+    @api fieldId = "selectField";
     @api label;
     @api fontSize;
     @api hintText;
