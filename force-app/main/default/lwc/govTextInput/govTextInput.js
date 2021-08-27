@@ -99,7 +99,7 @@ export default class GovTextInput extends LightningElement {
     get characterCountText() {
         if(this.showCharacterCount) {
             if(this.charCount === 0 && this.maxCharacterCount) {
-                return `You can enter up to ${this.maxCharacterCount} characters`;
+                return `${this.maxCharacterCount - this.charCount} characters remaining`;
             }
             let text = "";
             if(this.maxCharacterCount) {

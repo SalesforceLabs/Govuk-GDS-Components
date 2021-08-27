@@ -16,6 +16,7 @@
             <property name="navigationLinks" type="String" label="Navigation URL's" description="Please provide Pipe symbol '|'  seperated navigation URLs in th same order correposding to the navigation item names for each section and semicolon should be used to differentiate between each sections"/>
             <property name="columnTypes" type="String" label="Column Type" description="Please provide valueas either 1 or 2 corresponding to 1 column and 2 column format"/>
             <property name="metalinksRequired" type="Boolean" label="Enable Footer with links to Meta information" description="Check the checkbox if you want footer with links as meta information and fill below 2 fields."/>
+            <property name="crownLogoRequired" type="Boolean" label="Enable Footer with Crown Logo" description="Check the checkbox if you want footer with Crown Logo"/>
             <property name="metalinkNames" type="String" label="Meta Information Link Names" description="Please provide semicolon list of the display names to the links"/>
             <property name="metalinkURL" type="String" label="Meta Information Link URL's" description="Please provide semicolon list of the links in same order corresponding to the above mentioned names"/>
         </targetConfig>

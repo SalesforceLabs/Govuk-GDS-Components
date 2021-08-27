@@ -8,10 +8,11 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 export default class GovDate extends LightningElement {
     
     @api fieldId = "";
-    @api value = "";
     @api label = "";
-    @api hintText = "";
     @api fontSize = "";
+    @api hintText = "";
+    @api required = false;
+    @api value = "";
 
     @track dayValue = "";
     @track monthValue = "";
@@ -175,32 +176,33 @@ export default class GovDate extends LightningElement {
         this.hasMonthError = false;
         this.hasYearError = false;
 
-        // do we have valid numbers for day, month & year
         let day = parseInt(this.dayValue, 10);
-        if (isNaN(day)) {
-            this.hasDayError = true;
-        }
-
         let month = parseInt(this.monthValue, 10);
-        if (isNaN(month)) {
-            this.hasMonthError = true;
-        }
-
         let year = parseInt(this.yearValue, 10);
-        if (isNaN(year)) {
-            this.hasYearError = true;
-        }
 
-        this.hasErrors = (this.hasDayError || this.hasMonthError || this.hasYearError);
-
-        if (!this.hasErrors) {
-            month = month - 1;
-            if (month < 0 || month > 11) {
-                this.hasMonthError = true;
-            } else if (!this.isValidDate(day, month, year)) {
+        if(this.required || (!isNaN(day) || !isNaN(month) || !isNaN(year))) {
+            // do we have valid numbers for day, month & year
+            if (isNaN(day)) {
                 this.hasDayError = true;
+            }   
+            if (isNaN(month)) {
+                this.hasMonthError = true;
+            } else {
+                month = month - 1;
+                if (month < 0 || month > 11) {
+                    this.hasMonthError = true;
+                }
             }
-            this.hasErrors = (this.hasDayError || this.hasMonthError);
+            if (isNaN(year)) {
+                this.hasYearError = true;
+            }
+            this.hasErrors = (this.hasDayError || this.hasMonthError || this.hasYearError);
+            if (!this.hasErrors) {
+                if (!this.isValidDate(day, month, year)) {
+                    this.hasDayError = true;
+                }
+                this.hasErrors = (this.hasDayError || this.hasMonthError);
+            }  
         }
 
         // Create errors and events for error notifications

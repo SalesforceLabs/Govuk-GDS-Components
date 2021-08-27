@@ -11,8 +11,9 @@
         <targetConfig targets="lightning__FlowScreen">
             <property name="fieldId" type="String" label="Field Id" description="The Field Id to display"/>
             <property name="label" type="String" label="Label" description="The label text"/>
-             <property name="fontSize" type="String" label="Label Font Size" description="The font size for the label (i.e. Small,Medium,Large"/>
+            <property name="fontSize" type="String" label="Label Font Size" description="The font size for the label (i.e. Small,Medium,Large"/>
             <property name="hintText" type="String" label="Hint" description="The hint text"/>
+            <property name="required" type="Boolean" label="Required?" description="This holds true if date field is required"/>
             <property name="value" type="String" label="Value" description="The date as a string (dd/mm/yyyy)"/>
         </targetConfig>
     </targetConfigs>

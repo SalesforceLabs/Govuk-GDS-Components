@@ -13,6 +13,7 @@ export default class GovFooter extends LightningElement {
     @api metalinkNames = "";
     @api metalinkURL = "";
     @api metalinksRequired = false;
+    @api crownLogoRequired = false;
 
     // fields to show consolidated data on UI
     @track finalNavData = []; 
