@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Select
+ * Version: X.X.XX
+ * Created by: Harshpreet Singh Chhabra
+ **/
 import {LightningElement, api, track, wire} from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import getPicklistValuesByObjectField from '@salesforce/apex/govComponentHelper.getPicklistValuesByObjectField';

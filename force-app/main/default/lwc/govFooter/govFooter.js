@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Footer
+ * Version: X.X.XX
+ * Created by: Harshpreet Singh Chhabra
+ **/
 import { LightningElement,track ,api} from 'lwc';
 
 export default class GovFooter extends LightningElement {

@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Header
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import {LightningElement, api, track} from 'lwc';
 import {NavigationMixin} from "lightning/navigation";
 import communityBasePath from '@salesforce/community/basePath';

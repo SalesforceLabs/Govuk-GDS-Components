@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Checkbox
+ * Version: X.X.XX
+ * Created by: Harshpreet Singh Chhabra
+ **/
 import {LightningElement, api, wire, track} from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';

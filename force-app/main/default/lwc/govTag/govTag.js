@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Tag
+ * Version: X.X.XX
+ * Created by: Harshpreet Singh Chhabra
+ **/
 import { LightningElement,api,track } from 'lwc';
 
 export default class GovTag extends LightningElement {

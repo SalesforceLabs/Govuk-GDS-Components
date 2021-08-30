@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Markup Text Editor
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import { LightningElement,api } from 'lwc';
 
 export default class GovMarkupTextEditor extends LightningElement {

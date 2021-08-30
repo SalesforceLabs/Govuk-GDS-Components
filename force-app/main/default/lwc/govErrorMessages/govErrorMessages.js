@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Error Messages
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import { LightningElement, api, track, wire } from 'lwc';
 import { MessageContext, subscribe, unsubscribe } from 'lightning/messageService';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';

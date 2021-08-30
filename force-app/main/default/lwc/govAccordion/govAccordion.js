@@ -1,7 +1,11 @@
+/**
+ * Component Name: Gov UK Accordion
+ * Version: X.X.XX
+ * Created by: Harshpreet Singh Chhabra
+ **/
 import { LightningElement,api, track } from 'lwc';
 
 export default class GovAccordion extends LightningElement {
-
 
     @api sectionLabels = '';
     @api sectionLabelSummarys = '';

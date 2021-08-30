@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK CSS Provider
+ * Version: X.X.XX
+ * Created by: Neetesh Jain/Harshpreet Singh Chhabra
+ **/
 import { LightningElement } from 'lwc';
 import { loadStyle } from 'lightning/platformResourceLoader';
 import govCssStyle from '@salesforce/resourceUrl/govukcss';

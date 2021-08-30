@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Summary List
+ * Version: X.X.XX
+ * Created by: Harshpreet Singh Chhabra
+ **/
 import {LightningElement, api, track} from 'lwc';
 import {FlowNavigationNextEvent} from 'lightning/flowSupport';
 

@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Breadcrumbs
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import { LightningElement, api, track } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 

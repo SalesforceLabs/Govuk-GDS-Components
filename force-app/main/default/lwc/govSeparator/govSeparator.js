@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Separator
+ * Version: X.X.XX
+ * Created by: Harshpreet Singh Chhabra
+ **/
 import {LightningElement,api} from 'lwc';
 
 export default class GovSeparator extends LightningElement {

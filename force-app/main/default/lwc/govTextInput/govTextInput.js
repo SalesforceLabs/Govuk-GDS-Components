@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Text Input
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import { LightningElement, api, track, wire } from 'lwc';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';

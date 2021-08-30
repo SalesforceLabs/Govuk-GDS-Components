@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK File Upload
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import { LightningElement, wire, api, track } from 'lwc';
 import saveFiles from '@salesforce/apex/FileUploadController.saveFiles';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';

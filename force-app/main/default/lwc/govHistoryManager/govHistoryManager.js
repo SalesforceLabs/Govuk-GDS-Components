@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK History Manager
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import { LightningElement, api } from 'lwc';
 
 export default class GovHistoryManager extends LightningElement {

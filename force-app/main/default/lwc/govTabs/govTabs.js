@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Tabs
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import { LightningElement, api, track } from 'lwc';
 
 export default class GovTabs extends LightningElement {

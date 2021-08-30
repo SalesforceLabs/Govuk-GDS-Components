@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Start Button
+ * Version: X.X.XX
+ * Created by: Neetesh Jain
+ **/
 import {LightningElement, api} from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 
