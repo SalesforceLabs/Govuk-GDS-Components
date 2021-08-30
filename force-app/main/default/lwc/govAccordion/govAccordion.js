@@ -12,6 +12,7 @@ export default class GovAccordion extends LightningElement {
     @api sectionContents = '';
 
     @track sectionArray = [];
+    @track openAndCLoseAllText = 'Open All';
 
     connectedCallback(){
 
@@ -42,18 +43,27 @@ export default class GovAccordion extends LightningElement {
                 secContent : ''
                 };
         }
-        console.log(this.sectionArray);
     }
 
     handleclick(event){
         let targetId = event.target.dataset.id;
-        console.log('Button Id', targetId);
         let target = this.template.querySelector(`[data-id="Content${targetId}"]`);
         if(target.classList.value.includes("govuk-accordion__section--expanded")){
             target.classList.remove('govuk-accordion__section--expanded');
         }else{
             target.classList.add('govuk-accordion__section--expanded');
         }
-        console.log(target.classList);
+    }
+    
+    handlebuttonclick(event){
+        for(let i=0; i<this.sectionArray.length; i++){
+            let target = this.template.querySelector(`[data-id="Content${this.sectionArray[i].secId}"]`);
+            if(this.openAndCLoseAllText.includes('Close')){
+                target.classList.remove('govuk-accordion__section--expanded');
+            }else{
+                target.classList.add('govuk-accordion__section--expanded');
+            }
+        }
+        this.openAndCLoseAllText = this.openAndCLoseAllText.includes('Open') ? 'Close All' : 'Open All' ;
     }
 }

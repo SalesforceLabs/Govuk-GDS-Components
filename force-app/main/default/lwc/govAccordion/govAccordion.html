@@ -2,7 +2,7 @@
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container js-enabled">
         <div class="govuk-accordion__controls">
-            <button type="button" class="govuk-accordion__open-all" aria-expanded="false">Open all<span class="govuk-visually-hidden"> sections</span></button>
+            <button type="button" class="govuk-accordion__open-all" onclick={handlebuttonclick} aria-expanded="false">{openAndCLoseAllText}</button>
         </div>
         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
             <template for:each={sectionArray} for:item="opt">
