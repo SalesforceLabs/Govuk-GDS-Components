@@ -9,8 +9,8 @@ export default class GovTextInput extends LightningElement {
     
     @api fieldId = 'textField';
     @api label = '';
-    @api labelFontSize = '';
-    @api widthLengthWise = '';
+    @api labelFontSize = 'Medium';
+    @api widthLengthWise = '20';
     @api widthQuarterWise = '';
     @api hintText = '';
     @api regexPattern = '';

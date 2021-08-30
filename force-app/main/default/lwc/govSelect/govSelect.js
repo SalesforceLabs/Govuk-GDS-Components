@@ -31,7 +31,9 @@ export default class GovSelect extends LightningElement {
     connectedCallback() {
         if(this.picklist !== '' && this.picklist !== undefined && this.picklist !== null) {
             //call the apex to get the values
-            getPicklistValuesByObjectField({field:this.picklist})
+            getPicklistValuesByObjectField({
+                strSObjectFieldName: this.picklist
+            })
                 .then(result => {
                     this.selectOptions = [];
                     let selectOption = {};

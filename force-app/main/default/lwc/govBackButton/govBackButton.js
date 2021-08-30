@@ -5,7 +5,7 @@ import { NavigationMixin } from 'lightning/navigation';
 export default class GovBackButtone extends NavigationMixin(LightningElement) {
 
     @api availableActions = [];
-    @api backButtonLabel = '';
+    @api backButtonLabel = 'Back';
     @api backAction  = false;
     @api destinationPageName = '';
     

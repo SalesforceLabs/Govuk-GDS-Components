@@ -10,8 +10,8 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default">
-            <property name="pageLabels" type="String" label="Page Labels" description="Colon seperated Page Labels"/>
-            <property name="pageAPINames" type="String" label="Page API Names" description="Colon seperated Page API Names"/>
+            <property name="pageLabels" type="String" label="Page Labels" description="Semi-Colon seperated Page Labels"/>
+            <property name="pageAPINames" type="String" label="Page API Names" description="Semi-Colon seperated Page API Names"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

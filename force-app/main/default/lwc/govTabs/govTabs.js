@@ -3,7 +3,7 @@ import { LightningElement, api, track } from 'lwc';
 export default class GovTabs extends LightningElement {
 
     @api title = "";
-    @api titleSize = "";
+    @api titleSize = "Large";
     @api tabNames = "";
     @api tabData = "";
 

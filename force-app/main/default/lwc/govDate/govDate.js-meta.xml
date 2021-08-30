@@ -3,7 +3,7 @@
     <apiVersion>52.0</apiVersion>
     <description>A GDS date component with three separate fieds for day, month and year</description>
     <isExposed>true</isExposed>
-    <masterLabel>Gov UK Date</masterLabel>
+    <masterLabel>Gov UK Date Input</masterLabel>
     <targets>
         <target>lightning__FlowScreen</target>
     </targets>

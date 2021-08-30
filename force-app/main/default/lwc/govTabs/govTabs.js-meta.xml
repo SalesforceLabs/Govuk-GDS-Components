@@ -11,9 +11,9 @@
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default">
             <property name="title" type="String" label="Tab Panel Title" description="Title for the tab panel"/>
-            <property name="titleSize" type="String" label="Title font Size" description="Tabs Panel Title Font Size" default="Large" datasource="Small,Medium,Large"/>
-            <property name="tabNames" type="String" label="Tab Names" description="Tab names seperated by | oerator"/>
-            <property name="tabData" type="String" label="Tabs Data" description="Rich Text formatted tabs data sepereated by | operator for different tabs"/>
+            <property name="titleSize" type="String" label="Title Font Size" description="Tabs Panel Title Font Size" default="Large" datasource="Small,Medium,Large"/>
+            <property name="tabNames" type="String" label="Tab Names" description="Tab names seperated by | operator"/>
+            <property name="tabData" type="String" label="Tabs Data" description="Rich Text formatted tabs data seperated by | operator for different tabs"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

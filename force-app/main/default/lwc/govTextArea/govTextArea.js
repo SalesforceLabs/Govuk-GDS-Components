@@ -14,7 +14,7 @@ export default class GovTextArea extends LightningElement {
     @api required;
     @api errorMessage;
     @api labelFontSize;
-    @api fontSize;
+    @api fontSize = 'Medium';
     @api isInset;
     @api maxCharacterCount = 32768;
     @api showCharacterCount;

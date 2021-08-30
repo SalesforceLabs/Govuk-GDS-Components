@@ -3,7 +3,7 @@
     <apiVersion>52.0</apiVersion>
     <description>Flow only component that shows a summary screen and allows the user to go back to a previous screen to make changes.</description>
     <isExposed>true</isExposed>
-    <masterLabel>Gov UK Summary</masterLabel>
+    <masterLabel>Gov UK Summary List</masterLabel>
     <targets>
         <target>lightning__FlowScreen</target>
     </targets>
