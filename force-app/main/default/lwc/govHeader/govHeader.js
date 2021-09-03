@@ -13,12 +13,12 @@ export default class GovHeader extends LightningElement(NavigationMixin) {
     
     crownLogo = CROWN_LOGO;
 
-    @api headerLabel = "Header Label Goes Here";
-    @api headerURL = "Header URL Goes Here";
-    @api serviceName = "Service Name Goes Here";
-    @api serviceURL = "Service URL Goes Here";
-    @api menuLabel = "Menu Label Goes Here";
-    @api navigationMenuDevName = "Navigation Menu Developer Name Goes Here";
+    @api headerLabel = "GOV.UK";
+    @api headerURL = "#";
+    @api serviceName = "Service Name";
+    @api serviceURL = "#";
+    @api menuLabel = "Menu";
+    @api navigationMenuDevName = "Default_Navigation";
     
     @track menuItems = [];
     @track showMenuInMobile = false;

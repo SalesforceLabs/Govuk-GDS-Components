@@ -18,6 +18,7 @@ export default class GovDate extends LightningElement {
     @api hintText = "";
     @api required = false;
     @api value = "";
+    @api formattedDate = "";
 
     @track dayValue = "";
     @track monthValue = "";
@@ -80,6 +81,7 @@ export default class GovDate extends LightningElement {
                 this.dayValue = parts[0];
                 this.monthValue = parts[1];
                 this.yearValue = parts[2];
+                this.formattedDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue;
             }
         }
 
@@ -115,6 +117,7 @@ export default class GovDate extends LightningElement {
 
     updateValue() {
         this.value = this.dayValue + "/" + this.monthValue + "/" + this.yearValue;
+        this.formattedDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue;
         this.dispatchValueChangedEvent();
     }
 

@@ -39,7 +39,7 @@ export default class GovSelect extends LightningElement {
             getPicklistValuesByObjectField({
                 strSObjectFieldName: this.picklist
             })
-                .then(result => {
+            .then(result => {
                     this.selectOptions = [];
                     let selectOption = {};
                     selectOption.key = `csv-value-no-value`;
@@ -95,7 +95,6 @@ export default class GovSelect extends LightningElement {
 
     get groupClass() {
         let groupClass = "govuk-form-group";
-        groupClass = (this.isInset) ? groupClass + " govuk-inset-text" : groupClass;
         groupClass = (this.hasErrors) ? groupClass + " govuk-form-group--error" : groupClass;
         return groupClass;
     }

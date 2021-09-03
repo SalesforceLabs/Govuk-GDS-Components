@@ -18,7 +18,6 @@
             <property name="optionValues" type="String" label="Option Values" description="Comma separated list of option values"/>
             <property name="value" type="String" label="Value" description="The value"/>
             <property name="required" type="Boolean" label="Is required" description="Is a value required before continuing"/>
-            <property name="isInset" type="Boolean" label="Is Inset" description="Should the component be inset"/>
             <property name="errorMessage" type="String" label="Error Message" description="The error message to display"/>
         </targetConfig>
     </targetConfigs>

@@ -1,8 +1,3 @@
-/**
- * Component Name: Gov UK Text Area
- * Version: X.X.XX
- * Created by: Harshpreet Singh Chhabra
- **/
 import {LightningElement, api, track, wire} from 'lwc';
 import {FlowAttributeChangeEvent} from 'lightning/flowSupport';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
@@ -20,7 +15,6 @@ export default class GovTextArea extends LightningElement {
     @api errorMessage;
     @api labelFontSize;
     @api fontSize = 'Medium';
-    @api isInset;
     @api maxCharacterCount = 32768;
     @api showCharacterCount;
     @api rowCount = 5;
@@ -59,7 +53,6 @@ export default class GovTextArea extends LightningElement {
 
     get groupClass() {
         let groupClass = "govuk-form-group";
-        groupClass = (this.isInset) ? groupClass + " inset-border" : groupClass;
         groupClass = (this.hasErrors) ? groupClass + " govuk-form-group--error" : groupClass;
         return groupClass;
     }

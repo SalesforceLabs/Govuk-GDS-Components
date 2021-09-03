@@ -8,7 +8,7 @@ import { LightningElement,api,track } from 'lwc';
 export default class GovTag extends LightningElement {
 
     @api tagText = '';
-    @api tagTextColour = 'default';
+    @api tagTextColour = 'Default';
 
     @track tagClass = "govuk-tag";
 

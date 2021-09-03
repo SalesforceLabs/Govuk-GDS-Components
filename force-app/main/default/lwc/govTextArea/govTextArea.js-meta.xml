@@ -16,7 +16,6 @@
             <property name="errorMessage" type="String" label="Error Message" description="Error Message"/>
             <property name="fontSize" type="String" label="Label Font Size" default="Medium" description="Label Font Size - Small, Medium or Large"/>
             <property name="required" type="Boolean" label="Required" description="Is a value required to submit the form?"/>
-            <property name="isInset" type="Boolean" label="Is inset" description="Is the text area inset?"/>
             <property name="maxCharacterCount" type="Integer" label="Maximum Character Count" description="The maximum length of the string in the field"/>
             <property name="showCharacterCount" type="Boolean" label="Show Character Count" description="Shows the user the character count and the maximum character count"/>
             <property name="rowCount" type="Integer" label="No of rows to display" default="5" description="Default no of rows to display in the text area"/>
