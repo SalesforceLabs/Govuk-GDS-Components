@@ -3,15 +3,15 @@
         {
             "path": "force-app",
             "default": true,
-            "package": "firstPackage",
-            "versionName": "Version 1.0",
-            "versionNumber": "1.0.0.NEXT"
+            "package": "Salesforce GOV.UK Frontend",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT"
         }
     ],
-    "namespace": "",
+    "namespace": "uxgovuk",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "50.0",
+    "sourceApiVersion": "52.0",
     "packageAliases": {
-        "firstPackage": "0Ho5g000000XZeCCAW"
+        "Salesforce GOV.UK Frontend": "0Ho4L000000k9gXSAQ"
     }
 }

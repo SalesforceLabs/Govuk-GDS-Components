@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Checkbox
- * Version: X.X.XX
- * Created by: Harshpreet Singh Chhabra
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell
  **/
 import {LightningElement, api, wire, track} from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
@@ -10,7 +10,7 @@ import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
 
-export default class GovCheckbox extends LightningElement {
+export default class GovCheckboxes extends LightningElement {
     // flow inputs and outputs
     @api fieldId = "checkboxField";
     @api errorMessage;
@@ -193,11 +193,13 @@ export default class GovCheckbox extends LightningElement {
     // Class functions
 
     get inputClass() {
-        return this.hasErrors ? `govuk-input--error` : `govuk-input`;
+        return this.hasErrors ? "govuk-input--error" : "govuk-input";
     }
 
     get groupClass() {
-        return this.hasErrors ? "govuk-form-group govuk-form-group--error" : "govuk-form-group";
+        let groupClass = "govuk-form-group";
+        groupClass = (this.hasErrors) ? groupClass + " govuk-form-group--error" : groupClass;
+        return groupClass;
     }
 
 
@@ -238,6 +240,7 @@ export default class GovCheckbox extends LightningElement {
             isValid: !this.hasErrors,
             error: this.errorMessage
         });
+        return !this.hasErrors;
     }
 
     @api clearError() {

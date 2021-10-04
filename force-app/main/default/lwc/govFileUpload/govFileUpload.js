@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK File Upload
- * Version: X.X.XX
- * Created by: Neetesh Jain
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
  **/
 import { LightningElement, wire, api, track } from 'lwc';
 import saveFiles from '@salesforce/apex/FileUploadController.saveFiles';
@@ -113,7 +113,7 @@ export default class GovFileUpload extends LightningElement {
 
         // publish the registration message after 0.1 sec to give other components time to initialise
         setTimeout(() => {
-            publish(this.messageContext, REGISTER_MC, { componentId: this.uniqueFieldId });
+            publish(this.messageContext, REGISTER_MC, { componentId: this.fieldId });
         }, 100);
     }
 

@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Footer
- * Version: X.X.XX
- * Created by: Harshpreet Singh Chhabra
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell
  **/
 import { LightningElement,track ,api} from 'lwc';
 
@@ -27,7 +27,7 @@ export default class GovFooter extends LightningElement {
     @track isNavLLinksPresent = false;
 
     connectedCallback(){
-        //splitting all comma seperated values to form an array
+        //splitting all comma separated values to form an array
         let sectionNamesList = this.sectionNames ? this.sectionNames.split(';') : [];
         let navigationNamesList = this.navigationNames ? this.navigationNames.split(';') : [];
         let navigationLinksList = this.navigationLinks ? this.navigationLinks.split(';') : [];

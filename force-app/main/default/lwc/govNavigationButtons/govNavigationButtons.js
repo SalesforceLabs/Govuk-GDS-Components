@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Navigation Buttons
- * Version: X.X.XX
- * Created by: Harshpreet Singh Chhabra
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell
  **/
 import {LightningElement, api, track, wire} from 'lwc';
 import { FlowNavigationBackEvent, FlowNavigationNextEvent, FlowNavigationFinishEvent } from 'lightning/flowSupport';
@@ -25,6 +25,7 @@ export default class GovNavigationButtons extends LightningElement {
     @api buttonVariantsString;
     @api buttonAlignmentsString;
     @api action;
+    @api fieldId = 'NavigationButtons';
     @api useFlowStyling;
     @api fullWidth = false;
 
@@ -104,17 +105,21 @@ export default class GovNavigationButtons extends LightningElement {
     handleClick(event) {
         // get the action for the data-action attribute
         this.action = event.target.getAttribute('data-action').toUpperCase();
-
         console.log(`action is ${this.action}`);
         console.log(`available actions are ${this.availableActions}`);
+        
+        console.log(`component api name is ${this.fieldId}`);
+        console.log(`NAVIGATION_BUTTONS: components are ${JSON.stringify(this.components)}`);
 
+       
+        console.log('Testing.. ');
         // check to see if next or finish was selected and we have components to validate
         if( (this.action === 'NEXT' || this.action === 'FINISH') && this.components.length > 0 ) {
             this.components.forEach(component => {
                 component.isValid = false;
             })
             console.log('NAVIGATION_BUTTONS: Sending validation message');
-            publish(this.messageContext, VALIDATE_MC, { componentId: 'NavigationButtons' });
+            publish(this.messageContext, VALIDATE_MC, { componentId: this.fieldId });
         } else if(this.action === 'NEXT' && this.availableActions.find(action => action === 'NEXT')) {
             const event = new FlowNavigationNextEvent();
             this.dispatchEvent(event);

@@ -1,6 +1,6 @@
 /**
  * Component Name: Gov UK CSS Provider
- * Version: X.X.XX
+ * Derived_From_Frontend_Version:v3.13.1
  * Created by: Neetesh Jain/Harshpreet Singh Chhabra
  **/
 import { LightningElement } from 'lwc';

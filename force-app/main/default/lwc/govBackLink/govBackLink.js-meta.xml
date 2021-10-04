@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>A back link that will navigate to the supplied page if no flow back action is possible.</description>
+    <masterLabel>Gov UK Back Link</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default, lightning__FlowScreen">
+            <property name="backLinkLabel" type="String" label="Back Link Label" default="Back" description="Label for back link"/>
+            <property name="backAction" type="Boolean" label="Perform Flow Back Action" description="If true will perform a flow back action if possible and is only applicable to Flow Builder."/>
+            <property name="destinationPageName" type="String" label="Destination Page" description="The HTML/Community Page API where we have to navigate and is only applicable to Experience Builder"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

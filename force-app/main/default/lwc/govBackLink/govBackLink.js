@@ -1,16 +1,16 @@
 /**
- * Component Name: Gov UK Back Button
- * Version: X.X.XX
- * Created by: Neetesh Jain
+ * Component Name: Gov UK Back Link
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
  **/
 import { LightningElement, api } from 'lwc';
 import { FlowNavigationBackEvent } from 'lightning/flowSupport';
 import { NavigationMixin } from 'lightning/navigation';
 
-export default class GovBackButton extends NavigationMixin(LightningElement) {
+export default class GovBackLink extends NavigationMixin(LightningElement) {
 
     @api availableActions = [];
-    @api backButtonLabel = 'Back';
+    @api backLinkLabel = 'Back';
     @api backAction  = false;
     @api destinationPageName = '';
     

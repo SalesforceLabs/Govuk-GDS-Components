@@ -1,3 +1,8 @@
+/**
+ * Component Name: Gov UK Warning Text
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell
+ **/
 import {LightningElement, api, track, wire} from 'lwc';
 import {FlowAttributeChangeEvent} from 'lightning/flowSupport';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';

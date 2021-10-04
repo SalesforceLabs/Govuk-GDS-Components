@@ -10,9 +10,9 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default">
-            <property name="sectionLabels" type="String" label="Section Labels" description="Please provide semi colon seperated Labels for each accordion section"/>
-            <property name="sectionLabelSummarys" type="String" label="Section Label Summarys" description="Please provide semi colon seperated Label Summarys for each accordion section"/>
-            <property name="sectionContents" type="String" label="Section Content" description="Please provide Pipe (|) seperated content for each accordion section in either text or html format"/>
+            <property name="sectionLabels" type="String" label="Section Labels" description="Please provide semi colon separated Labels for each accordion section"/>
+            <property name="sectionLabelSummarys" type="String" label="Section Label Summarys" description="Please provide semi colon separated Label Summarys for each accordion section"/>
+            <property name="sectionContents" type="String" label="Section Content" description="Please provide Pipe (|) separated content for each accordion section in either text or html format"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

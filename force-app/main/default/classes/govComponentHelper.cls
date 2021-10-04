@@ -1,10 +1,15 @@
-global without sharing class govComponentHelper {
+public without sharing class GovComponentHelper {
 
     @AuraEnabled
     public static List<NavigationMenuItem> getDefaultMenuItems(String strNavigationMenuDevName) {
         try {
             List<NavigationMenuItem> lstNavigationItems = new List<NavigationMenuItem>();
-            if(String.isNotBlank(strNavigationMenuDevName)) {
+            if(
+                NavigationMenuItem.SObjectType.getDescribe().isAccessible() &&
+                Schema.SObjectType.NavigationMenuItem.fields.Label.isAccessible() &&
+                Schema.SObjectType.NavigationMenuItem.fields.Target.isAccessible() &&
+                String.isNotBlank(strNavigationMenuDevName)
+            ) {
                 lstNavigationItems = [SELECT Label, Target, TargetPrefs, Type FROM NavigationMenuItem WHERE NavigationLinkSet.DeveloperName = :strNavigationMenuDevName AND Status = 'Live' ORDER BY Position ASC];
             }
             return lstNavigationItems;

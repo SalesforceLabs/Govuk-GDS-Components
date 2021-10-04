@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Markup Text Editor
- * Version: X.X.XX
- * Created by: Neetesh Jain
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
  **/
 import { LightningElement,api } from 'lwc';
 

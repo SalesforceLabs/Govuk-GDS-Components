@@ -10,10 +10,7 @@
         <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-gov-markup-text-editor">
-            <property name="markupText" type="String" label="HTML" description="The HTML to display"/>
-        </targetConfig>
-        <targetConfig targets="lightningCommunity__Default">
+        <targetConfig targets="lightning__FlowScreen,lightningCommunity__Default">
             <property name="markupText" type="String" label="HTML" description="The HTML to display"/>
         </targetConfig>
     </targetConfigs>

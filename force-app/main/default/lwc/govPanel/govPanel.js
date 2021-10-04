@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Panel
- * Version: X.X.XX
- * Created by: Harshpreet Singh Chhabra
+ * Derived_From_Frontend_Version:v3.13.1
+ * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell
  **/
 import {LightningElement,api} from 'lwc';
 

@@ -16,10 +16,10 @@
             <property name="captionText" label="Title" type="String" description="The title for the top of the table"></property>
             <property name="captionTextFontSize" label="Title Font Size" type="String" description="The font size for the table accepted values are small, medium, large and xtra-large"></property>
             <property name="columnHeaders" type="String" label="Column Headers" description="A comma separated list of column headings"/>
-            <property name="columnTypes" type="String" label="Column Types" description="A comma seperated list of data type for columns accepted values are string, numeric"/>
+            <property name="columnTypes" type="String" label="Column Types" description="A comma separated list of data type for columns accepted values are string, numeric"/>
             <property name="columnWeights" type="String" label="Column Font Weight" description="A comma separated list of column weights accepted values are bold or normal"/>
             <property name="columnSizes" type="String" label="Column sizes" description="A comma separated list of column sizes accepted values are three-quarters, two-thirds, one-half, one-third, one-quarter or any integer values"/> 
-            <property name="columnData" type="String" label="Column Data" description="The data for rows seperated by ; and for columns in a row seperated by | "/>
+            <property name="columnData" type="String" label="Column Data" description="The data for rows separated by ; and for columns in a row separated by | "/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
