@@ -2,16 +2,10 @@
     "packageDirectories": [
         {
             "path": "force-app",
-            "default": true,
-            "package": "Salesforce GOV.UK Frontend",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT"
+            "default": true
         }
     ],
     "namespace": "uxgovuk",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "52.0",
-    "packageAliases": {
-        "Salesforce GOV.UK Frontend": "0Ho4L000000k9gXSAQ"
-    }
+    "sourceApiVersion": "52.0"
 }
