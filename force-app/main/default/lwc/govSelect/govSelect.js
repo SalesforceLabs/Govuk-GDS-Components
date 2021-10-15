@@ -190,7 +190,7 @@ export default class GovSelect extends LightningElement {
             this.hasErrors = false;
         }
 
-        console.log('SELECT: Sending validation state message');
+        //console.log('SELECT: Sending validation state message');
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,

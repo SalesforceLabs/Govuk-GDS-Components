@@ -266,7 +266,7 @@ export default class GovCheckboxes extends LightningElement {
             this.hasErrors = false;
         }
 
-        console.log('CHECKBOX: Sending validation state message');
+        //console.log('CHECKBOX: Sending validation state message');
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,
