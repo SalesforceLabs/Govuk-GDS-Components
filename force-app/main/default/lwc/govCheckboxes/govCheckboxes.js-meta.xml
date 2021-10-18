@@ -15,13 +15,13 @@
             <property name="headingFontSize" type="String" label="Heading Label Font Size" description="Heading Label Font Size - Small, Medium or Large"/>
             <property name="labels" type="String" label="Checkbox Labels" description="A comma separated list of labels for the checkboxes (Property,Bank Account,Shares. Not required if using Checkbox Picklist Field"/>
             <property name="picklistField" type="String" label="Checkbox Picklist Field"  description="The API name of a picklist to get the labels and values from in the form of SObjectName.FieldName."/>
-            <property name="booleanValues" type="String" label="Checkbox Boolean Values" description="Default selections to display, separated by semicolon (false;false;false). Not required if using Checkbox Picklist Field"/>
+            <property name="booleanValues" type="String" label="Checkbox Values Boolean" description="Default selections to display, separated by semicolon (eg true;true;false)"/>
             <property name="errorMessage" type="String" label="Error Message" description="Error Message"/>
             <property name="outputValue" type="String" label="Selected Values" description="The values of the checkboxes selected in MSP variable format (Property;Bank Account)"/>
-            <property name="outputValueBoolean" type="String" label="Selected Values Boolean" description="The boolean values of the checkboxes selected in a Flow text variable format (true;true;false).  Can be used as input to Checkbox Values field to re-display choices a user has previously made in a Flow."/>
+            <property name="outputValueBoolean" type="String" label="Selected Values Boolean" description="The boolean values of the checkboxes selected in a Flow text variable format (true;true;false).  Can be used as input to Checkbox Values field to re-display choices a user has previously selected."/>
             <property name="outputValueCollection" type="String[]" label="Selected Values Collection" description="The values of the checkboxes selected in collection variable format (Property, Bank Account as multiple entries in a Flow collection variable).  Used to facilitate manipulation of choices made, for example to loop through selected values."/>
-            <property name="required" type="Boolean" label="Is required" description="If true, the checkbox must be checked for it to be valid"/>
-            <property name="smallerCheckboxes" type="Boolean" label="Smaller Checkbox Options?" description="Choose to display checkboxes in smaller size"/>
+            <property name="required" type="Boolean" label="Is required" description="If true, at least once checkbox must be selected (true) by the user;"/>
+            <property name="smallerCheckboxes" type="Boolean" label="Smaller Checkbox Options?" description="Choose to display checkboxes in smaller size"/>          
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
