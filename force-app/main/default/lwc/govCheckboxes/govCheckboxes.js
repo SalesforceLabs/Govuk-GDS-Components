@@ -20,7 +20,7 @@ export default class GovCheckboxes extends LightningElement {
     @api required = false;
     @api labels ;
     //@api names ;
-    @api booleanValues ;
+    @api booleanValues;
     @api outputValueCollection = [];
     @api outputValueBoolean;
     @api outputValue;
@@ -68,6 +68,14 @@ export default class GovCheckboxes extends LightningElement {
 
     connectedCallback() {
         let defaultValuesBooleanList = [];
+        let defaultValuesList = this.outputValueBoolean ? this.outputValueBoolean.split(';') : [];
+        for(let i=0; i<defaultValuesList.length;i++){
+            if(defaultValuesList[i].toUpperCase() === 'TRUE') {
+                defaultValuesBooleanList.push(true);
+            }else{
+                defaultValuesBooleanList.push(false);
+            }
+        }
         if(this.picklistField !== '' && this.picklistField !== undefined && this.picklistField !== null) {
             // get picklist field values
             getPicklistValuesByObjectField({
@@ -81,7 +89,11 @@ export default class GovCheckboxes extends LightningElement {
                             checkboxValue : false
                             };   
                         checkboxObj.checkboxLabel = result[i];
-                        checkboxObj.checkboxValue = false; //this.selectedValue === result[i];
+                        if (i<defaultValuesBooleanList.length) {
+                            checkboxObj.checkboxValue = defaultValuesBooleanList[i];
+                        } else {
+                            checkboxObj.checkboxValue = false;
+                        }
                         this.checkboxArray.push(checkboxObj);     
                     }
                 })
@@ -91,21 +103,17 @@ export default class GovCheckboxes extends LightningElement {
         } else {
             //user provided values
             let labelsList = this.labels ? this.labels.split(',') : [];
-            let defaultValuesList = this.booleanValues ? this.booleanValues.split(';') : [];
-            for(let i=0; i<defaultValuesList.length;i++){
-                if(defaultValuesList[i].toUpperCase() === 'TRUE') {
-                    defaultValuesBooleanList.push(true);
-                }else{
-                    defaultValuesBooleanList.push(false);
-                }
-            }
             for(let i=0; i<labelsList.length;i++){
                 let checkboxObj = {
                     checkboxLabel : '',
                     checkboxValue : false
                     };
                 checkboxObj.checkboxLabel = labelsList[i];
-                checkboxObj.checkboxValue = defaultValuesBooleanList[i];
+                if (i<defaultValuesBooleanList.length) {
+                    checkboxObj.checkboxValue = defaultValuesBooleanList[i];
+                } else {
+                    checkboxObj.checkboxValue = false;
+                }
                 this.checkboxArray.push(checkboxObj);
             }
         }
@@ -123,7 +131,7 @@ export default class GovCheckboxes extends LightningElement {
                 checkedCount ++;
                 outputString = this.checkboxArray[i].checkboxLabel;
                 this.outputValueCollection.push(outputString);
-                if (this.outputValue.length==0) {
+                if (this.outputValue === undefined) {
                     this.outputValue = outputString;
                 } else {
                     this.outputValue = this.outputValue + ';' + outputString;

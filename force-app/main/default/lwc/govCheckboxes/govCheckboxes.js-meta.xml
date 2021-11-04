@@ -15,7 +15,7 @@
             <property name="headingFontSize" type="String" label="Heading Label Font Size" description="Heading Label Font Size - Small, Medium or Large"/>
             <property name="labels" type="String" label="Checkbox Labels" description="A comma separated list of labels for the checkboxes (Property,Bank Account,Shares. Not required if using Checkbox Picklist Field"/>
             <property name="picklistField" type="String" label="Checkbox Picklist Field"  description="The API name of a picklist to get the labels and values from in the form of SObjectName.FieldName."/>
-            <property name="booleanValues" type="String" label="Checkbox Values Boolean" description="Default selections to display, separated by semicolon (eg true;true;false)"/>
+            <property name="booleanValues" type="String" label="Unassigned" description="Do not use as not currently utilised"/>
             <property name="errorMessage" type="String" label="Error Message" description="Error Message"/>
             <property name="outputValue" type="String" label="Selected Values" description="The values of the checkboxes selected in MSP variable format (Property;Bank Account)"/>
             <property name="outputValueBoolean" type="String" label="Selected Values Boolean" description="The boolean values of the checkboxes selected in a Flow text variable format (true;true;false).  Can be used as input to Checkbox Values field to re-display choices a user has previously selected."/>

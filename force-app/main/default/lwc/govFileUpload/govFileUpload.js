@@ -19,7 +19,9 @@ export default class GovFileUpload extends LightningElement {
     @api required = false;
     @api errorMessage = "Select a file"; 
 
-    @api filesUploaded = []; 
+    @api filesUploadedCollection = []; 
+    @api filesUploadedExpanded = []; 
+    @api filesUploaded; 
 
     @api useApexToSaveFile = false;   
     @api recordId = "";
@@ -56,7 +58,13 @@ export default class GovFileUpload extends LightningElement {
                     let base64 = 'base64,';
                     let content = freader.result.indexOf(base64) + base64.length;
                     let fileContents = freader.result.substring(content);
-                    this.filesUploaded.push({
+                    if (i==0) {
+                        this.filesUploaded = file.name;
+                    } else {
+                        this.filesUploaded = this.filesUploaded + ';' + file.name;
+                    }
+                    this.filesUploadedCollection.push(file.name);
+                    this.filesUploadedExpanded.push({
                         Title: file.name,
                         VersionData: fileContents
                     });
@@ -75,7 +83,7 @@ export default class GovFileUpload extends LightningElement {
 
     handleSaveFiles() {
         saveFiles({
-            filesToInsert: this.filesUploaded,
+            filesToInsert: this.filesUploadedExpanded,
             strRecId: this.recordId
          })
         .then(data => {
@@ -128,7 +136,7 @@ export default class GovFileUpload extends LightningElement {
     @api 
     handleValidate() {
         this.hasErrors = false;
-        if(this.required && this.filesUploaded.length === 0) {
+        if(this.required && this.filesUploadedExpanded.length === 0) {
             this.hasErrors = true;
         }
         publish(this.messageContext, VALIDATION_STATE_MC, {
