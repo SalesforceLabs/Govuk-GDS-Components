@@ -1,4 +1,4 @@
-public without sharing class GovComponentHelper {
+public with sharing class GovComponentHelper {
 
     @AuraEnabled
     public static List<NavigationMenuItem> getDefaultMenuItems(String strNavigationMenuDevName) {
