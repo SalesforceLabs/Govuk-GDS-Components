@@ -4,6 +4,7 @@
  * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
  **/
 import { LightningElement, wire, api, track } from 'lwc';
+import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import saveFiles from '@salesforce/apex/FileUploadController.saveFiles';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
