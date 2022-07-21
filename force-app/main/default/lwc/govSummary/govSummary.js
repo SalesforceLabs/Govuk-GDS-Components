@@ -22,9 +22,9 @@ export default class GovSummary extends LightningElement {
     connectedCallback() {
         this.sectionFields = [];
         // create the section fields from the collections
-        //console.log("Creating fields")
+        console.log("Creating fields")
         for(var index = 0; index < this.confirmationLabels.length; index++) {
-            //console.log("Adding new confirmation field");
+            console.log("Adding new confirmation field");
             var sectionField = {};
             sectionField.key = index;
             sectionField.label = this.confirmationLabels[index];
@@ -37,11 +37,11 @@ export default class GovSummary extends LightningElement {
     renderedCallback() {
         //insert the instructions HTML
         if(this.instructionsHTML) {
-            //console.log(`setting html instructions`);
+            console.log(`setting html instructions`);
             const htmlElement = this.template.querySelector(".html-element");
             if(htmlElement) {
                 htmlElement.innerHTML = this.instructionsHTML;
-                //console.log(`done it`);
+                console.log(`done it`);
             }
         }
     }
@@ -50,10 +50,10 @@ export default class GovSummary extends LightningElement {
 
         this.destination = event.target.getAttribute('data-destination');
 
-        //console.log(`processing handleChange event for ${this.destination}`);
+        console.log(`processing handleChange event for ${this.destination}`);
 
         if (this.availableActions.find(action => action === 'NEXT')) {
-            //console.log(`sending next event to flow engine.`);
+            console.log(`sending next event to flow engine.`);
             const nextNavigationEvent = new FlowNavigationNextEvent();
             this.dispatchEvent(nextNavigationEvent);
         }

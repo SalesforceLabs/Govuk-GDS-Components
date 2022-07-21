@@ -5,7 +5,7 @@
  **/
 import {LightningElement, api, track, wire} from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
-import getPicklistValuesByObjectField from '@salesforce/apex/GovComponentHelper.getPicklistValuesByObjectField';
+import getPicklistValuesByObjectField from '@salesforce/apex/govComponentHelper.getPicklistValuesByObjectField';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
@@ -190,7 +190,7 @@ export default class GovSelect extends LightningElement {
             this.hasErrors = false;
         }
 
-        //console.log('SELECT: Sending validation state message');
+        console.log('SELECT: Sending validation state message');
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,

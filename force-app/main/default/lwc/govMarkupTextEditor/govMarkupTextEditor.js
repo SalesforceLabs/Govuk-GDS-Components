@@ -87,7 +87,7 @@ export default class GovMarkupTextEditor extends LightningElement {
     }
 
     handleTogglePreview(event) {
-        //console.log("handleTogglePreview called");
+        console.log("handleTogglePreview called");
         const textArea = this.template.querySelector(".markupTextarea");
         if(textArea) {
             // get the value from the text area

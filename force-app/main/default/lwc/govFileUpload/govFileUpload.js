@@ -4,7 +4,6 @@
  * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
  **/
 import { LightningElement, wire, api, track } from 'lwc';
-import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import saveFiles from '@salesforce/apex/FileUploadController.saveFiles';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
@@ -20,9 +19,7 @@ export default class GovFileUpload extends LightningElement {
     @api required = false;
     @api errorMessage = "Select a file"; 
 
-    @api filesUploadedCollection = []; 
-    @api filesUploadedExpanded = []; 
-    @api filesUploaded; 
+    @api filesUploaded = []; 
 
     @api useApexToSaveFile = false;   
     @api recordId = "";
@@ -59,17 +56,10 @@ export default class GovFileUpload extends LightningElement {
                     let base64 = 'base64,';
                     let content = freader.result.indexOf(base64) + base64.length;
                     let fileContents = freader.result.substring(content);
-                    if (i==0) {
-                        this.filesUploaded = file.name;
-                    } else {
-                        this.filesUploaded = this.filesUploaded + ';' + file.name;
-                    }
-                    this.filesUploadedCollection.push(file.name);
-                    this.filesUploadedExpanded.push({
+                    this.filesUploaded.push({
                         Title: file.name,
                         VersionData: fileContents
                     });
-                    this.useApexToSaveFile = true;
                     if(this.recordId !== "" && this.useApexToSaveFile && (i+1) === files.length) {
                         this.handleSaveFiles();
                     } 
@@ -85,7 +75,7 @@ export default class GovFileUpload extends LightningElement {
 
     handleSaveFiles() {
         saveFiles({
-            filesToInsert: this.filesUploadedExpanded,
+            filesToInsert: this.filesUploaded,
             strRecId: this.recordId
          })
         .then(data => {
@@ -138,7 +128,7 @@ export default class GovFileUpload extends LightningElement {
     @api 
     handleValidate() {
         this.hasErrors = false;
-        if(this.required && this.filesUploadedExpanded.length === 0) {
+        if(this.required && this.filesUploaded.length === 0) {
             this.hasErrors = true;
         }
         publish(this.messageContext, VALIDATION_STATE_MC, {

@@ -18,15 +18,9 @@
                     </span>
                 </template>
                 <template for:each={checkboxArray} for:item="opt">
-                    <div class="govuk-checkboxes__item" key={opt.checkboxLabel} style="margin-bottom: 30px;">
-                        <input class="govuk-checkboxes__input" 
-                            data-id={opt.checkboxLabel} 
-                            name={opt.checkboxLabel} 
-                            type="checkbox" 
-                            checked={opt.checkboxValue} 
-                            onclick={handleClick}>
-                        <label class="govuk-label govuk-checkboxes__label" 
-                                for=opt.checkboxLabel}>
+                    <div class="govuk-checkboxes__item" key={opt.checkboxName} style="margin-bottom: 30px;">
+                        <input class="govuk-checkboxes__input" data-id={opt.checkboxName} name={opt.checkboxName} type="checkbox" checked={opt.checkboxValue} onclick={handleClick}>
+                        <label class="govuk-label govuk-checkboxes__label" for=opt.checkboxName}>
                             {opt.checkboxLabel}
                         </label>
                     </div>

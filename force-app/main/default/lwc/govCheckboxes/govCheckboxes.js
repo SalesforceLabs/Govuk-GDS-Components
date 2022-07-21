@@ -9,7 +9,6 @@ import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messa
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
-import getPicklistValuesByObjectField from '@salesforce/apex/GovComponentHelper.getPicklistValuesByObjectField';
 
 export default class GovCheckboxes extends LightningElement {
     // flow inputs and outputs
@@ -19,13 +18,9 @@ export default class GovCheckboxes extends LightningElement {
     @api headinghint;
     @api required = false;
     @api labels ;
-    //@api names ;
-    @api booleanValues;
-    @api outputValueCollection = [];
-    @api outputValueBoolean;
-    @api outputValue;
-    @api picklistField;
-
+    @api names ;
+    @api defaultValues ;
+    @api outputValue = [];
     @api headingFontSize = '';
     @api smallerCheckboxes;
 
@@ -67,8 +62,27 @@ export default class GovCheckboxes extends LightningElement {
     }
 
     connectedCallback() {
+        // subscribe to the message channels
+        this.subscribeMCs();
+
+        // publish the registration message after 0.1 sec to give other components time to initialise
+        setTimeout(() => {
+            publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
+        }, 100);
+
+        let labelsList = this.labels ? this.labels.split(';') : [];
+        let namesList = this.names ? this.names.split(';') : [];
+        let defaultValuesList = this.defaultValues ? this.defaultValues.split(';') : [];
+        
+
+        let checkboxObj = {
+            checkboxLabel : '',
+            checkboxName : '',
+            checkboxValue : false
+            };
+
         let defaultValuesBooleanList = [];
-        let defaultValuesList = this.outputValueBoolean ? this.outputValueBoolean.split(';') : [];
+
         for(let i=0; i<defaultValuesList.length;i++){
             if(defaultValuesList[i].toUpperCase() === 'TRUE') {
                 defaultValuesBooleanList.push(true);
@@ -76,66 +90,30 @@ export default class GovCheckboxes extends LightningElement {
                 defaultValuesBooleanList.push(false);
             }
         }
-        if(this.picklistField !== '' && this.picklistField !== undefined && this.picklistField !== null) {
-            // get picklist field values
-            getPicklistValuesByObjectField({
-                strSObjectFieldName: this.picklistField
-            })
-                .then(result => {
-                    //this.checkboxArray = [];
-                    for(let i=0; i<result.length; i++) {
-                        let checkboxObj = {
-                            checkboxLabel : '',
-                            checkboxValue : false
-                            };   
-                        checkboxObj.checkboxLabel = result[i];
-                        if (i<defaultValuesBooleanList.length) {
-                            checkboxObj.checkboxValue = defaultValuesBooleanList[i];
-                        } else {
-                            checkboxObj.checkboxValue = false;
-                        }
-                        this.checkboxArray.push(checkboxObj);     
-                    }
-                })
-                .catch(error => {
-                    console.error(`Select:connectedCallback - could not get checkbox picklist values due to ${error.message}`);
-                })
-        } else {
-            //user provided values
-            let labelsList = this.labels ? this.labels.split(',') : [];
-            for(let i=0; i<labelsList.length;i++){
-                let checkboxObj = {
-                    checkboxLabel : '',
-                    checkboxValue : false
-                    };
-                checkboxObj.checkboxLabel = labelsList[i];
-                if (i<defaultValuesBooleanList.length) {
-                    checkboxObj.checkboxValue = defaultValuesBooleanList[i];
-                } else {
-                    checkboxObj.checkboxValue = false;
-                }
-                this.checkboxArray.push(checkboxObj);
-            }
+
+
+        for(let i=0; i<labelsList.length;i++){
+            checkboxObj.checkboxLabel = labelsList[i];
+            checkboxObj.checkboxName = namesList[i];
+            checkboxObj.checkboxValue = defaultValuesBooleanList[i];
+
+            this.checkboxArray.push(checkboxObj);
+
+            checkboxObj = {
+                checkboxLabel : '',
+                checkboxName : '',
+                checkboxValue : false
+            };
         }
 
         let checkedCount = 0;
         let outputString = '';
 
         for(var i=0; i<this.checkboxArray.length; i++){
-            if (i==0) {
-                this.outputValueBoolean = this.checkboxArray[i].checkboxValue;
-            } else {
-                this.outputValueBoolean = this.outputValueBoolean + ';' + this.checkboxArray[i].checkboxValue;
-            }
             if(this.checkboxArray[i].checkboxValue == true){
                 checkedCount ++;
-                outputString = this.checkboxArray[i].checkboxLabel;
-                this.outputValueCollection.push(outputString);
-                if (this.outputValue === undefined) {
-                    this.outputValue = outputString;
-                } else {
-                    this.outputValue = this.outputValue + ';' + outputString;
-                }
+                outputString = this.checkboxArray[i].checkboxName;
+                this.outputValue.push(outputString);
                 outputString = '';
             }
         }
@@ -148,13 +126,6 @@ export default class GovCheckboxes extends LightningElement {
             this.checked = false;
         }
 
-        // subscribe to the message channels
-        this.subscribeMCs();
-
-        // publish the registration message after 0.1 sec to give other components time to initialise
-        setTimeout(() => {
-            publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
-        }, 100);
     }
 
     disconnectedCallback() {
@@ -175,31 +146,20 @@ export default class GovCheckboxes extends LightningElement {
 
     handleClick(event) {
         
-        this.outputValueCollection = [];
-        this.outputValueBoolean = '';
-        this.outputValue = '';
+        this.outputValue = [];
         let outputString = '';
+
         let checkboxId = event.target.dataset.id;
         let checkedCount = 0;
 
         for(var i=0; i<this.checkboxArray.length; i++){
-            if(this.checkboxArray[i].checkboxLabel == checkboxId){
+            if(this.checkboxArray[i].checkboxName == checkboxId){
                 this.checkboxArray[i].checkboxValue = event.target.checked;
-            }
-            if (i==0) {
-                this.outputValueBoolean = this.checkboxArray[i].checkboxValue;
-            } else {
-                this.outputValueBoolean = this.outputValueBoolean + ';' + this.checkboxArray[i].checkboxValue;
             }
             if(this.checkboxArray[i].checkboxValue == true){
                 checkedCount ++;
-                outputString = this.checkboxArray[i].checkboxLabel;
-                this.outputValueCollection.push(outputString);
-                if (this.outputValue.length==0) {
-                    this.outputValue = outputString;
-                } else {
-                    this.outputValue = this.outputValue + ';' + outputString;
-                }
+                outputString = this.checkboxArray[i].checkboxName;
+                this.outputValue.push(outputString);
                 outputString = '';
             }
         }
@@ -274,7 +234,7 @@ export default class GovCheckboxes extends LightningElement {
             this.hasErrors = false;
         }
 
-        //console.log('CHECKBOX: Sending validation state message');
+        console.log('CHECKBOX: Sending validation state message');
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,

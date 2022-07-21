@@ -18,7 +18,7 @@ export default class GovCSSProvider extends LightningElement {
         }
         cssStylesLoaded = true;
         loadStyle(this, govCssStyle)
-        .then(() => console.log('CSS File loaded.'))
+        .then(() => console.log('Files loaded.'))
         .catch(error => console.log("Error " + error.body.message));
     }
 

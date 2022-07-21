@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <description>Flow only component that shows a summary screen and allows the user to go back to a previous screen to make changes.</description>
     <isExposed>true</isExposed>
     <masterLabel>Gov UK Summary List</masterLabel>

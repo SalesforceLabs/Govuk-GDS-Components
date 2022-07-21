@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <description>Provides the Warning Text GDS component</description>
     <isExposed>true</isExposed>
     <masterLabel>Gov UK Warning Text</masterLabel>

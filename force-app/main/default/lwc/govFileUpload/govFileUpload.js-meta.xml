@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <isExposed>true</isExposed>
     <description>This help users select and upload a file.</description>
     <masterLabel>Gov UK File Upload</masterLabel>
@@ -13,12 +13,11 @@
             <property name="fileUploadLabel" type="String" label="Field Label" default="Upload a file" description="The label to display"/>
             <property name="acceptedFormats" type="String" label="Accepted File Formats" default="image/png, image/jpg, .pdf, .doc, .docx, .zip" description="A valid case-insensitive filename extension, starting with a period (.) character. For example: .jpg, .pdf, or .doc."/>
             <property name="maxFileSizeInMB" type="Integer" label="Max Files Size Allowed (in MB)" default="2" description="The maximum file size allowed to upload in MB (Max Value should not be greater than Salesforce Standards)"/>
-            <property name="required" type="Boolean" label="Required?" default="false" description="If True, user must enter at least one file."/>
+            <property name="required" type="Boolean" label="Required?" default="false" description="Is this required to submit the form?"/>
             <property name="errorMessage" type="String" label="Error Message" default="Select a file" description="Error Message to display"/>
-            <property name="useApexToSaveFile" type="Boolean" label="Use Apex Function to Save File"  default="true" description="Must be set to True - {!$GlobalConstant.True}. [This feature is not yet enabled]"/>
-            <property name="recordId" type="String" label="Related Record ID" description="The ID of the Salesforce record to associate the files with.  A value must be entered or the flow will fail."/>        
-            <property name="filesUploaded" type="String" label="Uploaded file names" description="Semi-colon delimited list of file names uploaded. Text variable. Output only."/>
-            <property name="filesUploadedCollection" type="String[]" label="Uploaded file names Collection" description="A collection variable to hold the names of any files uploaded. Output only."/>
+            <property name="useApexToSaveFile" type="Boolean" label="Use Apex Function to Save File"  default="false" description="True - If you want to use predefined apex funtion to save the file without any event. Record Id of parent is required for this."/>
+            <property name="recordId" type="String" label="Record Id where File needs to be attached" description="Record Id of Parent Record to save the file"/>        
+            <property name="filesUploaded" type="String" label="(Output Only Variable) Uploaded Files Output Data" description="(Output Only Variable) Uploaded Files Output Data"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

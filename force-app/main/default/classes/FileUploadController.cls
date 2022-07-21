@@ -1,4 +1,4 @@
-public with sharing class FileUploadController {
+public without sharing class FileUploadController {
     
     @AuraEnabled
     public static void saveFiles(List<Object> filesToInsert, String strRecId) { 
@@ -20,33 +20,22 @@ public with sharing class FileUploadController {
                     lstCntVerIds.add(saveResult.getId());
                 }
             }
-            List<ContentDocumentLink> lstCntDocLinkToInsert = getLstCntDocLink(lstCntVerIds, strRecId);
-            if(!lstCntDocLinkToInsert.isEmpty()) {
-                try {
-                    List<Database.SaveResult> res2 = Database.INSERT(lstCntDocLinkToInsert);
-                } catch (DmlException dmlEx) {
-                    throw new AuraHandledException('Could not insert document to database. Check user permissions ' + dmlEx.getMessage());
+            List<Id> lstCntDocIds = new List<Id>();
+            List<ContentDocumentLink> lstCntDocLinkToInsert = new List<ContentDocumentLink>();
+            if(!lstCntVerIds.isEmpty()) {
+                for(ContentVersion objCntVer : [SELECT ContentDocumentId FROM ContentVersion WHERE Id IN :lstCntVerIds]) {
+                    ContentDocumentLink objCntDocLink = new ContentDocumentLink();
+                    objCntDocLink.ContentDocumentId = objCntVer.ContentDocumentId;
+                    objCntDocLink.LinkedEntityId = strRecId;
+                    objCntDocLink.ShareType = 'V';
+                    lstCntDocLinkToInsert.add(objCntDocLink);
+                }
+                
+                if(!lstCntDocLinkToInsert.isEmpty()) {
+                    Database.INSERT(lstCntDocLinkToInsert);
                 }
             }
         }  
-    }
-    
-    private static List<ContentDocumentLink> getLstCntDocLink(List<Id> lstCntVerIds, String strRecordId) {
-        List<ContentDocumentLink> lstCntDocLink = new List<ContentDocumentLink>();
-        List<ContentVersion> lstContVersion = new List<ContentVersion>();
-        if(!lstCntVerIds.isEmpty()) {
-            if(ContentVersion.SObjectType.getDescribe().isAccessible()) {
-                lstContVersion = [SELECT ContentDocumentId FROM ContentVersion WHERE Id IN :lstCntVerIds];
-            }
-            for(ContentVersion objCntVer : lstContVersion) {
-                ContentDocumentLink objCntDocLink = new ContentDocumentLink();
-                objCntDocLink.ContentDocumentId = objCntVer.ContentDocumentId;
-                objCntDocLink.LinkedEntityId = strRecordId;
-                objCntDocLink.ShareType = 'V';
-                lstCntDocLink.add(objCntDocLink);
-            }
-        }
-        return lstCntDocLink;
     }
     
     public class FileInfo {

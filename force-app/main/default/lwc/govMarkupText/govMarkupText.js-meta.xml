@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
     <isExposed>true</isExposed>
     <description>Display GDS compliant HTML text</description>
     <masterLabel>Gov UK Markup Text</masterLabel>
@@ -10,10 +10,7 @@
         <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen" configurationEditor="uxgovuk-gov-markup-text-editor">
-            <property name="markupText" type="String" label="HTML" description="The HTML to display"/>
-        </targetConfig>
-        <targetConfig targets="lightningCommunity__Default">
+        <targetConfig targets="lightning__FlowScreen,lightningCommunity__Default">
             <property name="markupText" type="String" label="HTML" description="The HTML to display"/>
         </targetConfig>
     </targetConfigs>
