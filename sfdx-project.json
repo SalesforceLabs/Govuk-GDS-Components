@@ -10,5 +10,8 @@
     ],
     "namespace": "uxgovuk",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "55.0"
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "Salesforce GOV.UK Frontend": "0Ho4L000000k9gXSAQ"
+    }
 }
