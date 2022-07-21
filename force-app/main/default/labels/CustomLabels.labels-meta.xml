@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Back_Label</fullName>
+        <categories>Forms</categories>
+        <language>cy</language>
+        <protected>false</protected>
+        <shortDescription>Back_Label</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>Email_Label</fullName>
+        <categories>Forms</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Label</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Forename_label</fullName>
+        <categories>Forms</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Forename Label</shortDescription>
+        <value>Forename</value>
+    </labels>
+    <labels>
+        <fullName>Next_Label</fullName>
+        <categories>Forms</categories>
+        <language>cy</language>
+        <protected>false</protected>
+        <shortDescription>Next_Label</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>Surname_Label</fullName>
+        <categories>Forms</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Surname Label</shortDescription>
+        <value>Surname</value>
+    </labels>
+</CustomLabels>

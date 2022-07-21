@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <description>A component that presents the user with radio button choices</description>
     <isExposed>true</isExposed>
     <masterLabel>Gov UK Radios</masterLabel>

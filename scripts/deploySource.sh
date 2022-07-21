@@ -1,2 +1,2 @@
 #!/bin/zsh
-sfdx force:source:push -f
+sfdx force:source:deploy -p "./force-app/main/default"

@@ -69,6 +69,7 @@ export default class GovFileUpload extends LightningElement {
                         Title: file.name,
                         VersionData: fileContents
                     });
+                    this.useApexToSaveFile = true;
                     if(this.recordId !== "" && this.useApexToSaveFile && (i+1) === files.length) {
                         this.handleSaveFiles();
                     } 

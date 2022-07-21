@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <description>This component renders all error messages.  Should be added to the top of a page.</description>
     <isExposed>true</isExposed>
     <masterLabel>Gov UK Error Messages</masterLabel>

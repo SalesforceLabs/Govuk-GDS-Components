@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>55.0</apiVersion>
     <isExposed>true</isExposed>
     <description>A back link that will navigate to the supplied page if no flow back action is possible.</description>
     <masterLabel>Gov UK Back Link</masterLabel>
