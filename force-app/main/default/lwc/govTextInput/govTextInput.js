@@ -13,6 +13,7 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 export default class GovTextInput extends LightningElement {
     
     @api fieldId = 'textField';
+    @api textFieldId = "input-text";
     @api label = '';
     @api labelFontSize = 'Medium';
     @api widthLengthWise = '20';
@@ -53,8 +54,15 @@ export default class GovTextInput extends LightningElement {
 
         // publish the registration message after 0.1 sec to give other components time to initialise
         setTimeout(() => {
-            publish(this.messageContext, REGISTER_MC, { componentId: this.fieldId });
+            publish(this.messageContext, REGISTER_MC, { componentId: this.textFieldId });
         }, 100);
+        
+        
+    }
+
+    renderedCallback() {
+        this.textFieldId = this.template.querySelector('input').getAttribute('id'); 
+        // TODO: How can we persist the element ID in DOM?? 
     }
 
     disconnectedCallback() {
@@ -172,7 +180,9 @@ export default class GovTextInput extends LightningElement {
             }
         }
         publish(this.messageContext, VALIDATION_STATE_MC, {
-            componentId: this.fieldId,
+            componentId: this.textFieldId,
+            componentType: 'UXGOVUK-GOV-TEXT-INPUT',
+            componentSelect: 'INPUT',
             isValid: !this.hasErrors,
             error: this.errorMessage
         });

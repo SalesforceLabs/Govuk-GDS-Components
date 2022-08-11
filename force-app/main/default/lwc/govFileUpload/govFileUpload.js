@@ -59,6 +59,11 @@ export default class GovFileUpload extends LightningElement {
                     let base64 = 'base64,';
                     let content = freader.result.indexOf(base64) + base64.length;
                     let fileContents = freader.result.substring(content);
+                    if (fileContents === ''  || fileContents === undefined) {
+                        this.hasErrors = true;
+                        this.errorMessage = `The selected file is empty`;
+                        return;
+                    }
                     if (i==0) {
                         this.filesUploaded = file.name;
                     } else {
@@ -91,6 +96,7 @@ export default class GovFileUpload extends LightningElement {
         .then(data => {
         })
         .catch(error => {
+            console.log(`Error during save Files` + error);
             this.hasErrors = true;
             this.errorMessage = error;
         }); 
@@ -152,6 +158,7 @@ export default class GovFileUpload extends LightningElement {
     @api 
     clearError() {
         this.hasErrors = false;
+        this.errorMessage = '';
     }
 
     dispatchUploadEvent() {

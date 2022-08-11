@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="uniqueFieldId" type="String" label="Unique Field Id" required="true" default="radioField" description="Field Id - must be unique to this process"/>
+            <property name="uniqueFieldId" type="String" label="Unique Field Id" required="true" default="radioField" description="You must copy the API Name into this field"/>
             <property name="questionLabel" type="String" label="Question Label" description="The label to display"/>
             <property name="questionFontSize" type="String" label="Question Label Font Size" description="Label Font Size - Small, Medium or Large"/>
             <property name="questionHint" type="String" label="Question Hint Text" description="The hint text to show below the label"/>

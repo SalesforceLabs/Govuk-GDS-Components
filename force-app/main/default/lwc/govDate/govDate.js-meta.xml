@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="fieldId" type="String" label="Field Id" required="true" default="dateField" description="The Field Id to display"/>
+            <property name="fieldId" type="String" label="Field Id" required="true" default="dateField" description="You must copy the API Name into this field"/>
             <property name="label" type="String" label="Label" description="The label text"/>
             <property name="fontSize" type="String" label="Label Font Size" description="The font size for the label (i.e. Small,Medium,Large"/>
             <property name="hintText" type="String" label="Hint" description="The hint text"/>

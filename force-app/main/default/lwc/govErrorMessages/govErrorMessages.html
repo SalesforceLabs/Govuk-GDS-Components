@@ -10,7 +10,7 @@
                     <ul class="govuk-list govuk-error-summary__list">
                         <template for:each={components} for:item="component">
                             <li key={component.id}>
-                                <a href="#passport-issued-error" if:false={component.isValid}>{component.error}</a>
+                                <a href="#" onclick={handleClick} data-target-id={component.id} if:false={component.isValid}>{component.error}</a>
                             </li>
                         </template>
                     </ul>

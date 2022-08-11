@@ -11,7 +11,7 @@
                 <div id="hint" class="govuk-hint" if:true={hintText}>
                     {hintText}
                 </div>
-                <template id="error" if:true={hasErrors}>
+                <template if:true={hasErrors}>
                     <template for:each={errorMessages} for:item="pageError">
                         <div key={pageError.key}>
                             <span class="govuk-error-message">
@@ -24,7 +24,7 @@
                     <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="date-input-day">
-                                Day
+                                {Day_label}
                             </label>
                             <input class={dayClass} id="date-input-day" name="date-input-day" type="text" value={dayValue} pattern="[0-9]*" autocomplete="bday-day" inputmode="numeric" onkeyup={handleDayChange}>
                         </div>
@@ -32,7 +32,7 @@
                     <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="date-input-month">
-                                Month
+                                {Month_label}
                             </label>
                             <input class={monthClass} id="date-input-month" name="date-input-month" type="text" value={monthValue} pattern="[0-9]*" autocomplete="bday-month" inputmode="numeric" onkeyup={handleMonthChange}>
                         </div>
@@ -40,7 +40,7 @@
                     <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="date-input-year">
-                                Year
+                                {Year}
                             </label>
                             <input class={yearClass} id="date-input-year" name="date-input-year" type="text" value={yearValue} pattern="[0-9]*" autocomplete="bday-year" inputmode="numeric" onkeyup={handleYearChange}>
                         </div>

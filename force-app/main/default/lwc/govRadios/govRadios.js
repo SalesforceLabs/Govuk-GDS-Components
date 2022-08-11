@@ -14,6 +14,7 @@ import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessa
 export default class GovRadios extends LightningElement {
 
     @api uniqueFieldId = "radioField";
+    @api radioFieldId = "picklist-value";
     @api questionLabel;
     @api questionFontSize;
     @api questionHint;
@@ -80,6 +81,9 @@ export default class GovRadios extends LightningElement {
                         radioOption.label = result[i];
                         radioOption.checked = (this.selectedValue === result[i]);
                         this.radioOptions.push(radioOption);
+                        if (i==0) {
+                            this.radioFieldId = radioOption.key;
+                        }
                     }
                     this.isInitialised = true;
                 })
@@ -98,6 +102,9 @@ export default class GovRadios extends LightningElement {
                 radioOption.value = radioValuesArray[i];
                 radioOption.checked = (this.selectedValue === radioValuesArray[i]);
                 this.radioOptions.push(radioOption);
+                if (i==0) {
+                    this.radioFieldId = radioOption.key;
+                }
             }
             this.isInitialised = true;
         }

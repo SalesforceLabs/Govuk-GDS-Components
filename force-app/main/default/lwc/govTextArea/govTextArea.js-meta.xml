@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="fieldId" type="String" label="Field Id" required="true" default="textAreaField" description="Field Id - must be unique to this process"/>
+            <property name="fieldId" type="String" label="Field Id" required="true" default="textAreaField" description="You must copy the API Name into this field"/>
             <property name="label" type="String" label="Label" description="The label to display"/>
             <property name="hint" type="String" label="Hint Text" description="The hint text to show below the label"/>
             <property name="value" type="String" label="Value" description="The Value"/>

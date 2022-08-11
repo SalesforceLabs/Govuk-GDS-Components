@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>uxgovuk__FileUploadController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>uxgovuk__GovComponentHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Permissions required for the Salesforce GOV.UK Frontend managed package.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>UXGOV</label>
+</PermissionSet>
