@@ -40,4 +40,100 @@
         <shortDescription>Surname Label</shortDescription>
         <value>Surname</value>
     </labels>
+    <labels>
+        <fullName>uxg_Blank_date_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Blank date error</shortDescription>
+        <value>Enter a date</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Day_label</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Day_label</shortDescription>
+        <value>Day</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Error_summary_title</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Error summary title</shortDescription>
+        <value>There is a problem</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Invalid_date_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Invalid date error</shortDescription>
+        <value>Enter a valid date</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Invalid_day_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Invalid day error</shortDescription>
+        <value>Enter a valid day</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Invalid_month_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Invalid month error</shortDescription>
+        <value>Enter a valid month</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Invalid_year_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Invalid year error</shortDescription>
+        <value>Enter a valid year</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Month_label</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Month label</shortDescription>
+        <value>Month</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Non_numeric_day_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Non numeric day error</shortDescription>
+        <value>Enter a day using numbers only</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Non_numeric_month_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Non numeric month error</shortDescription>
+        <value>Enter a month using numbers only</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Non_numeric_year_error</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Non numeric year error</shortDescription>
+        <value>Enter a year using numbers only</value>
+    </labels>
+    <labels>
+        <fullName>uxg_Year_label</fullName>
+        <categories>UXGOV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>uxg Year label</shortDescription>
+        <value>Year</value>
+    </labels>
 </CustomLabels>
