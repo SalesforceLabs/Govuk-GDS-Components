@@ -110,7 +110,7 @@ export default class GovNavigationButtons extends LightningElement {
             this.components.forEach(component => {
                 component.isValid = false;
             })
-            console.log('NAVIGATION_BUTTONS: Sending validation message ' + this.fieldId );
+            //console.log('NAVIGATION_BUTTONS: Sending validation message ' + this.fieldId );
             publish(this.messageContext, VALIDATE_MC, { componentId: this.fieldId });
         } else if(this.action === 'NEXT' && this.availableActions.find(action => action === 'NEXT')) {
             const event = new FlowNavigationNextEvent();

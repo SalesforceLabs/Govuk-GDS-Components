@@ -96,7 +96,7 @@ export default class GovFileUpload extends LightningElement {
         .then(data => {
         })
         .catch(error => {
-            console.log(`Error during save Files` + error);
+            console.log(`Error while attempting to save file: ` + error);
             this.hasErrors = true;
             this.errorMessage = error;
         }); 
