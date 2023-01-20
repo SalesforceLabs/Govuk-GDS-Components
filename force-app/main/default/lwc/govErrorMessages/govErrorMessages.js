@@ -55,6 +55,11 @@ export default class ErrorMessages extends LightningElement {
         this.errorSubscription = null;
     }
 
+    putFocusOnError(){
+        let myLink = this.template.querySelector('a[name="errorSummaryTitle"]');
+        myLink.focus();
+    }
+
     // called during validation to update error states and messages
     handleValidationStateMessage(message) {
         const component = this.components.find(component => component.id === message.componentId);
@@ -81,6 +86,7 @@ export default class ErrorMessages extends LightningElement {
 
     // called at the start of validation to remove existing errors
     handleValidateMessage(message) {
+        this.putFocusOnError();
         this.components = [];
     }
 
