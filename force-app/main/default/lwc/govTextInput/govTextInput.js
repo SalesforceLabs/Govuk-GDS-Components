@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Text Input
  * Derived_From_Frontend_Version:v3.13.1
- * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell, Jakub Szelagowski
  **/
 import { LightningElement, api, track, wire } from 'lwc';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
@@ -64,13 +64,15 @@ export default class GovTextInput extends LightningElement {
         if(this.initialised) {
             return;
         }
-        this.textFieldId = this.template.querySelector('input').getAttribute('id'); 
+
         const htmlElement = this.template.querySelector(".html-element");
         // TODO: How can we persist the element ID in DOM?? 
         if(htmlElement) {
             htmlElement.innerHTML = this.hintText;
             this.initialised = true;
         }
+
+        this.textFieldId = this.template.querySelector('input').getAttribute('id'); 
     }
 
     disconnectedCallback() {

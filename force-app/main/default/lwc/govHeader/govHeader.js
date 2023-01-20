@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Header
  * Derived_From_Frontend_Version:v3.13.1
- * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell, Jakub Szelagowski
  **/
 import {LightningElement, api, track} from 'lwc';
 import {NavigationMixin} from "lightning/navigation";

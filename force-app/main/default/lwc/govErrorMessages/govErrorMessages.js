@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Error Messages
  * Derived_From_Frontend_Version:v3.13.1
- * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell, Jakub Szelagowski
  **/
 import { LightningElement, api, track, wire } from 'lwc';
 import { MessageContext, subscribe, unsubscribe } from 'lightning/messageService';
