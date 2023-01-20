@@ -19,6 +19,7 @@ export default class GovHeader extends LightningElement(NavigationMixin) {
     @api serviceURL = "#";
     @api menuLabel = "Menu";
     @api navigationMenuDevName = "Default_Navigation";
+    @api displayMenu=false;
     
     @track menuItems = [];
     @track showMenuInMobile = false;
@@ -29,6 +30,10 @@ export default class GovHeader extends LightningElement(NavigationMixin) {
         })
             .then(menuItems => {
                 try {
+                    if(menuItems && menuItems.length>0){
+                        this.displayMenu=true;
+                        this.showMenuInMobile = true;
+                    }
                     // get the page title
                     let urlParts = window.location.href.split("/");
                     let pageTarget = `/${urlParts.pop()}`;
