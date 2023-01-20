@@ -8,7 +8,7 @@
                 </label>
             </div>
             <div id="hint-text" class="govuk-hint slds-hyphenate" if:true={hintText}>
-                {hintText}
+                <div class="html-element" lwc:dom="manual"></div>
             </div>
             <span id="error-text" class="govuk-error-message slds-hyphenate" if:true={hasErrors}>
                 <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}

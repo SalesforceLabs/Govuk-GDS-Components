@@ -61,8 +61,16 @@ export default class GovTextInput extends LightningElement {
     }
 
     renderedCallback() {
+        if(this.initialised) {
+            return;
+        }
         this.textFieldId = this.template.querySelector('input').getAttribute('id'); 
+        const htmlElement = this.template.querySelector(".html-element");
         // TODO: How can we persist the element ID in DOM?? 
+        if(htmlElement) {
+            htmlElement.innerHTML = this.hintText;
+            this.initialised = true;
+        }
     }
 
     disconnectedCallback() {
