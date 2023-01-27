@@ -2,6 +2,7 @@
  * Component Name: Gov UK Text Input
  * Derived_From_Frontend_Version:v3.13.1
  * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell, Jakub Szelagowski
+  * 
  **/
 import { LightningElement, api, track, wire } from 'lwc';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
@@ -34,6 +35,10 @@ export default class GovTextInput extends LightningElement {
     @track hasErrors = false;
     @track regularExpression;
     
+    @api h1Size = false;
+    @api h2Size = false;
+    @api h3Size = false;
+
     initialised = false;
 
     // LMS attributes
@@ -41,7 +46,10 @@ export default class GovTextInput extends LightningElement {
     validateSubscription;
 
     // Lifecycle functions
-    connectedCallback() { 
+    connectedCallback() {
+        // sets the H value for template based on labele font size  
+        this.getHSize(); 
+        
         // subscribe to validation messages
         this.subscribeMCs();
 
@@ -61,18 +69,8 @@ export default class GovTextInput extends LightningElement {
     }
 
     renderedCallback() {
-        if(this.initialised) {
-            return;
-        }
-
-        const htmlElement = this.template.querySelector(".html-element");
-        // TODO: How can we persist the element ID in DOM?? 
-        if(htmlElement) {
-            htmlElement.innerHTML = this.hintText;
-            this.initialised = true;
-        }
-
         this.textFieldId = this.template.querySelector('input').getAttribute('id'); 
+        // TODO: How can we persist the element ID in DOM?? 
     }
 
     disconnectedCallback() {
@@ -84,6 +82,8 @@ export default class GovTextInput extends LightningElement {
         groupClass = (this.hasErrors) ? groupClass + " govuk-form-group--error" : groupClass;
         return groupClass;
     }
+    
+    
 
     get labelClass() {
         let labelClass;
@@ -117,6 +117,33 @@ export default class GovTextInput extends LightningElement {
             inputClass =  this.hasErrors ? `govuk-input govuk-input--width-${this.widthQuarterWise} govuk-input--error` : `govuk-input govuk-input--width-${this.widthQuarterWise}`;
         }
         return inputClass;
+    }
+
+    
+    getHSize(){
+        if(this.labelFontSize) {
+            switch(this.labelFontSize.toLowerCase()) {
+                case "small":
+                    this.h3Size = true;
+                    // labelClass = "govuk-label govuk-label--s";
+                    break;
+                case "medium":
+                    this.h2Size = true;
+                    // labelClass = "govuk-label govuk-label--m";
+                    break;
+                case "large":
+                    this.h1Size = true;
+                    // labelClass = "govuk-label govuk-label--l";
+                    break;
+                default:
+                    this.h3Size = true;
+                    // labelClass = "govuk-label govuk-label--s";
+            }
+        } else {
+            this.h3Size = true;
+            // labelClass = "govuk-label govuk-label--s";
+        }
+        //return labelClass;
     }
 
     get characterCountText() {
@@ -191,7 +218,7 @@ export default class GovTextInput extends LightningElement {
         }
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.textFieldId,
-            componentType: 'UXGOVUK-GOV-TEXT-INPUT',
+            componentType: 'C-GOV-TEXT-INPUT',
             componentSelect: 'INPUT',
             isValid: !this.hasErrors,
             error: this.errorMessage
