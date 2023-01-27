@@ -38,7 +38,7 @@ lightning-input.slds-form-element {
     padding: var(--lwc-spacingXxxSmall,0.125rem);
     border: var(--lwc-borderWidthThin,1px) dashed var(--lwc-colorBorder,#D4D4D4);
     border-radius: var(--lwc-borderRadiusMedium,0.25rem);
-    width: 620px;
+    width: auto;
     /* background-color: blueviolet; */
     box-sizing: border-box;
 }
