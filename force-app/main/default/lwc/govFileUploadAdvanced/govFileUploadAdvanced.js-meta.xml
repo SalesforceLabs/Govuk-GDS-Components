@@ -8,7 +8,7 @@
         <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen" configurationEditor="uxgovuk-gov-file-upload-advanced-c-p-e">
+        <targetConfig targets="lightning__FlowScreen">
             <property
                 name="label"
                 type="String"
@@ -127,14 +127,6 @@
                 role="inputOnly"
             />
             <property name="cb_visibleToAllUsers" type="String" role="inputOnly" />
-            <!-- <property
-                name="embedExternally"
-                type="Boolean"
-                label="Embed on External Website"
-                description="If this flow is being embedded on an external website (like Wordpress, for example), set this to TRUE. Otherwise, this should almost always be either empty or FALSE."
-                role="inputOnly"
-            /> -->
-            <!-- <property name="cb_embedExternally" type="String" role="inputOnly" /> -->
             <property
                 name="disableDelete"
                 type="Boolean"
