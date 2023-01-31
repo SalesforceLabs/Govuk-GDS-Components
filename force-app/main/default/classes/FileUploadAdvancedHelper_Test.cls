@@ -22,7 +22,7 @@ public class FileUploadAdvancedHelper_Test {
 
         Contact con = getCon();
         ContentVersion cv = getCV();
-        cv.Guest_Record_fileupload__c = FileUploadAdvancedHelper.encrypt(con.Id,key);
+        cv.uxgovuk__Guest_Record_fileupload__c = FileUploadAdvancedHelper.encrypt(con.Id,key);
         update cv;
         
         system.test.startTest();
@@ -40,7 +40,7 @@ public class FileUploadAdvancedHelper_Test {
 
         Contact con = getCon();
         ContentVersion cv = getCV();
-        cv.Guest_Record_fileupload__c = FileUploadAdvancedHelper.encrypt(con.Id,key);
+        cv.uxgovuk__Guest_Record_fileupload__c = FileUploadAdvancedHelper.encrypt(con.Id,key);
         update cv;
         
         system.test.startTest();
@@ -151,8 +151,8 @@ public class FileUploadAdvancedHelper_Test {
             }
         system.test.stopTest();
 
-        for(ContentVersion vers : [SELECT VersionData, Guest_Record_fileupload__c FROM ContentVersion WHERE Id IN :versIds]){
-            system.assertEquals(encodedRecordId, vers.Guest_Record_fileupload__c);
+        for(ContentVersion vers : [SELECT VersionData, uxgovuk__Guest_Record_fileupload__c FROM ContentVersion WHERE Id IN :versIds]){
+            system.assertEquals(encodedRecordId, vers.uxgovuk__Guest_Record_fileupload__c);
 
             // I'm stumped on this one, I'd expect this to return this way, but it doesn't.
             // Perhaps there's a bug in Salesforce tests that make it so you can't update ContentVersions?
@@ -179,7 +179,7 @@ public class FileUploadAdvancedHelper_Test {
     }
 
     private static ContentVersion getCV(){
-        return [SELECT Id, Guest_Record_fileupload__c, ContentDocument.Title, ContentDocumentId, VersionData FROM ContentVersion LIMIT 1];
+        return [SELECT Id, uxgovuk__Guest_Record_fileupload__c, ContentDocument.Title, ContentDocumentId, VersionData FROM ContentVersion LIMIT 1];
     }
 
     private static Contact getCon(){
