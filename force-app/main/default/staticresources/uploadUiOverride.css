@@ -1,17 +1,19 @@
-/* .slds-file-selector_files .slds-file-selector__body, .slds-file-selector--files .slds-file-selector__body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-} */
-
 span.slds-file-selector__button, span.slds-button span.slds-button_neutral{
     /* background-color: aqua; */
     width: 200px;
 }
 
-lightning-primitive-icon{
+
+/* END hiding slds icons except X */
+svg[data-key="upload"]{
     display: none;
 }
+
+.slds-media__figure{
+display: none;
+}
+/* END hiding slds icons except X */
+
 
 label.slds-file-selector__body {
     width: auto;
@@ -20,19 +22,15 @@ label.slds-file-selector__body {
 
 lightning-file-upload.govuk-file-upload {
     display: inline; 
-    /* width: 600px; */
     /* background-color: red; */
 }
 
 lightning-input.slds-form-element {
     display: inline-block;
     width: auto;
-    /* max-width: 100%; */
     /* background-color: yellow; */
     height: 0px;
 }
-
-/* lightning-primitive-file-droppable-zone */
 
 .slds-file-selector__dropzone {
     padding: var(--lwc-spacingXxxSmall,0.125rem);
@@ -43,53 +41,7 @@ lightning-input.slds-form-element {
     box-sizing: border-box;
 }
 
-span.slds-file-selector__text, span.slds-medium-show{
-
-}
-
-
-
-/* .slds-file-selector__input {
-    width: 500px;
-    display: block;
-    border: 1px solid yellow;
-}
-.slds-assistive-text {
-    width: 800px;
-    display: block;
-    border: 1px solid red;
-}
-
-
-.customInput, .slds-input{
-    border-color: red;
-} */
-
-
-/* .lightning-primitive-icon, .lightning-input_input {
-    display: none;
-    background-color: blue;
-}
-
-input.lightning-input_input {
-    background-color: red;
-}
-*/
-/* .slds-assistive-text {
-    background-color: yellow;
-    position: relative!important;
-} 
-
-.slds-file-selector__dropzone {
-    width:700px;
-} */
-
 .slds-button_neutral, .slds-button--neutral{
-/* slds-file-selector__button slds-button slds-button_neutral { */
-
-    
-
-
     font-family: "GDS Transport",Arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -124,17 +76,34 @@ lightning-layout.slds-grid {
 
 }
 
-.slds-wrap{
-/* background-color: aquamarine; */
-} 
+.forceContentPanelFooter.uiButton--brand {
+    padding-left: var(--lwc-spacingMedium, 1rem);
+    padding-right: var(--lwc-spacingMedium, 1rem);
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F3F2F1; 
+    /* var(--lwc-brandAccessible, #F3F2F1); */
+    border-color: #0B0C0C;
+    /* var(--lwc-brandAccessible, #0B0C0C); */
+    color: #0B0C0C;
+    /* var(--lwc-colorTextButtonBrand, #0B0C0C); */
+}
 
-/* slds-grid slds-wrap.slds-wrap{
+button.slds-button.slds-button--neutral.ok.uiButton--default.uiButton--brand.uiButton {
+    background-color: #00703c; /*#F3F2F1*/
+    border-color: #0B0C0C;
+    color: #F3F2F1;
+}
 
-} */
 
-/* span.lightning-input_input  */
+span.slds-text-body--small {
+    font-size: 1rem;
+}
 
-/* 
+.slds-progress-bar__value {
+    display: block;
+    background-color: #00703c;
+    height: 100%;
+    /* var(--lwc-progressBarColorBackgroundFill,#00703c); */
+}
 
-govuk-button govuk-button--secondary 
-*/

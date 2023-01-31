@@ -335,16 +335,16 @@ this.displayExistingFiles();
     }
     
     handleUploadFinished(files) {
-        // console.log('Inside handleUploadFinished');
+        console.log('Inside handleUploadFinished');
         let objFiles = [];
         let versIds = [];
 
 
         files.forEach(file => {
             if(file.contentVersionId){
-                // console.log('file.contentVersionId:' + file.contentVersionId);
+                 console.log('file.contentVersionId:' + file.contentVersionId);
             } else {
-                // console.log('NOT AVAILABLE file.contentVersionId:');   
+                 console.log('NOT AVAILABLE file.contentVersionId:');   
             }
 
             // console.log('file.documentId:' + file.documentId);
@@ -375,8 +375,13 @@ this.displayExistingFiles();
                     this.showErrors(this.reduceErrors(error).toString());
                 });
         }
-
+        console.log('this.recordId:'+this.recordId);
         if(this.recordId){
+            console.log('============================');
+            console.log('versIds:'+versIds);
+            console.log('this.key:'+this.key);
+            console.log('this.visibleToAllUsers:'+this.visibleToAllUsers);
+            console.log('============================');
             createContentDocLink({versIds: versIds, encodedKey: this.key, visibleToAllUsers: this.visibleToAllUsers})
                 .catch(error => {
                     this.showErrors(this.reduceErrors(error).toString());
