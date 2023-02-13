@@ -4,12 +4,11 @@
  * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell, Jakub Szelagowski
  **/
 import {LightningElement, api, track} from 'lwc';
-import {NavigationMixin} from "lightning/navigation";
 import communityBasePath from '@salesforce/community/basePath';
 import CROWN_LOGO from '@salesforce/resourceUrl/govuklogotypecrown';
 import getDefaultMenuItems from '@salesforce/apex/GovComponentHelper.getDefaultMenuItems';
 
-export default class GovHeader extends LightningElement(NavigationMixin) {
+export default class GovHeader extends LightningElement() {
     
     crownLogo = CROWN_LOGO;
 
