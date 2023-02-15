@@ -23,9 +23,9 @@
                 <a href={serviceURL} class="govuk-header__link govuk-header__link--service-name">
                     {serviceName}
                 </a>
-                <button if:true={displayMenu} type="button" class="govuk-header__menu-button govuk-js-header-toggle"
+                <button type="button" class="govuk-header__menu-button govuk-js-header-toggle"
                     aria-controls="navigation" aria-label="Show or hide navigation menu" onclick={toggleButton}>{menuLabel}</button>
-                <nav if:true={displayMenu}>
+                <nav>
                     <ul id="navigation" class="govuk-header__navigation" aria-label="Navigation menu">
                         <template for:each={menuItems} for:item="menuItem">
                             <li key={menuItem.Id} class={menuItem.class}>
