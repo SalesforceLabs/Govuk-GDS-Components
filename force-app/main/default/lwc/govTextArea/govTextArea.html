@@ -2,11 +2,18 @@
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container">
         <div class={groupClass}>
-            <h1 class="govuk-label-wrapper" if:true={label}>
-                <label class={labelClass} for="text-area">
-                    {label}
-                </label>
-            </h1>
+            <!-- 1 -->
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper" if:true={h1Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h1>
+                <h2 class="govuk-label-wrapper" if:true={h2Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h2>
+                <h3 class="govuk-label-wrapper" if:true={h3Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h3>
+            </div>
             <div id="more-detail-hint" class="govuk-hint" if:true={hint}>
                 {hint}
             </div>
