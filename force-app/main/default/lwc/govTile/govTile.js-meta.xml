@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>A GDS Tile that appears on the Homepage</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov Tile</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__AppPage,lightning__HomePage,lightning__FlowScreen">
+            <property name="label" type="String" label="Label" description="The HTML to display"/>
+            <property name="link" type="String" label="Destination API Name" description="The API name of the page to forward to"/>
+            <property name="tileTextColour" type="String" label="Tile Colour" description="Colour of the tile : Provide value from these options only : Default,Grey,Green,Turquoise,Blue, Light Blue,Purple Light Purple,Pink,Light Pink,Dark Pink,Red,Orange,Yellow"/>
+            <property name="tileType" type="String" label="Tile Type" description="Tile type: Title or Content"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

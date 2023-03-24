@@ -1,0 +1,17 @@
+<template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class={tileClass} data-module="govuk-tile" >
+                    <a class="tile-link" href="#" role="button" draggable="false" onclick={handleClick}>
+                        {label}
+                    </a>
+                    <!-- <svg class="tile-content-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.625 17.75L17.75 9L9.625 0.25L7.75 2.125L13 7.75H0.25V10.25H13L7.75 15.875L9.625 17.75Z" fill="#212B32"/>
+                    </svg>                 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

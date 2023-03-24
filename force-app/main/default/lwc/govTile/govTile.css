@@ -1,0 +1,90 @@
+.govuk-tile {
+    padding: 12px;
+    font-family: Frutiger W01,arial,sans-serif;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+    background: #7C2855;
+    display: block;
+}
+
+.govuk-tile--grey {
+    background: #768692;
+}
+
+.govuk-tile--green {
+    background: #006747;
+}
+
+.govuk-tile--turquoise {
+    background: #41B6E6;
+}
+
+.govuk-tile--blue {
+    background: #005EB8;
+}
+
+.govuk-tile--light-blue {
+    background: #CCDFF1;
+}
+
+.govuk-tile--purple {
+   background: #330072;
+}
+
+.govuk-tile--light-purple{
+    background: #d6cce3;
+ }
+
+.govuk-tile--pink {
+    background: #AE2573;
+}
+
+.govuk-tile--light-pink {
+    background: #e5d4dd;
+}
+
+.govuk-tile--dark-pink {
+    background: #7C2855
+}
+
+.govuk-tile--red {
+    background: #DA291C;
+}
+
+.govuk-tile--orange {
+    background: #ED8B00;
+}
+
+.govuk-tile--yellow {
+    background: #FAE100;
+}
+
+.govuk-tile_type--title {
+    font-size: 32px;
+}
+
+.govuk-tile_type--content {
+    font-size: 24px;
+    padding: 24px;
+    color: #212B32;
+    border-radius: 6px;
+}
+
+.govuk-tile_type--content:hover{
+    box-shadow: 0 0 0 4px #ffeb3b;
+}
+
+.tile-content-arrow:hover {
+    background: #ffeb3b;
+    transform: translateX(4px);
+}
+
+.tile-content-arrow:visited {
+    fill: #fff;
+}
+
+.tile-link { 
+    text-decoration: none;
+    color: unset
+}
