@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>CookiesAccept</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Message Channel to pass recommended Cookies preference (i.e. accept or reject)</description>
+     <lightningMessageFields>
+        <fieldName>acceptRecommended</fieldName>
+        <description>Whether or not the user has accepted the recommended Cookies</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

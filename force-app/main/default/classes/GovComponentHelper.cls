@@ -20,6 +20,27 @@ public with sharing class GovComponentHelper {
     }
 
     @AuraEnabled
+    public static Map<String, String> getPicklistValuesMapByObjectField(String strSObjectFieldName){
+        Map<String, String> mapPicklistValues = new Map<String, String>();
+        if(String.isNotBlank(strSObjectFieldName)) { 
+            List<String> lstSplitStrings = strSObjectFieldName.split('\\.');
+            if(!lstSplitStrings.isEmpty()) {
+                Schema.SobjectField theField = Schema.getGlobalDescribe().get(lstSplitStrings[0]).getDescribe().fields.getMap().get(lstSplitStrings[1]);
+                Schema.DescribeFieldResult theFieldDescription = theField.getDescribe();
+
+                 List<Schema.PicklistEntry> ple = theFieldDescription.getPicklistValues();
+                 for( Schema.PicklistEntry pickListVal : ple) {
+                    mapPicklistValues.put(pickListVal.getLabel(), pickListVal.getValue());
+                }
+            }  
+        }
+
+        System.debug(mapPicklistValues);
+
+        return mapPicklistValues;
+    }
+
+    @AuraEnabled
     public static List<String> getPicklistValuesByObjectField(String strSObjectFieldName){
         List<String> lstPicklistValues = new List<String>();
         if(String.isNotBlank(strSObjectFieldName)) { 

@@ -2,13 +2,21 @@
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container ">
         <div class={groupClass} aria-describedby="hint-text error-text character-count-text">
-            <div class="govuk-label-wrapper">
-                <label class={labelClass} for="input-text">
-                    {label} <span class="govuk-visually-hidden">{label}</span>
-                </label>
+            
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper" if:true={h1Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h1>
+                <h2 class="govuk-label-wrapper" if:true={h2Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h2>
+                <h3 class="govuk-label-wrapper" if:true={h3Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h3>
             </div>
+            
             <div id="hint-text" class="govuk-hint slds-hyphenate" if:true={hintText}>
-                {hintText}
+                <div class="html-element" lwc:dom="manual"></div>
             </div>
             <span id="error-text" class="govuk-error-message slds-hyphenate" if:true={hasErrors}>
                 <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}

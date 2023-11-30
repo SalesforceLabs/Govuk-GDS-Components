@@ -1,8 +1,10 @@
 <template>
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container ">
+        <a href="#" id="errorSummaryTitle" name="errorSummaryTitle"></a>
         <template if:true={hasErrors}>
-            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <div class="govuk-error-summary error-summary" aria-labelledby="error-summary-title" 
+            role="alert" tabindex="0" data-module="govuk-error-summary">
                 <h2 class="govuk-error-summary__title" id="error-summary-title">
                     {errorPrefix}
                 </h2>
@@ -10,7 +12,7 @@
                     <ul class="govuk-list govuk-error-summary__list">
                         <template for:each={components} for:item="component">
                             <li key={component.id}>
-                                <a href="#passport-issued-error" if:false={component.isValid}>{component.error}</a>
+                                <a href="#" onclick={handleClick} onfocus={handleLinkFocus} onblur={handleLinkBlur} class={highlightedLinkClass} data-target-id={component.focusId} if:false={component.isValid}>{component.error}</a>
                             </li>
                         </template>
                     </ul>

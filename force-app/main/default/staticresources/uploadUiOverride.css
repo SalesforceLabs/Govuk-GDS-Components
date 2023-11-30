@@ -1,0 +1,109 @@
+span.slds-file-selector__button, span.slds-button span.slds-button_neutral{
+    /* background-color: aqua; */
+    width: 200px;
+}
+
+
+/* END hiding slds icons except X */
+svg[data-key="upload"]{
+    display: none;
+}
+
+.slds-media__figure{
+display: none;
+}
+/* END hiding slds icons except X */
+
+
+label.slds-file-selector__body {
+    width: auto;
+    /* background-color: pink; */
+}
+
+lightning-file-upload.govuk-file-upload {
+    display: inline; 
+    /* background-color: red; */
+}
+
+lightning-input.slds-form-element {
+    display: inline-block;
+    width: auto;
+    /* background-color: yellow; */
+    height: 0px;
+}
+
+.slds-file-selector__dropzone {
+    padding: var(--lwc-spacingXxxSmall,0.125rem);
+    border: var(--lwc-borderWidthThin,1px) dashed var(--lwc-colorBorder,#D4D4D4);
+    border-radius: var(--lwc-borderRadiusMedium,0.25rem);
+    width: auto;
+    /* background-color: blueviolet; */
+    box-sizing: border-box;
+}
+
+.slds-button_neutral, .slds-button--neutral{
+    font-family: "GDS Transport",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    /* font-size: 1rem; */
+    font-size: 0.98rem;
+    line-height: 1.1875!important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    /* width: 100%; */
+    margin-top: 0;
+    /* margin-bottom: 22px; */
+    /* padding: 8px 10px 7px; */
+    padding: 2px 0px 0px 0px;
+    border: 2px solid transparent;
+    border-radius: 0;
+    color:  #0B0C0C; /* #fff; */
+    background-color: #F3F2F1;  /*  #00703c; */
+    border: 1px solid #0B0C0C;
+    /* -webkit-box-shadow: 0 2px 0 #002d18; */
+    /* box-shadow: 0 2px 0 #002d18; */
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+lightning-layout.slds-grid {
+
+}
+
+.forceContentPanelFooter.uiButton--brand {
+    padding-left: var(--lwc-spacingMedium, 1rem);
+    padding-right: var(--lwc-spacingMedium, 1rem);
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F3F2F1; 
+    /* var(--lwc-brandAccessible, #F3F2F1); */
+    border-color: #0B0C0C;
+    /* var(--lwc-brandAccessible, #0B0C0C); */
+    color: #0B0C0C;
+    /* var(--lwc-colorTextButtonBrand, #0B0C0C); */
+}
+
+button.slds-button.slds-button--neutral.ok.uiButton--default.uiButton--brand.uiButton {
+    background-color: #00703c; /*#F3F2F1*/
+    border-color: #0B0C0C;
+    color: #F3F2F1;
+}
+
+
+span.slds-text-body--small {
+    font-size: 1rem;
+}
+
+.slds-progress-bar__value {
+    display: block;
+    background-color: #00703c;
+    height: 100%;
+    /* var(--lwc-progressBarColorBackgroundFill,#00703c); */
+}
+

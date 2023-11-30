@@ -6,10 +6,11 @@
     <masterLabel>Gov UK Radios</masterLabel>
     <targets>
         <target>lightning__FlowScreen</target>
+        <target>lightning__AppPage</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen">
-            <property name="uniqueFieldId" type="String" label="Unique Field Id" required="true" default="radioField" description="Field Id - must be unique to this process"/>
+        <targetConfig targets="lightning__FlowScreen, lightning__AppPage">
+            <property name="uniqueFieldId" type="String" label="Unique Field Id" required="true" default="radioField" description="You must copy the API Name into this field"/>
             <property name="questionLabel" type="String" label="Question Label" description="The label to display"/>
             <property name="questionFontSize" type="String" label="Question Label Font Size" description="Label Font Size - Small, Medium or Large"/>
             <property name="questionHint" type="String" label="Question Hint Text" description="The hint text to show below the label"/>
@@ -19,7 +20,8 @@
             <property name="radioPicklistField" type="String" label="Radio Picklist Field"  description="The API name of a picklist to get the labels and values from in the form of SObjectName.FieldName. If standard objects have been renamed, you must use the original API name, for example, if Account has been renamed as Organisation, use Account.Name."/>
             <property name="radioLabels" type="String" label="Radio Labels" description="A comma separated list of labels for the radios. Not required if using Radio Picklist Field."/>
             <property name="radioValues" type="String" label="Radio Values" description="A comma separated list of values for the radios. Not required if using Radio Picklist Field."/>
-            <property name="selectedValue" type="String" label="Selected Value" description="Input: The default value to display, Output: The value selected"/>
+            <property name="selectedValue" type="String" label="Selected Value (Label)" description="Input: The default value (label) to display, Output: The value (label) selected" />
+            <property name="selectedValueAPIName" type="String" label="Selected Value (API Name)" description="Input: The default value (API Name) to display, Output: The value (API Name) selected"/>
             <property name="errorMessage" type="String" label="Error Message" description="Error Message"/>
         </targetConfig>
     </targetConfigs>

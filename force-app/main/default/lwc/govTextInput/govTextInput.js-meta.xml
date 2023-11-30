@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="fieldId" type="String" label="Field Id" required="true" default="textField" description="Field Id - must be unique to this process"/>
+            <property name="fieldId" type="String" label="Field Id" required="true" default="textField" description="You must copy the API Name into this field"/>
             <property name="label" type="String" label="Label" description="The label to display"/>
             <property name="labelFontSize" type="String" label="Label Font Size" default="Medium" description="Label Font Size - Small, Medium or Large"/>
             <property name="widthLengthWise" type="String" label="Fixed Width Display Length (Known case)" default="20" description="The length of the text field based on character count - 2, 3, 4, 5, 10 or 20"/>

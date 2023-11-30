@@ -9,13 +9,14 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="fieldId" type="String" label="Field Id" required="true" default="dateField" description="The Field Id to display"/>
+            <property name="fieldId" type="String" label="Field Id" required="true" default="dateField" description="You must copy the API Name into this field"/>
             <property name="label" type="String" label="Label" description="The label text"/>
             <property name="fontSize" type="String" label="Label Font Size" description="The font size for the label (i.e. Small,Medium,Large"/>
             <property name="hintText" type="String" label="Hint" description="The hint text"/>
             <property name="required" type="Boolean" label="Required?" description="This holds true if date field is required"/>
             <property name="value" type="String" label="Default Date (dd/mm/yyyy)" description="The default date as a string (dd/mm/yyyy), Can be used as output as well."/>
             <property name="formattedDate" type="String" label="Output Date (yyyy-mm-dd)" description="The output date as a string (yyyy-mm-dd)"/>
+            <property name="salesforceDate" type="Date" label="Salesforce Date" description="The output date in Salesforce date format"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

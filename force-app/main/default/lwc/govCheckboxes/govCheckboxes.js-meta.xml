@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="fieldId" type="String" label="Field Id" required="true" default="checkboxField" description="Field Id - must be unique to this process"/>
+            <property name="fieldId" type="String" label="Field Id" required="true" default="checkboxField" description="You must copy the API Name into this field"/>
             <property name="headinglabel" type="String" label="Heading Label" description="Please provide heading label to be shown above all checkboxes"/>
             <property name="headinghint" type="String" label="Heading Hint" description="Please provide heading hint to be shown above all checkboxes"/>
             <property name="headingFontSize" type="String" label="Heading Label Font Size" description="Heading Label Font Size - Small, Medium or Large"/>

@@ -11,6 +11,7 @@
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen,lightning__AppPage">
             <property name="pageName" type="String" label="Page Name" description="The text to display as the page name and on the end of the URL for this flow page" required="true"></property>
+            <property name="pageTitle" type="String" label="Page Title" description="Descriptive Title" required="false"></property>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

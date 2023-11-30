@@ -4,9 +4,15 @@
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <label class={headingLabelClass}>
-                  {headinglabel}
-                </label>
+                <h1 class="govuk-label-wrapper" if:true={h1Size}>
+                    <label class={headingLabelClass} for="input-text">{headinglabel}</label>
+                </h1>
+                <h2 class="govuk-label-wrapper" if:true={h2Size}>
+                    <label class={headingLabelClass} for="input-text">{headinglabel}</label>
+                </h2>
+                <h3 class="govuk-label-wrapper" if:true={h3Size}>
+                    <label class={headingLabelClass} for="input-text">{headinglabel}</label>
+                </h3>
               </legend>
             <div id="waste-hint" class="govuk-hint">
                 {headinghint}
@@ -22,11 +28,12 @@
                         <input class="govuk-checkboxes__input" 
                             data-id={opt.checkboxLabel} 
                             name={opt.checkboxLabel} 
+                            value={opt.checkboxLabel} 
                             type="checkbox" 
                             checked={opt.checkboxValue} 
                             onclick={handleClick}>
                         <label class="govuk-label govuk-checkboxes__label" 
-                                for=opt.checkboxLabel}>
+                                for={opt.checkboxLabel}>
                             {opt.checkboxLabel}
                         </label>
                     </div>

@@ -10,10 +10,12 @@ import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messa
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
+import SET_FOCUS_MC from '@salesforce/messageChannel/setFocusMessage__c';
 
 export default class GovFileUpload extends LightningElement {
     
     @api fieldId = "uploadField";
+    @api inputFieldId = "file-upload"
     @api fileUploadLabel = "Upload a file";
     @api acceptedFormats = "image/png, image/jpg, .pdf, .doc, .docx, .zip";
     @api maxFileSizeInMB = 2;
@@ -59,6 +61,11 @@ export default class GovFileUpload extends LightningElement {
                     let base64 = 'base64,';
                     let content = freader.result.indexOf(base64) + base64.length;
                     let fileContents = freader.result.substring(content);
+                    if (fileContents === ''  || fileContents === undefined) {
+                        this.hasErrors = true;
+                        this.errorMessage = `The selected file is empty`;
+                        return;
+                    }
                     if (i==0) {
                         this.filesUploaded = file.name;
                     } else {
@@ -91,6 +98,7 @@ export default class GovFileUpload extends LightningElement {
         .then(data => {
         })
         .catch(error => {
+            console.log(`Error while attempting to save file: ` + error);
             this.hasErrors = true;
             this.errorMessage = error;
         }); 
@@ -99,6 +107,7 @@ export default class GovFileUpload extends LightningElement {
     // messaging attributes
     @wire(MessageContext) messageContext;
     validateSubscription;
+    setFocusSubscription;
 
     // LMS functions
     subscribeMCs() {
@@ -110,11 +119,21 @@ export default class GovFileUpload extends LightningElement {
             VALIDATION_MC, (message) => {
                 this.handleValidateMessage(message);
             });
+
+        // Receive focus request with message.componentId
+        this.setFocusSubscription = subscribe (
+            this.messageContext,
+            SET_FOCUS_MC, (message) => {
+                this.handleSetFocusMessage(message);
+            }
+        )
     }
 
     unsubscribeMCs() {
         unsubscribe(this.validateSubscription);
         this.validateSubscription = null;
+        unsubscribe(this.setFocusSubscription);
+        this.setFocusSubscription = null;
     }
 
     connectedCallback() {
@@ -125,6 +144,31 @@ export default class GovFileUpload extends LightningElement {
         setTimeout(() => {
             publish(this.messageContext, REGISTER_MC, { componentId: this.fieldId });
         }, 100);
+    }
+
+    renderedCallback() {
+        // getting ID of component's field
+        this.inputFieldId = this.template.querySelector('input').getAttribute('id'); 
+        
+        // inserting hint text and rendering its HTML
+        // const htmlElement = this.template.querySelector(".html-element");
+        // if(htmlElement) {
+        //     htmlElement.innerHTML = this.hintText;
+        //     this.initialised = true;
+        // }
+    }
+
+    handleSetFocusMessage(message){
+        // filter message to check if our component (id) needs to set focus
+        let myComponentId = message.componentId;
+        console.log('myComponentId: ' + myComponentId);
+        console.log('this.inputFieldId: ' + this.inputFieldId);
+        
+        if(myComponentId == this.inputFieldId){
+        
+            let myComponent = this.template.querySelector('input');
+            myComponent.focus();
+        }
     }
 
     disconnectedCallback() {
@@ -144,7 +188,8 @@ export default class GovFileUpload extends LightningElement {
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,
-            error: this.errorMessage
+            error: this.errorMessage,
+            focusId: this.inputFieldId
         });
         return !this.hasErrors;
     }
@@ -152,6 +197,7 @@ export default class GovFileUpload extends LightningElement {
     @api 
     clearError() {
         this.hasErrors = false;
+        this.errorMessage = '';
     }
 
     dispatchUploadEvent() {

@@ -1,0 +1,3 @@
+<design:component label="Gov.UK Theme">
+    <design:attribute name="showIntroRegion" label="Show the Intro Region" default="false"/>
+</design:component>

@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Warning Text
  * Derived_From_Frontend_Version:v3.13.1
- * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell
+ * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell, Jakub Szelagowski
  **/
 import {LightningElement, api, track, wire} from 'lwc';
 import {FlowAttributeChangeEvent} from 'lightning/flowSupport';
@@ -9,9 +9,11 @@ import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messa
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
+import SET_FOCUS_MC from '@salesforce/messageChannel/setFocusMessage__c';
 
 export default class GovTextArea extends LightningElement {
     @api fieldId = "textAreaField";
+    @api textAreaFieldId = "text-area";
     @api label;
     @api hint;
     @api value = '';
@@ -28,11 +30,19 @@ export default class GovTextArea extends LightningElement {
     @track hasErrors;
     @track charCount;
 
+    @api h1Size = false;
+    @api h2Size = false;
+    @api h3Size = false;
+
     // messaging attributes
     @wire(MessageContext) messageContext;
     validateSubscription;
+    setFocusSubscription;
 
     connectedCallback() {
+        // sets the H value for template based on labele font size  
+        this.getHSize(); 
+
         // set the value to blank if it's undefined
         this.value = (this.value === undefined) ? '' : this.value;
 
@@ -46,6 +56,18 @@ export default class GovTextArea extends LightningElement {
         setTimeout(() => {
             publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
         }, 100);
+    }
+
+    renderedCallback() {
+        // getting ID of component's field
+        this.textAreaFieldId = this.template.querySelector('textarea').getAttribute('id'); 
+        
+        // inserting hint text and rendering its HTML
+        // const htmlElement = this.template.querySelector(".html-element");
+        // if(htmlElement) {
+        //     htmlElement.innerHTML = this.hintText;
+        //     this.initialised = true;
+        // }
     }
 
     disconnectedCallback() {
@@ -96,6 +118,32 @@ export default class GovTextArea extends LightningElement {
         }
     }
 
+    getHSize(){
+        if(this.labelFontSize) {
+            switch(this.labelFontSize.toLowerCase()) {
+                case "small":
+                    this.h3Size = true;
+                    // labelClass = "govuk-label govuk-label--s";
+                    break;
+                case "medium":
+                    this.h2Size = true;
+                    // labelClass = "govuk-label govuk-label--m";
+                    break;
+                case "large":
+                    this.h1Size = true;
+                    // labelClass = "govuk-label govuk-label--l";
+                    break;
+                default:
+                    this.h3Size = true;
+                    // labelClass = "govuk-label govuk-label--s";
+            }
+        } else {
+            this.h3Size = true;
+            // labelClass = "govuk-label govuk-label--s";
+        }
+        //return labelClass;
+    }
+
     handleKeyUp(event) {
         
         if(this.charCount <= this.maxCharacterCount) {
@@ -132,11 +180,30 @@ export default class GovTextArea extends LightningElement {
             VALIDATION_MC, (message) => {
                 this.handleValidateMessage(message);
             });
+
+        // Receive focus request with message.componentId
+        this.setFocusSubscription = subscribe (
+            this.messageContext,
+            SET_FOCUS_MC, (message) => {
+                this.handleSetFocusMessage(message);
+            }
+        )
     }
 
     unsubscribeMCs() {
         unsubscribe(this.validateSubscription);
         this.validateSubscription = null;
+        unsubscribe(this.setFocusSubscription);
+        this.setFocusSubscription = null;
+    }
+
+    handleSetFocusMessage(message){
+        // filter message to check if our component (id) needs to set focus
+        let myComponentId = message.componentId;
+        if(myComponentId == this.textAreaFieldId){
+            let myComponent = this.template.querySelector('textarea');
+            myComponent.focus();
+        }
     }
 
     handleValidateMessage(message) {
@@ -156,7 +223,8 @@ export default class GovTextArea extends LightningElement {
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,
-            error: this.errorMessage
+            error: this.errorMessage,
+            focusId: this.textAreaFieldId
         });
     }
 

@@ -19,7 +19,7 @@ export default class GovTable extends LightningElement {
     @track rows = [];
 
     get captionClass() {
-        let captionClass = "govuk-table__caption";
+        let captionClass = "govuk-table__caption"; // <!-- "govuk-table__caption govuk-table__caption--l" -->
         if(this.captionTextFontSize) {
             switch(this.captionTextFontSize.toLowerCase()) {
                 case "small":

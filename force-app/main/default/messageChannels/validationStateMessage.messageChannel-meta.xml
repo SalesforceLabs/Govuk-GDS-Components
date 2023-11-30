@@ -13,5 +13,9 @@
         <description>The error text to display</description>
         <fieldName>error</fieldName>
     </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The id of tag to focus on</description>
+        <fieldName>focusId</fieldName>
+    </lightningMessageFields>
     <masterLabel>ValidationStateMessageChannel</masterLabel>
 </LightningMessageChannel>
