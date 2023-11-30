@@ -1,6 +1,9 @@
 
 
-# Please Note:  This is demonstration code only.  Do not deploy in its current state.
+# Please Note:  
+
+This code is made available free, as part of the Salesforce Labs programme.
+Salesforce Labs is a programme that lets salesforce.com engineers, professional services staff & other employees share AppExchange apps they've created with the customer community. Inspired by employees' work with customers of all sizes and industries, these apps range from simple utilities to entire vertical solutions. Salesforce Labs apps are free to use, but are not official salesforce.com products, and should be considered community projects - these apps are not officially tested or documented. For help on any Salesforce Labs app please consult the Salesforce message boards - salesforce.com support is not available for these applications. Questions? Please visit https://success.salesforce.com/answers.
 
 # Gov UK GDS UI Components
 
@@ -85,3 +88,6 @@ To do this:
  - Page Juggling license
  - Check Public available
  - Click Save Menu
+
+## Note  :
+in govMarkupText.js-meta.xml, please make sure for unmanaged component to change "uxgovuk-gov-markup-text-editor' to "c-gov-markup-text-editor"

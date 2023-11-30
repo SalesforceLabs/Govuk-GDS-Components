@@ -16,6 +16,7 @@
             <property name="serviceURL" type="String" label="Service Navigation URL" description="The Navigation URL for the given Sefvice, include https:// in starting of a custom url" default="#"/>
             <property name="menuLabel" type="String" label="Menu label" description="The Menu Label for Navigation Items Toggle to display in the header" default="Menu"/>
             <property name="navigationMenuDevName" type="String" label="Standard Navigation Menu Developer Name" description="The NavigationMenuDeveloperName which used to ged the to navigation items" default="Default_Navigation"/>
+            <property name="headerBannerRole" type="String" label="Deprecated" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

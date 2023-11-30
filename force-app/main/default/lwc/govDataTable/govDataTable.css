@@ -1,0 +1,40 @@
+.govuk-input--width-three-quarters {
+    width: 75% !important;
+}
+
+.govuk-input--width-two-thirds {
+    width: 66.66% !important;
+}
+
+.govuk-input--width-one-half {
+    width: 50% !important;
+}
+
+.govuk-input--width-one-third {
+    width: 33.33% !important;
+}
+
+.govuk-input--width-one-quarter {
+    width: 25% !important;
+}
+
+.govuk-table__caption--s {
+    font-size: 1.1875rem !important;
+    line-height: 1.31579 !important;
+}
+
+.govuk-table__caption--m {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+}
+
+.govuk-table__caption--l {
+    font-size: 2.25rem !important;
+    line-height: 1.11111 !important;
+    /* margin-bottom: 15px; */
+}
+
+.govuk-table__caption--xl {
+    font-size: 3rem !important;
+    line-height: 1.04167 !important;
+}

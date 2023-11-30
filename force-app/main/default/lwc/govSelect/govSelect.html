@@ -3,9 +3,17 @@
     <template if:true={selectOptions}>
         <div class="govuk-width-container ">
             <div class={groupClass}>
-                <label class={labelClass} for="select">
-                    {label}
-                </label>
+                
+                <h1 class="govuk-label-wrapper" if:true={h1Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h1>
+                <h2 class="govuk-label-wrapper" if:true={h2Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h2>
+                <h3 class="govuk-label-wrapper" if:true={h3Size}>
+                    <label class={labelClass} for="input-text">{label}</label>
+                </h3>
+               
                 <template if:true={hasErrors}>
                     <span class="govuk-error-message">
                         <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
@@ -15,8 +23,8 @@
                     {hintText}
                 </div>
                 <select class="govuk-select"
-                        id="select"
-                        name="select"
+                        id={fieldId}
+                        name={fieldId}
                         onchange={handleOnChange}>
                     <template for:each={selectOptions} for:item="option">
                         <option key={option.key}

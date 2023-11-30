@@ -1,0 +1,77 @@
+<template>
+    <div class="govuk-width-container js-enabled">
+        
+            <lightning-spinner if:true={loading} alternative-text="Uploading..." size="small"></lightning-spinner>
+
+            <lightning-layout multiple-rows="true">
+
+                <div class={formGroupClass}>
+                    <label class="govuk-label" for="uploadFile">
+                        {label}
+                    </label>
+                    <p id="file-upload-1-error" class="govuk-error-message" if:true={hasErrors}>
+                        <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
+                      </p>
+                    <lightning-file-upload
+                            if:false={external}
+                            name="upload  File"
+                            accept={acceptedFormats}
+                            file-field-name='Guest_Record_fileupload__c'
+                            file-field-value={value}
+                            onuploadfinished={handleUpload_lightningFile}
+                            multiple={allowMultiple}
+                            disabled={disabled}
+                            class="govuk-file-upload">
+                        </lightning-file-upload>
+                </div>                
+                
+                    <div>
+                        
+                        
+                    </div>
+                
+            </lightning-layout>
+
+
+            
+         <div if:true={displayFileList}>
+            <div>
+                <lightning-layout-item class="slds-form-element__label" size="12">
+                    <label class="govuk-label" for="file-upload">
+                        {uploadedlabel}
+                    </label>
+                </lightning-layout-item>
+            </div>
+         
+
+            <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+                <div class="file-upload--noborder">
+                  <dl class="govuk-summary-list">
+
+                    <template for:each={objFiles} for:item="objFile">
+                    <div class="govuk-summary-list__row" key={objFile.contentVersionId}>
+                      <dd class="govuk-summary-list__value">
+                        {objFile.name}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#" onclick={deleteDocument} data-documentid={objFile.documentId} data-contentversionid={objFile.contentVersionId}>
+                          Remove<span class="govuk-visually-hidden"> file uploaded</span>
+                        </a>
+                      </dd>
+                    </div>
+                    </template>
+                  </dl>
+                </div>
+            </div>
+
+        </div>  
+
+            
+                 
+
+
+        </div>
+
+    
+</template>
+    

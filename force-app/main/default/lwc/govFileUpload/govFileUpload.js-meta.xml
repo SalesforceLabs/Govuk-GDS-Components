@@ -9,7 +9,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="fieldId" type="String" label="Field Id" required="true" default="uploadField" description="Field Id - must be unique to this process"/>
+            <property name="fieldId" type="String" label="Field Id" required="true" default="uploadField" description="You must copy the API Name into this field"/>
             <property name="fileUploadLabel" type="String" label="Field Label" default="Upload a file" description="The label to display"/>
             <property name="acceptedFormats" type="String" label="Accepted File Formats" default="image/png, image/jpg, .pdf, .doc, .docx, .zip" description="A valid case-insensitive filename extension, starting with a period (.) character. For example: .jpg, .pdf, or .doc."/>
             <property name="maxFileSizeInMB" type="Integer" label="Max Files Size Allowed (in MB)" default="2" description="The maximum file size allowed to upload in MB (Max Value should not be greater than Salesforce Standards)"/>

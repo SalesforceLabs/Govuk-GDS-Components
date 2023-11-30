@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Date Input
  * Derived_From_Frontend_Version:v3.13.1
- * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell, Jakub Szelagowski
  **/
 import { LightningElement, api, track, wire } from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
@@ -9,32 +9,66 @@ import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messa
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import VALIDATE_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
+import Day_Label from '@salesforce/label/c.uxg_Day_label';
+import Month_label from '@salesforce/label/c.uxg_Month_label';
+import Year_label from '@salesforce/label/c.uxg_Year_label';
+import Invalid_day_error from '@salesforce/label/c.uxg_Invalid_day_error';
+import Invalid_month_error from '@salesforce/label/c.uxg_Invalid_month_error'; 
+import Invalid_year_error from '@salesforce/label/c.uxg_Invalid_year_error';
+import Non_numeric_day_error from '@salesforce/label/c.uxg_Non_numeric_day_error';
+import Non_numeric_month_error from '@salesforce/label/c.uxg_Non_numeric_month_error';
+import Non_numeric_year_error from '@salesforce/label/c.uxg_Non_numeric_year_error';
+import SET_FOCUS_MC from '@salesforce/messageChannel/setFocusMessage__c';
 
 export default class GovDate extends LightningElement {
     
-    @api fieldId = "dateField";
-    @api label = "";
-    @api fontSize = "";
-    @api hintText = "";
-    @api required = false;
-    @api value = "";
-    @api formattedDate = "";
 
-    @track dayValue = "";
-    @track monthValue = "";
-    @track yearValue = "";
-    @track hasErrors = false;
-    @track hasDayError = false;
-    @track hasMonthError = false;
-    @track hasYearError = false;
-    @track errorMessages = [];
+   dayLabel = Day_Label;
+   monthLabel = Month_label;
+   yearLabel = Year_label;
+   componentTypeName = "UXGOVUK-GOV-DATE";
+   componentSelectorName = "INPUT";
+
+   @api fieldId = "dateField";
+   @api dayFieldId = "date-input-day";
+   @api monthFieldId = "date-input-month";
+   @api yearFieldId = "date-input-year";
+   @api label = "";
+   @api fontSize = 'Medium';
+   @api hintText = "";
+   @api required = false;
+   @api value = "";
+   @api formattedDate = "";
+   @api minDate = "";
+   @api maxDate = "";
+
+   @api salesforceDate;
+
+   @track dayValue = "";
+   @track monthValue = "";
+   @track yearValue = "";
+   @track hasErrors = false;
+   @track hasDayError = false;
+   @track hasMonthError = false;
+   @track hasYearError = false;
+   @track dayErrorMsg = "";
+   @track monthErrorMsg = "";
+   @track yearErrorMsg = "";
+   @track day = "";
+   @track month = "";
+   @track year = "";
+   @track errorMessages = [];
+
+   @api h1Size = false;
+   @api h2Size = false;
+   @api h3Size = false;
 
     months = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"];
-
     // messaging attributes
     @wire(MessageContext) messageContext;
     validateSubscription;
+    setFocusSubscription;
 
     get groupClass() {
         if (this.hasErrors) {
@@ -45,36 +79,69 @@ export default class GovDate extends LightningElement {
     
     get labelClass() {
         let labelClass;
-
         switch (this.fontSize) {
             case "Small":
-                labelClass = "govuk-label govuk-label--s";
+                labelClass = "govuk-fieldset__legend govuk-fieldset__legend--s"; //"govuk-label govuk-label--s";
                 break;
             case "Medium":
-                labelClass = "govuk-label govuk-label--m";
+                labelClass = "govuk-fieldset__legend govuk-fieldset__legend--m"; //"govuk-label govuk-label--m";
                 break;
             case "Large":
-                labelClass = "govuk-label govuk-label--l";
+                labelClass = "govuk-fieldset__legend govuk-fieldset__legend--l"; // "govuk-label govuk-label--l";
                 break;
             default:
-                labelClass = "govuk-label govuk-label--s";
+                labelClass = "govuk-fieldset__legend govuk-fieldset__legend--s";// "govuk-label govuk-label--s";
         }
         return labelClass;
     }
-
     get dayClass() {
         return (this.hasDayError) ? "govuk-input govuk-date-input__input govuk-input--width-2 day-field govuk-input--error" : "govuk-input govuk-date-input__input govuk-input--width-2 day-field";
     }
-
     get monthClass() {
         return (this.hasMonthError) ? "govuk-input govuk-date-input__input govuk-input--width-2 month-field govuk-input--error" : "govuk-input govuk-date-input__input govuk-input--width-2 month-field";
     }
-
     get yearClass() {
         return (this.hasYearError) ? "govuk-input govuk-date-input__input govuk-input--width-4 year-field govuk-input--error" : "govuk-input govuk-date-input__input govuk-input--width-4 year-field";
     }
 
+    getHSize(){
+       // console.log('getHSize');
+       if(this.fontSize) {
+           switch(this.fontSize.toLowerCase()) {
+               case "small":
+                   this.h3Size = true;
+                   // console.log('h3Size'+ this.h3Size);
+                   // labelClass = "govuk-label govuk-label--s";
+                   break;
+               case "medium":
+                   this.h2Size = true;
+                   // console.log('h2Size'+ this.h2Size);
+                   // labelClass = "govuk-label govuk-label--m";
+                   break;
+               case "large":
+                   this.h1Size = true;
+                   // console.log('h1Size'+ this.h1Size);
+                   // labelClass = "govuk-label govuk-label--l";
+                   break;
+               default:
+                   this.h3Size = true;
+                   // console.log('h3Size'+ this.h3Size);
+                   // labelClass = "govuk-label govuk-label--s";
+           }
+       } else {
+           this.h3Size = true;
+           // console.log('else h3Size'+ this.h3Size);
+           // labelClass = "govuk-label govuk-label--s";
+       }
+       //return labelClass;
+   }
+
+
+
     connectedCallback() {
+       // sets the H value for template based on labele font size  
+       this.getHSize(); 
+
         if (this.value) {
             let parts = this.value.split("/");
             if (parts.length === 3) {
@@ -82,42 +149,62 @@ export default class GovDate extends LightningElement {
                 this.monthValue = parts[1];
                 this.yearValue = parts[2];
                 this.formattedDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue;
+                this.salesforceDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue + "T0:00:00.000Z";
             }
         }
-
         // subscribe to the message channels
         this.subscribeMCs();
-
         // publish the registration message after 0.1 sec to give other components time to initialise
         setTimeout(() => {
-            publish(this.messageContext, REGISTER_MC, {componentId: this.fieldId+" day"});
-            publish(this.messageContext, REGISTER_MC, {componentId: this.fieldId+" month"});
-            publish(this.messageContext, REGISTER_MC, {componentId: this.fieldId+" year"});
+            publish(this.messageContext, REGISTER_MC, {componentId: this.fieldId});
         }, 100);
     }
+
+    renderedCallback() {
+        // retrieving unique IDs of input fields (day, month, year)
+        let myDateComponents = this.template.querySelectorAll('input');
+        for (let i = 0; i < myDateComponents.length; i++) {
+            let myDateComp = myDateComponents[i];
+            const myCompName = myDateComp.name;
+
+            switch(myCompName){
+                case 'date-input-day':
+                    this.dayFieldId = myDateComp.id;
+                    break;
+                case 'date-input-month':
+                    this.monthFieldId = myDateComp.id;
+                    break;
+                case 'date-input-year':
+                    this.yearFieldId = myDateComp.id;
+                    break;
+                default:
+            }
+        }
+   }
 
     disconnectedCallback() {
         this.unsubscribeMCs();
     }
-
     handleDayChange(event) {
         this.dayValue = event.target.value;
+        this.dayFieldId = event.target.id;
         this.updateValue();
     }
-
     handleMonthChange(event) {
         this.monthValue = event.target.value;
+        this.monthFieldId = event.target.id;
         this.updateValue();
     }
-
     handleYearChange(event) {
         this.yearValue = event.target.value;
+        this.yearFieldId = event.target.id;
         this.updateValue();
     }
-
     updateValue() {
         this.value = this.dayValue + "/" + this.monthValue + "/" + this.yearValue;
         this.formattedDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue;
+
+        this.salesforceDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue + "T0:00:00.000Z";
         this.dispatchValueChangedEvent();
     }
 
@@ -137,17 +224,17 @@ export default class GovDate extends LightningElement {
     }
 
     isValidDate(d, m, y) {
-        return (m >= 0 && m < 12 && d > 0 && d <= this.daysInMonth(m, y));
+        return (m > 0 && m < 13 && d > 0 && d <= this.daysInMonth(m, y));
     }
 
     daysInMonth(m, y) {
         switch (m) {
-            case 1 :
+            case 2 :
                 return (y % 4 == 0 && y % 100) || y % 400 == 0 ? 29 : 28;
-            case 8 :
-            case 3 :
-            case 5 :
-            case 10 :
+            case 9 :
+            case 4 :
+            case 6 :
+            case 11 :
                 return 30;
             default :
                 return 31
@@ -164,11 +251,36 @@ export default class GovDate extends LightningElement {
             VALIDATE_MC, (message) => {
                 this.handleValidateMessage(message);
             });
+        
+         // Receive focus request with message.componentId
+        this.setFocusSubscription = subscribe (
+            this.messageContext,
+            SET_FOCUS_MC, (message) => {
+                // console.log('received message for componentId: '+ message.componentId);
+                this.handleSetFocusMessage(message);
+            }
+        )
     }
 
     unsubscribeMCs() {
         unsubscribe(this.validateSubscription);
         this.validateSubscription = null;
+        unsubscribe(this.setFocusSubscription);
+        this.setFocusSubscription = null;
+    }
+
+    handleSetFocusMessage(message){
+        // filter message to check if our component (id) needs to set focus
+        let myComponentId = message.componentId;
+            // getting all input fields
+            let myDateComponents = this.template.querySelectorAll('input');
+            for (let i = 0; i < myDateComponents.length; i++) {
+                let myDateComp = myDateComponents[i];
+                // setting focus only if current input field matches message.componentId
+                if (myDateComp.id == myComponentId){
+                    myDateComp.focus();
+                }
+            }
     }
 
     handleValidateMessage(message) {
@@ -183,93 +295,230 @@ export default class GovDate extends LightningElement {
         this.hasDayError = false;
         this.hasMonthError = false;
         this.hasYearError = false;
+        this.dayErrorMsg = "";
+        this.monthErrorMsg = "";
+        this.yearErrorMsg = "";
+        this.day = '';
+        this.month = '';
+        this.year = '';
 
-        let day = parseInt(this.dayValue, 10);
-        let month = parseInt(this.monthValue, 10);
-        let year = parseInt(this.yearValue, 10);
+       if (!this.required && this.dayValue.length == 0 && this.monthValue.length == 0 && this.yearValue.length == 0) {
+           // Not required and everything is empty then skip all validation
+           this.showNotifications();
+       } else {
+           // May be required or at least 1 field has some value so need to validate
+           this.checkValidNumbersUsed();
+           if(!this.hasDayError && !this.hasMonthError && !this.hasYearError) {
+               // do we have valid numbers for day, month & year
+               if (isNaN(this.day)) {
+                   this.dayErrorMsg = Invalid_day_error;
+                   this.hasDayError = true;
+               }                   
+               if (isNaN(this.month)) {
+                   this.monthErrorMsg = Invalid_month_error;
+                   this.hasMonthError = true;
+               } else {
+                   if (this.month < 0 || this.month > 12) {
+                       this.monthErrorMsg = Invalid_month_error;
+                       this.hasMonthError = true;
+                   } else {
+                       this.checkForValidDaysInMonth();
+                   }
+               }
+               if (isNaN(this.year)) {
+                   this.yearErrorMsg = Invalid_year_error;
+                   this.hasYearError = true;
+               } else {
+                   if (this.year < 1700 || this.year > 2200) {
+                       this.yearErrorMsg = Invalid_year_error;
+                       this.hasYearError = true;
+                   } else {
+                       if (this.month == 2) {
+                           if(this.year % 4 !== 0) {
+                               if (this.day < 0 || this.day > 28) {
+                                   this.dayErrorMsg = Invalid_day_error;
+                                   this.hasDayError = true;
+                               } 
+                           } else {
+                               if (this.day < 0 || this.day > 29) {
+                                   this.dayErrorMsg = Invalid_day_error;
+                                   this.hasDayError = true;
+                               } 
+                           }
+                       }
+                   }
+               }
+           } 
+           this.hasErrors = (this.hasDayError || this.hasMonthError || this.hasYearError);
+           if (!this.hasErrors) {
+               if (!this.isValidDate(this.day, this.month, this.year)) {
+                   this.hasDayError = true;
+               }
+               this.hasErrors = (this.hasDayError || this.hasMonthError);
+           }  
+           this.showNotifications();
+       }
+   }
 
-        if(this.required || (!isNaN(day) || !isNaN(month) || !isNaN(year))) {
-            // do we have valid numbers for day, month & year
-            if (isNaN(day)) {
-                this.hasDayError = true;
-            }   
-            if (isNaN(month)) {
-                this.hasMonthError = true;
-            } else {
-                month = month - 1;
-                if (month < 0 || month > 11) {
-                    this.hasMonthError = true;
-                }
-            }
-            if (isNaN(year)) {
-                this.hasYearError = true;
-            }
-            this.hasErrors = (this.hasDayError || this.hasMonthError || this.hasYearError);
-            if (!this.hasErrors) {
-                if (!this.isValidDate(day, month, year)) {
-                    this.hasDayError = true;
-                }
-                this.hasErrors = (this.hasDayError || this.hasMonthError);
-            }  
-        }
+    @api
+    checkValidNumbersUsed() {
+       if (this.dayValue.length > 0) {
+           if (this.containsAnyLetters(this.dayValue)) {
+               this.dayErrorMsg = Non_numeric_day_error;
+               this.hasDayError = true;  
+           } else {
+               if (this.dayValue.length > 2) {
+                   this.dayErrorMsg = Invalid_day_error;
+                   this.hasDayError = true;                      
+               } else {
+                   if (Number.isInteger(parseFloat(this.dayValue))) {
+                       this.day = parseInt(this.dayValue, 10);
+                   } else {
+                       this.dayErrorMsg = Invalid_day_error;
+                       this.hasDayError = true;  
+                   }
+               }
+           }
+       } else {
+           this.dayErrorMsg = Invalid_day_error;
+           this.hasDayError = true;  
+       }
+       if (this.monthValue.length > 0) {
+           if (this.containsAnyLetters(this.monthValue)) {
+               this.monthErrorMsg = Non_numeric_month_error;
+               this.hasMonthError = true;  
+           } else {
+               if (this.monthValue.length > 2) {
+                   this.monthErrorMsg = Invalid_month_error;
+                   this.hasMonthError = true; 
+               } else {
+                   if (Number.isInteger(parseFloat(this.monthValue))) {
+                       this.month = parseInt(this.monthValue, 10);
+                   } else {
+                       this.monthErrorMsg = Invalid_month_error;
+                       this.hasMonthError = true;  
+                   }
+               }
+           }
+       } else {
+           this.monthErrorMsg = Invalid_month_error;
+           this.hasMonthError = true;  
+       }
+       if (this.yearValue.length > 0) {
+           if (this.containsAnyLetters(this.yearValue)) {
+               this.yearErrorMsg = Non_numeric_year_error;
+               this.hasYearError = true;  
+           } else {
+               if (this.yearValue.length > 4) {
+                   this.yearErrorMsg = Invalid_year_error;
+                   this.hasYearError = true; 
+               } else {
+                   if (Number.isInteger(parseFloat(this.yearValue))) {
+                       this.year = parseInt(this.yearValue, 10);
+                   } else {
+                       this.yearErrorMsg = Invalid_year_error;
+                       this.hasYearError = true; 
+                   }
+               }
+           }
+       } else {
+           this.yearErrorMsg = Invalid_year_error;
+           this.hasYearError = true; 
+       }
+   }
 
-        // Create errors and events for error notifications
-        if(this.hasDayError) {
-            this.errorMessages.push({
-                key: 1,
-                target: "dayField",
-                detail: "Please enter a valid number for the day"
-            });
-            publish(this.messageContext, VALIDATION_STATE_MC, {
-                componentId: this.fieldId + " day",
-                isValid: false,
-                error: "Please enter a valid number for the day"
-            });
-        } else {
-            publish(this.messageContext, VALIDATION_STATE_MC, {
-                componentId: this.fieldId + " day",
-                isValid: true,
-                error: ""
-            });
-        }
+    @api 
+    containsAnyLetters(strInput) {
+       let atleastOneAlpha =  (/\p{L}/u.test(strInput)); 
+       if (!atleastOneAlpha) {
+           // Check for any other non-numeric characters characters 
+           let format = /[ `!@#$%^&*£()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+           atleastOneAlpha = format.test(strInput);
+       }
+       return atleastOneAlpha;
+    }
 
-        if(this.hasMonthError) {
-            this.errorMessages.push({
-                key: 1,
-                target: "monthField",
-                detail: "Please enter a valid number for the month"
-            });
-            publish(this.messageContext, VALIDATION_STATE_MC, {
-                componentId: this.fieldId + " month",
-                isValid: false,
-                error: "Please enter a valid number for the month"
-            });
-        } else {
-            publish(this.messageContext, VALIDATION_STATE_MC, {
-                componentId: this.fieldId + " month",
-                isValid: true,
-                error: ""
-            });
-        }
+    @api
+    checkForValidDaysInMonth() {
+       switch (this.month) {                      
+           case 2:
+               if (this.day < 0 || this.day > 29) {
+                   this.dayErrorMsg = Invalid_day_error;
+                   this.hasDayError = true;
+               }
+               break;
+           case 4:
+           case 6:
+           case 9:
+           case 11:
+               if (this.day < 0 || this.day > 30) {
+                   this.dayErrorMsg = Invalid_day_error;
+                   this.hasDayError = true;
+               }
+               break;
+           case 1:
+           case 3:
+           case 5:
+           case 7:
+           case 8:
+           case 10:
+           case 12:
+               if (this.day < 0 || this.day > 31) {
+                   this.dayErrorMsg = Invalid_day_error;
+                   this.hasDayError = true;
+               }
+               break;
+           default:
+               this.monthErrorMsg = Invalid_month_error;
+               this.hasMonthError = true;
+               break;
+       }
+    }
 
-        if(this.hasYearError) {
-            this.errorMessages.push({
-                key: 1,
-                target: "yearField",
-                detail: "Please enter a valid number for the year"
-            });
-            publish(this.messageContext, VALIDATION_STATE_MC, {
-                componentId: this.fieldId + " year",
-                isValid: false,
-                error: "Please enter a valid number for the year"
-            });
-        } else {
-            publish(this.messageContext, VALIDATION_STATE_MC, {
-                componentId: this.fieldId + " year",
-                isValid: true,
-                error: ""
-            });
-        }
+    @api
+    showNotifications() {
+       if (this.hasDayError) {
+           this.publishErrorMessage(this.dayFieldId, this.dayErrorMsg);
+       } 
+       if (this.hasMonthError) {
+           this.publishErrorMessage(this.monthFieldId, this.monthErrorMsg);
+       } 
+       if (this.hasYearError) {
+           this.publishErrorMessage(this.yearFieldId, this.yearErrorMsg);
+       }
+       if (!this.hasErrors) {
+           this.publishEmptyMessage(this.fieldId);
+           this.publishEmptyMessage(this.dayFieldId);
+           this.publishEmptyMessage(this.monthFieldId);
+           this.publishEmptyMessage(this.yearFieldId);
+       } 
+    }
+
+    @api
+    publishErrorMessage(idForField, errMsg) {
+       this.errorMessages.push({
+           key: idForField,
+           target: idForField,
+           detail: errMsg
+       });
+        publish(this.messageContext, VALIDATION_STATE_MC, {
+           componentId: idForField,
+           componentType: this.componentTypeName,
+           componentSelect: this.componentSelectorName,
+           isValid: false,
+           error: errMsg,
+           focusId: idForField
+       });
+    }
+
+    @api
+    publishEmptyMessage(idForField) {
+       publish(this.messageContext, VALIDATION_STATE_MC, {
+           componentId: idForField,
+           isValid: true,
+           error: "",
+           focusId: idForField
+       });
     }
 
     @api 

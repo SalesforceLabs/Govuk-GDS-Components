@@ -5,6 +5,7 @@
  **/
 import {LightningElement, api, track} from 'lwc';
 import {FlowNavigationNextEvent} from 'lightning/flowSupport';
+//import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 
 export default class GovSummary extends LightningElement {
     @api availableActions = []
@@ -51,9 +52,11 @@ export default class GovSummary extends LightningElement {
         this.destination = event.target.getAttribute('data-destination');
 
         //console.log(`processing handleChange event for ${this.destination}`);
+       
+        //this.dispatchEvent(new FlowAttributeChangeEvent('outputValue', this.destination));
 
         if (this.availableActions.find(action => action === 'NEXT')) {
-            //console.log(`sending next event to flow engine.`);
+            //console.log(`sending next event to flow engine. - handleChange `);
             const nextNavigationEvent = new FlowNavigationNextEvent();
             this.dispatchEvent(nextNavigationEvent);
         }
@@ -61,6 +64,7 @@ export default class GovSummary extends LightningElement {
 
     handleSend(event) {
         // next flow
+        //console.log(`sending next event to flow engine. - handleSend`);
         this.destination = "Default_Screen";
         const nextNavigationEvent = new FlowNavigationNextEvent();
         this.dispatchEvent(nextNavigationEvent);

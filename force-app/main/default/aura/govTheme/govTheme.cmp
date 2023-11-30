@@ -1,0 +1,41 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="GovUK Theme Layout">
+
+  <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+  <!-- whether to show or hide the intro section -->
+  <aura:attribute name="showIntroRegion" type="Boolean" default="true" access="global"/> 
+
+  <aura:attribute name="header" type="Aura.Component[]" required="false"  />
+  <aura:attribute name="intro" type="Aura.Component[]" required="false"  />
+  <aura:attribute name="footer" type="Aura.Component[]" required="false" />
+
+  <!-- include CSS -->
+  <ltng:require styles="{!$Resource.govukcss}" />
+
+  <div>
+
+    <div class="themeContainer">
+      
+      <header role="banner" >
+        <c:govSkipLink targetAnchor="#main"></c:govSkipLink>
+        {!v.header}
+      </header>
+
+      <aura:if isTrue="{!v.showIntroRegion}">
+        <div role="region" aria-label="intro" >
+          {!v.intro}
+        </div>
+      </aura:if>
+
+      <!-- This is where the main content goes -->
+      <div id="main" role="main" class="themeContent">
+        {!v.body}
+      </div>
+
+      <footer role="contentinfo" class="themeFooter">
+        {!v.footer}
+      </footer>
+
+    </div>
+  </div>
+</aura:component>

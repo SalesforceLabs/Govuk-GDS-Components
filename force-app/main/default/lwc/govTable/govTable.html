@@ -2,7 +2,7 @@
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container ">
         <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--l">{captionText}</caption>
+            <caption class={captionClass}>{captionText}</caption> 
             <thead class="govuk-table__head">
             <tr class="govuk-table__row">
                 <template for:each={columns} for:item="column" for:index="index">

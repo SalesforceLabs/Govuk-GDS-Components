@@ -9,14 +9,15 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="fieldId" type="String" label="Field Id" required="true" default="selectField" description="The unique field id"/>
+            <property name="fieldId" type="String" label="Field Id" required="true" default="selectField" description="You must copy the API Name into this field"/>
             <property name="label" type="String" label="Label" description="The label to display"/>
             <property name="fontSize" type="String" label="Label Font Size" description="The size of the label Font (Small, Medium, Large)"/>
             <property name="hintText" type="String" label="Hint Text" description="Some text to help the user"/>
             <property name="picklist" type="String" label="Picklist Field" description="The field to get the options from (e.g. Account.Type)"/>
             <property name="optionLabels" type="String" label="Option Labels" description="Comma separated list of option labels"/>
             <property name="optionValues" type="String" label="Option Values" description="Comma separated list of option values"/>
-            <property name="value" type="String" label="Value" description="The value"/>
+            <property name="value" type="String" label="Value (Label)" description="The value (label)"/>
+            <property name="valueAPIName" type="String" label="Value (API Name)" description="The value (API name)"/>
             <property name="required" type="Boolean" label="Is required" description="Is a value required before continuing"/>
             <property name="errorMessage" type="String" label="Error Message" description="The error message to display"/>
         </targetConfig>
