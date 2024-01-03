@@ -7,6 +7,7 @@ import {LightningElement, api, track, wire} from 'lwc';
 import { FlowNavigationBackEvent, FlowNavigationNextEvent, FlowNavigationFinishEvent } from 'lightning/flowSupport';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
+import UNREGISTER_MC from '@salesforce/messageChannel/unregistrationMessage__c';
 import VALIDATE_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
 
@@ -17,6 +18,7 @@ export default class GovNavigationButtons extends LightningElement {
     // messaging attributes
     @wire(MessageContext) messageContext;
     registrationSubscription;
+    unRegistrationSubscription;
     validationStateSubscription;
 
     // flow inputs and outputs
@@ -113,15 +115,26 @@ export default class GovNavigationButtons extends LightningElement {
         //var elementToSelect = null;
         this.action = event.target.getAttribute('data-action').toUpperCase();
 
+
+        console.log('handleClick:: ' + this.action);
+        console.log('Registered Components count: ' + this.components.length);
+        console.dir(this.components);
+        if(this.components.length === 0){
+            console.log('No input components, progress to next.');
+            const event = new FlowNavigationNextEvent();
+            this.dispatchEvent(event);
+        }
+
         // check to see if next or finish was selected and we have components to validate
         if( (this.action === 'NEXT' || this.action === 'FINISH') && this.components.length > 0 ) {
             this.components.forEach(component => {
                 component.isValid = false;
                 //this.focusOnErroBox();
             })
-            // console.log('NAVIGATION_BUTTONS: Sending validation message ' + this.fieldId );
+            console.log('NAVIGATION_BUTTONS: Sending validation message ' + this.fieldId );
             publish(this.messageContext, VALIDATE_MC, { componentId: this.fieldId });
         } else if(this.action === 'NEXT' && this.availableActions.find(action => action === 'NEXT')) {
+            console.log('About to dispatch FlowNavigationNextEvent');
             const event = new FlowNavigationNextEvent();
             this.dispatchEvent(event);
         } else if(this.action === 'FINISH' && this.availableActions.find(action => action === 'FINISH')) {
@@ -130,8 +143,10 @@ export default class GovNavigationButtons extends LightningElement {
             this.clearSessionStorage();
         } else if (this.action === 'CANCEL' &&
             (this.availableActions.find(action => action === 'NEXT'))) {
+            console.log('About to dispatch FlowNavigationNextEvent');
             const event = new FlowNavigationNextEvent();
             this.dispatchEvent(event);
+            console.log('FlowNavigationNextEvent dispatched');
         } else if (this.action === 'CANCEL' &&
             (this.availableActions.find(action => action === 'FINISH'))) {
             const event = new FlowNavigationFinishEvent();
@@ -164,6 +179,16 @@ export default class GovNavigationButtons extends LightningElement {
             this.messageContext,
             REGISTER_MC, (message) => {
                 this.handleRegistrationMessage(message);
+        });
+
+        if (this.unRegistrationSubscription) {
+            return;
+        }
+
+        this.unRegistrationSubscription = subscribe (
+            this.messageContext,
+            UNREGISTER_MC, (message) => {
+                this.handleUnRegistrationMessage(message);
             });
         if (this.validationStateSubscription) {
             return;
@@ -178,6 +203,8 @@ export default class GovNavigationButtons extends LightningElement {
     unsubscribeMCs() {
         unsubscribe(this.registrationSubscription);
         this.registrationSubscription = null;
+        unsubscribe(this.unRegistrationSubscription);
+        this.unRegistrationSubscription = null;
         unsubscribe(this.validationStateSubscription);
         this.validationStateSubscription = null;
     }
@@ -195,11 +222,29 @@ export default class GovNavigationButtons extends LightningElement {
         // console.log(`NAVIGATION_BUTTONS: Component are ${JSON.stringify(this.components)}`);
     }
 
+    handleUnRegistrationMessage(message) {
+        
+        console.log(`NAVIGATION_BUTTONS: Received unregistration message from component ${JSON.stringify(message)}`);
+        
+        //remove component from this.components array
+        for(let i=0; i<this.components.length; i++ ){
+            if(this.components[i].id == message.componentId){
+                console.log('found component to remove: ' + this.components[i].id);
+                this.components.splice(i,1);
+            }
+        }
+    }
+
     handleValidationUpdate(message) {
         // console.log(`NAVIGATION_BUTTONS: Received validation state message from component ${JSON.stringify(message)}`);
         // update the component that sent the message
         // filtering components to find the one that matches the id
         const component = this.components.find(component => component.id === message.componentId);
+
+        console.log('handleValidationUpdate: message ' + JSON.stringify(message));
+        console.log('handleValidationUpdate: component ' + JSON.stringify(component));
+        console.log('handleValidationUpdate: components ' + JSON.stringify(this.components));
+        
         if(component) {
              // console.log(`NAVIGATION_BUTTONS: Setting component ${component.id} to ${message.isValid}`);
             component.isValid = message.isValid;
@@ -221,7 +266,8 @@ export default class GovNavigationButtons extends LightningElement {
          
         // check to see if we have all valid components
         const invalidComponents = this.components.filter(component => component.isValid === false);
-        
+    
+
         if(invalidComponents.length === 0) {
              // console.log(`NAVIGATION_BUTTONS: All components are valid, moving along, action is ${this.action}`);
             if (this.action === 'NEXT' &&
@@ -246,7 +292,7 @@ export default class GovNavigationButtons extends LightningElement {
              // console.log(`NAVIGATION_BUTTONS: There are invalid components.`);
             for(let i=0; i<invalidComponents.length; i++ ){
                  let myComp = invalidComponents[i];
-                 // console.log(`NAVIGATION_BUTTONS: Component ${myComp.id} is invalid.`);
+                 console.log(`NAVIGATION_BUTTONS: Component ${myComp.id} is invalid.`);
             }
         }
     }

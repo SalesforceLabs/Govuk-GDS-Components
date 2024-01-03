@@ -11,9 +11,9 @@
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default">
             <property name="label" type="String" label="Label" description="The main label to display in the banner"/>
-            <property name="cookiePageUrl" type="String" label="Cookie Page Url" description="The Url of the page where cookie information is displayed"/>
-            <property name="acceptLabel" type="String" label="Accept Button Label" description="The label for the accept button"/>
-            <property name="rejectLabel" type="String" label="Reject Button Label" description="The label for the reject button"/>
+            <property name="cookiePageUrl" type="String" label="Cookie Page Url" description="The Url of the page where cookie information is displayed" default=""/>
+            <property name="acceptLabel" type="String" label="Accept Button Label" description="The label for the accept button" default=""/>
+            <property name="rejectLabel" type="String" label="Reject Button Label" description="The label for the reject button" default=""/>
             <property name="bannerContent" type="String" label="Banner Content" description="The guidance (in HTML) to display on the banner, before the buttons"/>
             <property name="preferencesSetCookieName" type="String" label="Name of 'Preferences Set' Cookie" description="The name of the cookie that indicates whether cookie preferences have been set" default="uxgovuk_cookies_preferences_set"/>
         </targetConfig>

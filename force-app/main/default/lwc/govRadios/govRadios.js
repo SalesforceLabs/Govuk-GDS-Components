@@ -8,6 +8,7 @@ import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import getPicklistValuesMapByObjectField from '@salesforce/apex/GovComponentHelper.getPicklistValuesMapByObjectField';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
+import UNREGISTER_MC from '@salesforce/messageChannel/unregistrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
 import SET_FOCUS_MC from '@salesforce/messageChannel/setFocusMessage__c';
@@ -163,10 +164,11 @@ export default class GovRadios extends LightningElement {
         // subscribe to the message channels
         this.subscribeMCs();
         
-        // publish the registration message after 0.1 sec to give other components time to initialise
-        setTimeout(() => {
-            publish(this.messageContext, REGISTER_MC, { componentId: this.uniqueFieldId }); //radioFieldIdForFocus //m  radioFieldId
-        }, 100);
+        this.register();
+        // // publish the registration message after 0.1 sec to give other components time to initialise
+        // setTimeout(() => {
+        //     publish(this.messageContext, REGISTER_MC, { componentId: this.uniqueFieldId }); //radioFieldIdForFocus //m  radioFieldId
+        // }, 100);
     }
 
     renderedCallback(){
@@ -206,6 +208,7 @@ export default class GovRadios extends LightningElement {
     }
 
     disconnectedCallback() {
+        this.unregister();
         this.unsubscribeMCs();
     }
 
@@ -314,6 +317,22 @@ export default class GovRadios extends LightningElement {
         this.validateSubscription = null;
         unsubscribe(this.setFocusSubscription);
         this.setFocusSubscription = null;
+    }
+
+    register(){
+        // publish the registration message after 0.1 sec to give other components time to initialise
+        setTimeout(() => {
+            //publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
+            publish(this.messageContext, REGISTER_MC, {componentId:this.uniqueFieldId});
+        }, 100);
+    }
+
+    //inform subscribers that this comoponent is no longer available
+    unregister() {
+        console.log('govRadios: unregister',this.uniqueFieldId);
+
+        //have to create a new message context to unregister
+        publish(createMessageContext(), UNREGISTER_MC, { componentId: this.uniqueFieldId });
     }
 
     handleSetFocusMessage(message){
