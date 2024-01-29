@@ -5,13 +5,13 @@
             <div class={groupClass}>
                 
                 <h1 class="govuk-label-wrapper" if:true={h1Size}>
-                    <label class={labelClass} for="input-text">{label}</label>
+                    <label class={labelClass} for={fieldId}>{label}</label>
                 </h1>
                 <h2 class="govuk-label-wrapper" if:true={h2Size}>
-                    <label class={labelClass} for="input-text">{label}</label>
+                    <label class={labelClass} for={fieldId}>{label}</label>
                 </h2>
                 <h3 class="govuk-label-wrapper" if:true={h3Size}>
-                    <label class={labelClass} for="input-text">{label}</label>
+                    <label class={labelClass} for={fieldId}>{label}</label>
                 </h3>
                
                 <template if:true={hasErrors}>
