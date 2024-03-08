@@ -2,8 +2,8 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
     <isExposed>true</isExposed>
-    <description>This help users select and upload a file over 3MB.</description>
-    <masterLabel>Gov UK File Upload Advanced</masterLabel>
+    <description>Component deprecated, do not use.</description>
+    <masterLabel>DEPRECATED - Gov UK File Upload Advanced</masterLabel>
     <targets>
         <target>lightning__FlowScreen</target>
     </targets>

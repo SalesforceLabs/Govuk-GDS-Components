@@ -10,6 +10,7 @@
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
             <property name="title" label="Title" type="String" description="Title for the summary screen"></property>
+            <property name="fontSize" type="String" label="Label Font Size" default="Medium" description="Label Font Size - Small, Medium or Large"/>
             <property name="sectionName" label="Section Name" type="String" description="A unique name in the current form."></property>
             <property name="instructionsHTML" label="Instructions HTML" type="String" description="Instruction HTML code"></property>
             <property name="destination" label="Destination" type="String" description="Output destination"></property>

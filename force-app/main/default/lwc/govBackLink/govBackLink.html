@@ -2,7 +2,7 @@
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container ">
         <template if:true={isVisible}>
-            <a href="#" class="govuk-back-link" onclick={handleBack}>{backLinkLabel}</a>
+            <a href="#" class="govuk-back-link" onclick={handleBack} aria-label={backLinkLabel}>{backLinkLabel}</a>
         </template>
     </div>
 </template>

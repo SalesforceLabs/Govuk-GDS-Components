@@ -24,19 +24,21 @@
                 <a href={serviceURL} class="govuk-header__link govuk-header__link--service-name">
                     {serviceName}
                 </a>
-                <button type="button" class="govuk-header__menu-button govuk-js-header-toggle"
-                    aria-controls="navigation" aria-label="Show or hide navigation menu" onclick={toggleButton}>{menuLabel}</button>
-                <nav>
-                    <ul id="navigation" class="govuk-header__navigation" aria-label="Navigation menu">
-                        <template for:each={menuItems} for:item="menuItem">
-                            <li key={menuItem.Id} class={menuItem.class}>
-                                <a class="govuk-header__link" href={menuItem.fullTarget} target={menuItem.targetPref}>
-                                    {menuItem.Label}
-                                </a> 
-                            </li>
-                        </template>
-                    </ul>
-                </nav>
+                <template if:true={hasMenuItems}>
+                    <button type="button" class="govuk-header__menu-button govuk-js-header-toggle"
+                        aria-controls="navigation" aria-label="Show or hide navigation menu" onclick={toggleButton}>{menuLabel}</button>
+                    <nav>
+                        <ul id="navigation" class="govuk-header__navigation" aria-label="Navigation menu">
+                            <template for:each={menuItems} for:item="menuItem">
+                                <li key={menuItem.Id} class={menuItem.class}>
+                                    <a class="govuk-header__link" href={menuItem.fullTarget} target={menuItem.targetPref}>
+                                        {menuItem.Label}
+                                    </a> 
+                                </li>
+                            </template>
+                        </ul>
+                    </nav>
+                </template>
             </div> 
         </div>
     </div>

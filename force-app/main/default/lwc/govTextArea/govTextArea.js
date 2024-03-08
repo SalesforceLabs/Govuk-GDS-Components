@@ -7,6 +7,7 @@ import {LightningElement, api, track, wire} from 'lwc';
 import {FlowAttributeChangeEvent} from 'lightning/flowSupport';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
+import UNREGISTER_MC from '@salesforce/messageChannel/unregistrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
 import SET_FOCUS_MC from '@salesforce/messageChannel/setFocusMessage__c';
@@ -20,8 +21,8 @@ export default class GovTextArea extends LightningElement {
     @api characterLimit;
     @api required;
     @api errorMessage;
-    @api labelFontSize;
     @api fontSize = 'Medium';
+    @api labelFontSize; // OBSOLETE - can't remove form package 
     @api maxCharacterCount = 32768;
     @api showCharacterCount;
     @api rowCount = 5;
@@ -52,25 +53,16 @@ export default class GovTextArea extends LightningElement {
         // subscribe to the message channels
         this.subscribeMCs();
 
-        // publish the registration message after 0.1 sec to give other components time to initialise
-        setTimeout(() => {
-            publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
-        }, 100);
+        this.register();
     }
 
     renderedCallback() {
         // getting ID of component's field
         this.textAreaFieldId = this.template.querySelector('textarea').getAttribute('id'); 
-        
-        // inserting hint text and rendering its HTML
-        // const htmlElement = this.template.querySelector(".html-element");
-        // if(htmlElement) {
-        //     htmlElement.innerHTML = this.hintText;
-        //     this.initialised = true;
-        // }
     }
 
     disconnectedCallback() {
+        this.unregister();
         this.unsubscribeMCs();
     }
 
@@ -119,8 +111,8 @@ export default class GovTextArea extends LightningElement {
     }
 
     getHSize(){
-        if(this.labelFontSize) {
-            switch(this.labelFontSize.toLowerCase()) {
+        if(this.fontSize) {
+            switch(this.fontSize.toLowerCase()) {
                 case "small":
                     this.h3Size = true;
                     // labelClass = "govuk-label govuk-label--s";
@@ -197,6 +189,21 @@ export default class GovTextArea extends LightningElement {
         this.setFocusSubscription = null;
     }
 
+    register(){
+        // publish the registration message after 0.1 sec to give other components time to initialise
+        setTimeout(() => {
+            publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
+        }, 100);
+    }
+
+    //inform subscribers that this comoponent is no longer available
+    unregister() {
+        console.log('govTextArea: unregister',this.fieldId);
+
+        //have to create a new message context to unregister
+        publish(createMessageContext(), UNREGISTER_MC, { componentId: this.fieldId });
+    }
+
     handleSetFocusMessage(message){
         // filter message to check if our component (id) needs to set focus
         let myComponentId = message.componentId;
@@ -219,7 +226,6 @@ export default class GovTextArea extends LightningElement {
             this.hasErrors = false;
         }
 
-        //console.log('CHECKBOX: Sending validation state message');
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,
