@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Radios
  * Derived_From_Frontend_Version:v3.13.1
- * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell, Jakub Szelagowski
  **/
 import {LightningElement, api, track, wire} from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
@@ -151,7 +151,7 @@ export default class GovRadios extends LightningElement {
                 radioOption.key = `csv-value-${i}`;
                 radioOption.label = radioLabelsArray[i];
                 radioOption.value = radioValuesArray[i];
-                console.log(' !!!!!! radioValuesArray[i]: ' + radioValuesArray[i]);
+                
                 radioOption.checked = (this.selectedValue === radioValuesArray[i]);
                 this.radioOptions.push(radioOption);
                 if (i==0) {
@@ -165,10 +165,6 @@ export default class GovRadios extends LightningElement {
         this.subscribeMCs();
         
         this.register();
-        // // publish the registration message after 0.1 sec to give other components time to initialise
-        // setTimeout(() => {
-        //     publish(this.messageContext, REGISTER_MC, { componentId: this.uniqueFieldId }); //radioFieldIdForFocus //m  radioFieldId
-        // }, 100);
     }
 
     renderedCallback(){
@@ -184,26 +180,10 @@ export default class GovRadios extends LightningElement {
 
                     for(let i=0; i<allRadioFieldComps.length; i++) {
                         // show all properties of single allRadioFieldComps[i]
-                        // console.log('allRadioFieldComps[i]: ' + allRadioFieldComps[i]);
                         let radioFieldComp = allRadioFieldComps[i];
-                        console.log('radioFieldComp.id: ' + radioFieldComp.id);
-                        console.log('radioFieldComp.name: ' + radioFieldComp.name);
-                        console.log('radioFieldComp.value: ' + radioFieldComp.value);
-                        // console.log('radioFieldComp.checked: ' + radioFieldComp.checked);
-                        // console.log('radioFieldComp.type: ' + radioFieldComp.type);
-                        // console.log('radioFieldComp.required: ' + radioFieldComp.required);
-                        // console.log('radioFieldComp.disabled: ' + radioFieldComp.disabled);
-                        // console.log('radioFieldComp.form: ' + radioFieldComp.form);
-                        // console.log('radioFieldComp.indeterminate: ' + radioFieldComp.indeterminate);
-                        // console.log('   ');
-                        // console.log('---');
-                    
                     }
-
-                    console.log('allRadioFieldComps[0].id: ' + allRadioFieldComps[0].id);
                     this.radioFieldIdForFocus = allRadioFieldComps[0].id;
                 }
-           
         }, 100);
     }
 
@@ -322,15 +302,12 @@ export default class GovRadios extends LightningElement {
     register(){
         // publish the registration message after 0.1 sec to give other components time to initialise
         setTimeout(() => {
-            //publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
             publish(this.messageContext, REGISTER_MC, {componentId:this.uniqueFieldId});
         }, 100);
     }
 
     //inform subscribers that this comoponent is no longer available
     unregister() {
-        console.log('govRadios: unregister',this.uniqueFieldId);
-
         //have to create a new message context to unregister
         publish(createMessageContext(), UNREGISTER_MC, { componentId: this.uniqueFieldId });
     }

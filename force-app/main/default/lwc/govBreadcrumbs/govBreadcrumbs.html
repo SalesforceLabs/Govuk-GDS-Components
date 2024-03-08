@@ -5,7 +5,7 @@
           <ol class="govuk-breadcrumbs__list">
             <template for:each={pathItems} for:item="path">
               <li key={path.pageName} class="govuk-breadcrumbs__list-item">
-                <a href="#" class="govuk-breadcrumbs__link" data-id={path.pageName} onclick={handleClick}>{path.pageLabel}</a>
+                <a href="#" class="govuk-breadcrumbs__link" data-id={path.pageName} onclick={handleClick} aria-label={path.pageLabel}>{path.pageLabel}</a>
               </li>
             </template>
           </ol>

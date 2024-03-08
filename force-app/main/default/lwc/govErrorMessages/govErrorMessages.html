@@ -1,7 +1,7 @@
 <template>
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container ">
-        <a href="#" id="errorSummaryTitle" name="errorSummaryTitle"></a>
+        <a href="#" id="errorSummaryTitle" name="errorSummaryTitle" aria-label="Error Summary"></a>
         <template if:true={hasErrors}>
             <div class="govuk-error-summary error-summary" aria-labelledby="error-summary-title" 
             role="alert" tabindex="0" data-module="govuk-error-summary">
@@ -12,7 +12,7 @@
                     <ul class="govuk-list govuk-error-summary__list">
                         <template for:each={components} for:item="component">
                             <li key={component.id}>
-                                <a href="#" onclick={handleClick} onfocus={handleLinkFocus} onblur={handleLinkBlur} class={highlightedLinkClass} data-target-id={component.focusId} if:false={component.isValid}>{component.error}</a>
+                                <a href="#" onclick={handleClick} onfocus={handleLinkFocus} onblur={handleLinkBlur} class={highlightedLinkClass} data-target-id={component.focusId} if:false={component.isValid} aria-label={component.error}>{component.error}</a>
                             </li>
                         </template>
                     </ul>

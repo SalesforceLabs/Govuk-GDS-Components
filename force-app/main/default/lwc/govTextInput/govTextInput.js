@@ -52,7 +52,7 @@ export default class GovTextInput extends LightningElement {
 
     // Lifecycle functions
     connectedCallback() {
-        console.log('govTextInput.js connectedCallback');
+        // console.log('govTextInput.js connectedCallback');
 
         // sets the H value for template based on labele font size  
         this.getHSize(); 
@@ -68,18 +68,11 @@ export default class GovTextInput extends LightningElement {
         this.charCount = (this.value) ? this.value.length : 0;
 
         this.register();
-        // // publish the registration message after 0.1 sec to give other components time to initialise
-        // setTimeout(() => {
-        //     // console.log('INSIDE connectedCallback this.textFieldId: '+ this.textFieldId);
-        //     publish(this.messageContext, REGISTER_MC, { componentId: this.textFieldId });
-        // }, 100);
-        
-        
     }
 
     renderedCallback() {
 
-        console.log('govTextInput.js renderedCallback');
+        // console.log('govTextInput.js renderedCallback');
         // getting ID of component's field
         this.textFieldId = this.template.querySelector('input').getAttribute('id'); 
         
@@ -92,8 +85,6 @@ export default class GovTextInput extends LightningElement {
     }
 
     disconnectedCallback() {
-        console.log('govTextInput.js disconnectedCallback');
-        
         this.unregister();
         this.unsubscribeMCs();
         
@@ -162,7 +153,6 @@ export default class GovTextInput extends LightningElement {
             this.h3Size = true;
             // labelClass = "govuk-label govuk-label--s";
         }
-        //return labelClass;
     }
 
     get characterCountText() {
@@ -211,7 +201,6 @@ export default class GovTextInput extends LightningElement {
         this.validateSubscription = subscribe (
             this.messageContext,
             VALIDATION_MC, (message) => {
-                // console.log('[govTextInput.js: subscribeMCs] returned form VALIDATION_MC');
                 this.handleValidateMessage(message);
             });
         
@@ -236,7 +225,6 @@ export default class GovTextInput extends LightningElement {
     register() {
         // publish the registration message after 0.1 sec to give other components time to initialise
         setTimeout(() => {
-            // console.log('INSIDE connectedCallback this.textFieldId: '+ this.textFieldId);
             publish(this.messageContext, REGISTER_MC, { componentId: this.textFieldId });
         }, 100);
     }
@@ -254,23 +242,12 @@ export default class GovTextInput extends LightningElement {
         let myComponentId = message.componentId;
 
         if(myComponentId == this.textFieldId){
-            // console.dir(message);
             let myComponent = this.template.querySelector('input');
-            // console.log('myComponent: '+ myComponent);
-            // console.log('myComponent: '+ myComponent.id);
-            // console.log('myComponent: '+ myComponent.innerHTML);
-            // console.log('myComponent: '+ myComponent.value);
             myComponent.focus();
         }
     }
 
     handleValidateMessage(message) {
-        // console.log('INSIDE: [govTextInput.js: handleValidateMessage]' + message);
-        // console.log('message.componentId: ' + message.componentId);
-        // console.log('message.componentSelect: ' + message.componentSelect);
-        // console.log('message.isValid: ' + message.isValid);
-        // console.log('message.error: ' + message.error);
-        // console.log('message.focusId: ' + message.focusId);
         this.handleValidate();
     }
 
@@ -287,13 +264,6 @@ export default class GovTextInput extends LightningElement {
                 }
             }
         }
-
-        console.log('govTextInput.js: handleValidate', this);
-
-        // console.log('[govTextInput.js: handleValidate]');
-        // console.log('handleValidate: '+this.hasErrors);
-        // console.log('this.textFieldId: ' + this.textFieldId);
-        // console.log('this.errorMessage: ' + this.errorMessage);
 
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.textFieldId,

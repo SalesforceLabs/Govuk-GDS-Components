@@ -1,10 +1,21 @@
 <template>
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container">
-        <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-main-wrapper " id="main-content">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <div class="govuk-heading-l">{title}</div>
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-label-wrapper" if:true={h1Size}>
+                            <label class={labelClass} for="input-text">{label}</label>
+                        </h1>
+                        <h2 class="govuk-label-wrapper" if:true={h2Size}>
+                            <label class={labelClass} for="input-text">{label}</label>
+                        </h2>
+                        <h3 class="govuk-label-wrapper" if:true={h3Size}>
+                            <label class={labelClass} for="input-text">{label}</label>
+                        </h3>
+                    </div>
+                    <!-- <div class="govuk-heading-l">{title}</div> -->
 
                     <!-- start of a section -->
                     <dl key={sectionName}  class="govuk-summary-list">
@@ -18,7 +29,7 @@
                                 </dd>
                                 <template if:true={sectionField.destination}>
                                     <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#" data-destination={sectionField.destination} onclick={handleChange}>
+                                        <a class="govuk-link" href="#" data-destination={sectionField.destination} onclick={handleChange} aria-label={getAriaChangeSectionFieldLabel}>
                                             Change<span class="govuk-visually-hidden"> {sectionField.label}</span>
                                         </a>
                                     </dd>
@@ -35,6 +46,6 @@
                     <div class="html-element" lwc:dom="manual"></div>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 </template>
