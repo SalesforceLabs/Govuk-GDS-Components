@@ -30,7 +30,7 @@ public without sharing class FileUploadAdvancedHelper{
                 PathOnClient = '/'+fileName,
                 VersionData = Blob.valueOf(' '),
                 IsMajorVersion = FALSE,
-                Guest_Record_fileupload__c = encodedRecordId
+                uxgovuk__Guest_Record_fileupload__c = encodedRecordId
             );
             versions.add(version);
         }
@@ -77,14 +77,14 @@ public without sharing class FileUploadAdvancedHelper{
         try {
             System.debug('inside createContentDocLink verIds + count: ' + versIds + versIds.size() + ' encodedKey: '+ encodedKey + 'visibleToAllUsers: ' + visibleToAllUsers);
             List<ContentDocumentLink> links = new List<ContentDocumentLink>();
-            for(ContentVersion vers : [SELECT Id, ContentDocumentId, Guest_Record_fileupload__c FROM ContentVersion WHERE Id IN :versIds]){
+            for(ContentVersion vers : [SELECT Id, ContentDocumentId, uxgovuk__Guest_Record_fileupload__c FROM ContentVersion WHERE Id IN :versIds]){
 
-                String grf = decrypt(vers.Guest_Record_fileupload__c, encodedKey);
-                System.debug('Guest_Record_fileupload__c (decrypted): ' + grf);
+                String grf = decrypt(vers.uxgovuk__Guest_Record_fileupload__c, encodedKey);
+                System.debug('uxgovuk__Guest_Record_fileupload__c (decrypted): ' + grf);
 
                 ContentDocumentLink link = new ContentDocumentLink(
                     ContentDocumentId = vers.ContentDocumentId,
-                    LinkedEntityId = decrypt(vers.Guest_Record_fileupload__c, encodedKey)
+                    LinkedEntityId = decrypt(vers.uxgovuk__Guest_Record_fileupload__c, encodedKey)
                 );
                 if(visibleToAllUsers != null){
                     if(visibleToAllUsers){
