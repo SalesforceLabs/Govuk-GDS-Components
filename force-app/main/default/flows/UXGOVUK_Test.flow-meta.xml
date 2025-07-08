@@ -832,7 +832,7 @@
             <inputParameters>
                 <name>radioPicklistField</name>
                 <value>
-                    <stringValue>uxgovuk__Application__c.uxgovuk__Number_of_Balls__c</stringValue>
+                    <stringValue>Application__c.Number_of_Balls__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -847,7 +847,7 @@
         </fields>
         <fields>
             <name>Personal_Nav_0</name>
-            <extensionName>uxgovuk:govNavigationButtons</extensionName>
+            <extensionName>c:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -926,7 +926,7 @@
             <inputParameters>
                 <name>backLinkLabel</name>
                 <value>
-                    <elementReference>$Label.uxgovuk__Back_Label</elementReference>
+                    <elementReference>$Label.Back_Label</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -974,7 +974,7 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <elementReference>$Label.uxgovuk__Forename_label</elementReference>
+                    <elementReference>$Label.Forename_label</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1000,7 +1000,7 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <elementReference>$Label.uxgovuk__Surname_Label</elementReference>
+                    <elementReference>$Label.Surname_Label</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1056,7 +1056,7 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <elementReference>$Label.uxgovuk__Email_Label</elementReference>
+                    <elementReference>$Label.Email_Label</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1076,7 +1076,7 @@
             <inputParameters>
                 <name>buttonLabelsString</name>
                 <value>
-                    <elementReference>$Label.uxgovuk__Next_Label</elementReference>
+                    <elementReference>$Label.Next_Label</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>

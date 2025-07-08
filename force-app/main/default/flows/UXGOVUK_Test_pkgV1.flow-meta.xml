@@ -850,7 +850,7 @@
             <inputParameters>
                 <name>radioPicklistField</name>
                 <value>
-                    <stringValue>uxgovuk__Application__c.uxgovuk__Number_of_Balls__c</stringValue>
+                    <stringValue>Application__c.Number_of_Balls__c</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
