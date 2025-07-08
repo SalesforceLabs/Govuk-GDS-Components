@@ -54,11 +54,22 @@ export default class GovTextArea extends LightningElement {
         this.subscribeMCs();
 
         this.register();
+        // // publish the registration message after 0.1 sec to give other components time to initialise
+        // setTimeout(() => {
+        //     publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
+        // }, 100);
     }
 
     renderedCallback() {
         // getting ID of component's field
         this.textAreaFieldId = this.template.querySelector('textarea').getAttribute('id'); 
+        
+        // inserting hint text and rendering its HTML
+        // const htmlElement = this.template.querySelector(".html-element");
+        // if(htmlElement) {
+        //     htmlElement.innerHTML = this.hintText;
+        //     this.initialised = true;
+        // }
     }
 
     disconnectedCallback() {
@@ -226,6 +237,7 @@ export default class GovTextArea extends LightningElement {
             this.hasErrors = false;
         }
 
+        //console.log('CHECKBOX: Sending validation state message');
         publish(this.messageContext, VALIDATION_STATE_MC, {
             componentId: this.fieldId,
             isValid: !this.hasErrors,
