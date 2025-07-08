@@ -6,6 +6,8 @@ import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
 import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
 import getKey from '@salesforce/apex/FileUploadAdvancedHelper.getKey';
 import encrypt from '@salesforce/apex/FileUploadAdvancedHelper.encrypt';
+import createContentVers from '@salesforce/apex/FileUploadAdvancedHelper.createContentVers';
+import appendDataToContentVersion from '@salesforce/apex/FileUploadAdvancedHelper.appendDataToContentVersion';
 import createContentDocLink from '@salesforce/apex/FileUploadAdvancedHelper.createContentDocLink';
 import deleteContentDoc from '@salesforce/apex/FileUploadAdvancedHelper.deleteContentDoc';
 import getExistingFiles from '@salesforce/apex/FileUploadAdvancedHelper.getExistingFiles';
@@ -19,7 +21,6 @@ import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
 import VALIDATION_STATE_MC from '@salesforce/messageChannel/validationStateMessage__c';
 import SET_FOCUS_MC from '@salesforce/messageChannel/setFocusMessage__c';
-// import { LABEL_SIZE } from 'c/govSharedJs';
 
 export default class GovFileUploadEnhanced extends LightningElement {
 
@@ -32,10 +33,6 @@ export default class GovFileUploadEnhanced extends LightningElement {
     @track versIds          = [];
     @api errorMessage       = '';
     @api label;
-    @api labelSize;
-    @api hintText;
-    @api buttonLabel = 'Choose Files';
-    @api dropzoneLabel = 'No file chosen';
     @api acceptedFormats;
     @api allowMultiple;
     @api overriddenFileName;    
@@ -54,8 +51,7 @@ export default class GovFileUploadEnhanced extends LightningElement {
 
     //accessibility text
     message = '';
-    fileFieldName ='Guest_Record_fileupload__c';
-    
+
     @api filesUploadedCollection = []; 
     @api filesUploaded; 
 
@@ -93,35 +89,20 @@ export default class GovFileUploadEnhanced extends LightningElement {
         return groupClass;
     }
 
-    get labelSizeClass(){
-        return 'SMALL'; // this.labelSize && LABEL_SIZE[this.labelSize] ? LABEL_SIZE[this.labelSize.toUpperCase()] : LABEL_SIZE['SMALL'];
-    }
-
-    rendered = false;
     renderedCallback() {
-        // const myFileUploadComp = this.template.querySelector('fileUploader');
-        // myFileUploadComp.setCustomValidity('');
 
-        if(!this.rendered){
-            this.rendered = true;
-            this.displayExistingFiles();
-            this.loadStylesheets();
 
-            const inputBorder = this.template.querySelector('.body-fix');
-            if(inputBorder){
-                inputBorder.style.setProperty('--gds-button-text', `\'${this.buttonLabel}\'`);
-                inputBorder.style.setProperty('--gds-dropzone-text', `\'${this.dropzoneLabel}\'`);
-            }
-        }
-    }
-
-    async loadStylesheets(){
-        if(!this.isCssLoaded){
-            const overides = await loadStyle(this,uploadUiOverride);
-            if(overides){
-                this.isCssLoaded = true;
-            }
-        }
+        this.displayExistingFiles();
+       
+        if(this.isCssLoaded) return
+        this.isCssLoaded = true;
+        
+        loadStyle(this,uploadUiOverride).then(()=>{
+            
+        })
+        .catch(error=>{
+            this.showErrors(this.reduceErrors(error).toString());
+        });
     }
 
 
@@ -132,11 +113,6 @@ export default class GovFileUploadEnhanced extends LightningElement {
 
     }
 
-    handleFocus(event){
-        // event.preventDefault();
-        const myComponent = this.template.querySelector('a[name="fileUploaderSummaryTitle"]');
-        myComponent.focus();
-    }
     connectedCallback(){
         console.log('*** this.recordId: '+ this.recordId);
         let cachedSelection = sessionStorage.getItem(this.uniqueFieldId + '.files'); 

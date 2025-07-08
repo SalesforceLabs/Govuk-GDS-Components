@@ -371,7 +371,7 @@
         </connector>
         <fields>
             <name>Checkboxes1_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -385,7 +385,7 @@
         </fields>
         <fields>
             <name>Checkboxes1_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -393,7 +393,7 @@
         </fields>
         <fields>
             <name>Checkboxes1_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -410,7 +410,7 @@
         </fields>
         <fields>
             <name>Checkboxes1_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -456,7 +456,7 @@
         </connector>
         <fields>
             <name>Checkboxes1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -476,7 +476,7 @@
         </fields>
         <fields>
             <name>Checkboxes1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -484,7 +484,7 @@
         </fields>
         <fields>
             <name>Checkboxes1_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -502,7 +502,7 @@
         </fields>
         <fields>
             <name>Checkboxes1</name>
-            <extensionName>c:govCheckboxes</extensionName>
+            <extensionName>uxgovuk:govCheckboxes</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -546,7 +546,7 @@
         </fields>
         <fields>
             <name>Checkboxes1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -592,7 +592,7 @@
         </connector>
         <fields>
             <name>Checkboxes2_confirm_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -606,7 +606,7 @@
         </fields>
         <fields>
             <name>Checkboxes2_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -620,7 +620,7 @@
         </fields>
         <fields>
             <name>Checkboxes2_Confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -628,7 +628,7 @@
         </fields>
         <fields>
             <name>Checkboxes2_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -647,7 +647,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxes2_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -694,7 +694,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Checkboxes2_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -708,7 +708,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxest2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -722,7 +722,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxes2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -730,7 +730,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxes2_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -746,7 +746,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxes2_text_spacer</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -784,7 +784,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxes_dummy</name>
-            <extensionName>c:govCheckboxes</extensionName>
+            <extensionName>uxgovuk:govCheckboxes</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -840,7 +840,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxes2</name>
-            <extensionName>c:govCheckboxes</extensionName>
+            <extensionName>uxgovuk:govCheckboxes</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -901,7 +901,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkboxes2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -947,7 +947,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Checkboxes1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -967,7 +967,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -975,7 +975,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes1_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -993,7 +993,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>checkbox3_1</name>
-            <extensionName>c:govCheckboxes</extensionName>
+            <extensionName>uxgovuk:govCheckboxes</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -1043,7 +1043,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkbox3_2</name>
-            <extensionName>c:govCheckboxes</extensionName>
+            <extensionName>uxgovuk:govCheckboxes</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -1069,7 +1069,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Checkbox3_3</name>
-            <extensionName>c:govCheckboxes</extensionName>
+            <extensionName>uxgovuk:govCheckboxes</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -1107,7 +1107,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -1153,7 +1153,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>choose_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -1161,7 +1161,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>choose_html</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -1178,7 +1178,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Choice</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -1228,7 +1228,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>AccountId</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -1260,7 +1260,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>choose_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -1306,7 +1306,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_2_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -1320,7 +1320,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_2_of_Copy_1_of_radios1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -1328,7 +1328,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_conditional_visibility_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -1344,7 +1344,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios_condition_checkbox</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -1400,7 +1400,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>conditional_checkbox</name>
-            <extensionName>c:govCheckboxes</extensionName>
+            <extensionName>uxgovuk:govCheckboxes</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -1414,7 +1414,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_2_of_Copy_1_of_radios1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -1460,7 +1460,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_2_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -1474,7 +1474,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_2_of_Copy_1_of_radios1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -1482,7 +1482,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_conditional_visibility_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -1498,7 +1498,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_radios_condition</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -1554,7 +1554,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>conditional_radios</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -1586,7 +1586,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_2_of_Copy_1_of_radios1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -1632,7 +1632,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_2_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -1646,7 +1646,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_2_of_Copy_1_of_radios1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -1654,7 +1654,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_conditional_visibility_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -1670,7 +1670,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_radios_condition</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -1726,7 +1726,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_conditional_textarea</name>
-            <extensionName>c:govTextArea</extensionName>
+            <extensionName>uxgovuk:govTextArea</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -1762,7 +1762,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_2_of_Copy_1_of_radios1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -1808,7 +1808,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -1822,7 +1822,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_radios1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -1830,7 +1830,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>conditional_visibility_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -1846,7 +1846,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios_condition</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -1902,7 +1902,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Other_text</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -1944,7 +1944,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_radios1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -1990,7 +1990,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_2_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2004,7 +2004,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_2_of_Copy_1_of_radios1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2012,7 +2012,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_conditional_visibility_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2028,7 +2028,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios_condition_textarea</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -2084,7 +2084,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>conditional_textarea</name>
-            <extensionName>c:govTextArea</extensionName>
+            <extensionName>uxgovuk:govTextArea</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -2120,7 +2120,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_2_of_Copy_1_of_radios1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -2166,7 +2166,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_text2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2186,7 +2186,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_text2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2194,7 +2194,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_notification_html1</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2209,7 +2209,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>notification_banner_success</name>
-            <extensionName>c:govNotificationBanner</extensionName>
+            <extensionName>uxgovuk:govNotificationBanner</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>bodyText</name>
@@ -2235,7 +2235,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_text2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -2281,7 +2281,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_text_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2295,7 +2295,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_text_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2303,7 +2303,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_text_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2319,7 +2319,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Text_Input_Simple</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -2345,7 +2345,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_text_input_hint</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -2365,7 +2365,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_text_area1</name>
-            <extensionName>c:govTextArea</extensionName>
+            <extensionName>uxgovuk:govTextArea</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -2421,7 +2421,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_text_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -2467,7 +2467,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_text2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2487,7 +2487,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_text2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2495,7 +2495,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>notification_html1</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2510,7 +2510,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>notification_banner_warning</name>
-            <extensionName>c:govNotificationBanner</extensionName>
+            <extensionName>uxgovuk:govNotificationBanner</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>bodyText</name>
@@ -2536,7 +2536,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_text2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -2582,7 +2582,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Date1_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2596,7 +2596,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date1_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2604,7 +2604,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date1_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2626,7 +2626,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date1_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -2672,7 +2672,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Date1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2686,7 +2686,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2694,7 +2694,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date1_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2713,7 +2713,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>date1</name>
-            <extensionName>c:govDate</extensionName>
+            <extensionName>uxgovuk:govDate</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -2751,7 +2751,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -2797,7 +2797,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Checkboxes2_confirm_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -2811,7 +2811,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes2_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2825,7 +2825,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes2_Confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2833,7 +2833,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes2_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2858,7 +2858,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes2_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -2904,7 +2904,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Date2_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -2918,7 +2918,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -2932,7 +2932,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -2940,7 +2940,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Checkboxes2_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -2959,7 +2959,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date2_text_spacer</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -2997,7 +2997,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date2_dummy</name>
-            <extensionName>c:govDate</extensionName>
+            <extensionName>uxgovuk:govDate</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -3035,7 +3035,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date2</name>
-            <extensionName>c:govDate</extensionName>
+            <extensionName>uxgovuk:govDate</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -3073,7 +3073,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Date2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3119,7 +3119,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>File1_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3133,7 +3133,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3141,7 +3141,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FIle1_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3157,7 +3157,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3203,7 +3203,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>File1_Enhanced_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3217,7 +3217,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_Enhanced_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3225,7 +3225,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_Enhanced_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3241,7 +3241,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_Enhanced_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3287,7 +3287,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>File1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3301,7 +3301,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3309,7 +3309,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3327,7 +3327,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1</name>
-            <extensionName>c:govFileUpload</extensionName>
+            <extensionName>uxgovuk:govFileUpload</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -3359,7 +3359,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>File1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3405,7 +3405,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>FileEnhanced1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3419,7 +3419,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3427,7 +3427,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced1_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3443,7 +3443,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced1</name>
-            <extensionName>c:govFileUploadEnhanced</extensionName>
+            <extensionName>uxgovuk:govFileUploadEnhanced</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>errorMessage</name>
@@ -3493,7 +3493,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3539,7 +3539,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>FileEnhanced2_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3553,7 +3553,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced2_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3561,7 +3561,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced2_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3577,7 +3577,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced2_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3623,7 +3623,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>FileEnhanced2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3637,7 +3637,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3645,7 +3645,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced2_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3661,7 +3661,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced2</name>
-            <extensionName>c:govFileUploadEnhanced</extensionName>
+            <extensionName>uxgovuk:govFileUploadEnhanced</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>errorMessage</name>
@@ -3711,7 +3711,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced3</name>
-            <extensionName>c:govFileUploadEnhanced</extensionName>
+            <extensionName>uxgovuk:govFileUploadEnhanced</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>acceptedFormats</name>
@@ -3755,7 +3755,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>FileEnhanced2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3801,7 +3801,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_2_of_Copy_1_of_Copy_1_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3815,7 +3815,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_2_of_Copy_1_of_no_input_test_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -3829,7 +3829,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_2_of_confirm_multi_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3845,7 +3845,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_2_of_confirmation_multi_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -3897,7 +3897,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>multi_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -3917,7 +3917,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>multi_nav_errros</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3925,7 +3925,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>multi_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -3941,7 +3941,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>temp</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>label</name>
@@ -3955,7 +3955,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>multi_nav1</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4001,7 +4001,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4015,7 +4015,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_no_input_test_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -4029,7 +4029,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_confirm_multi_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4045,7 +4045,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_confirmation_multi_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4097,7 +4097,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_multi_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4117,7 +4117,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>nav_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -4125,7 +4125,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_multi_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4141,7 +4141,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>multi_nav2</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4187,7 +4187,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4201,7 +4201,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_no_input_test_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -4215,7 +4215,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>confirm_multi_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4231,7 +4231,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>confirmation_multi_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4283,7 +4283,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_summary</name>
-            <extensionName>c:govSummary</extensionName>
+            <extensionName>uxgovuk:govSummary</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>confirmationDestinations</name>
@@ -4327,7 +4327,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>multi_nav3</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4373,7 +4373,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4387,7 +4387,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>no_input_test_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -4401,7 +4401,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_radios1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -4409,7 +4409,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>no_input_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4425,7 +4425,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_radios1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4471,7 +4471,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>radios1_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4485,7 +4485,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios1_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -4493,7 +4493,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios1_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4509,7 +4509,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios1_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4555,7 +4555,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>radios1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4569,7 +4569,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -4577,7 +4577,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios1_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4593,7 +4593,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios1</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -4649,7 +4649,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4695,7 +4695,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>radios2_confirm_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -4709,7 +4709,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4723,7 +4723,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_Confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -4731,7 +4731,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4747,7 +4747,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -4793,7 +4793,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>radios2_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -4807,7 +4807,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -4821,7 +4821,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -4829,7 +4829,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -4845,7 +4845,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_text_spacer</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -4883,7 +4883,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios_dummy</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -4939,7 +4939,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2</name>
-            <extensionName>c:govRadios</extensionName>
+            <extensionName>uxgovuk:govRadios</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>uniqueFieldId</name>
@@ -4989,7 +4989,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>radios2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -5035,7 +5035,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>select1_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -5049,7 +5049,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select1_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -5057,7 +5057,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select1_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -5074,7 +5074,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select1_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -5120,7 +5120,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>select1_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -5134,7 +5134,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select1_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -5142,7 +5142,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select1_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -5158,7 +5158,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select1</name>
-            <extensionName>c:govSelect</extensionName>
+            <extensionName>uxgovuk:govSelect</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -5208,7 +5208,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select1_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -5254,7 +5254,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Select2_confirm_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -5268,7 +5268,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select2_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -5282,7 +5282,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select2_Confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -5290,7 +5290,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select2_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -5307,7 +5307,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select2_confirm_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -5353,7 +5353,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>select2_back</name>
-            <extensionName>c:govBackLink</extensionName>
+            <extensionName>uxgovuk:govBackLink</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>backAction</name>
@@ -5367,7 +5367,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -5381,7 +5381,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -5389,7 +5389,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select2_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -5405,7 +5405,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>select2_text_spacer</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -5443,7 +5443,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select_dummy</name>
-            <extensionName>c:govSelect</extensionName>
+            <extensionName>uxgovuk:govSelect</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>label</name>
@@ -5499,7 +5499,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select2</name>
-            <extensionName>c:govSelect</extensionName>
+            <extensionName>uxgovuk:govSelect</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -5549,7 +5549,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Select2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -5595,7 +5595,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>Copy_1_of_Copy_1_of_File1_confirm_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -5609,7 +5609,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Copy_1_of_Copy_1_of_File1_confirm_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -5617,7 +5617,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>summary_confirm_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -5634,7 +5634,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>summary_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -5680,7 +5680,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>summary</name>
-            <extensionName>c:govSummary</extensionName>
+            <extensionName>uxgovuk:govSummary</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>confirmationDestinations</name>
@@ -5724,7 +5724,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>summary_list_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -5770,7 +5770,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>text_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -5784,7 +5784,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -5792,7 +5792,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_HTML</name>
-            <extensionName>c:govMarkupText</extensionName>
+            <extensionName>uxgovuk:govMarkupText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>markupText</name>
@@ -5808,7 +5808,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>warning_test</name>
-            <extensionName>c:govWarningText</extensionName>
+            <extensionName>uxgovuk:govWarningText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>warningText</name>
@@ -5822,7 +5822,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>details_test</name>
-            <extensionName>c:govDetails</extensionName>
+            <extensionName>uxgovuk:govDetails</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>detailsText</name>
@@ -5842,7 +5842,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>inset_test</name>
-            <extensionName>c:govInsetText</extensionName>
+            <extensionName>uxgovuk:govInsetText</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>insetText</name>
@@ -5856,7 +5856,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>Text_Input_Simple</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -5882,7 +5882,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_input_hint</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -5908,7 +5908,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_input_small</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -5946,7 +5946,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_Input_required</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -5984,7 +5984,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_input_default</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -6040,7 +6040,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_input_regex</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -6084,7 +6084,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>input_text_ix</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -6128,7 +6128,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_input_react</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -6154,7 +6154,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>input_text_relative</name>
-            <extensionName>c:govTextInput</extensionName>
+            <extensionName>uxgovuk:govTextInput</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>fieldId</name>
@@ -6192,7 +6192,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>
@@ -6238,7 +6238,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </connector>
         <fields>
             <name>text2_history</name>
-            <extensionName>c:govHistoryManager</extensionName>
+            <extensionName>uxgovuk:govHistoryManager</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>pageName</name>
@@ -6258,7 +6258,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text2_errors</name>
-            <extensionName>c:govErrorMessages</extensionName>
+            <extensionName>uxgovuk:govErrorMessages</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -6266,7 +6266,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>panel1</name>
-            <extensionName>c:govPanel</extensionName>
+            <extensionName>uxgovuk:govPanel</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>bodyText</name>
@@ -6286,7 +6286,7 @@ NB outputs assigned to variables in Advanced - Assign Manual Variables</stringVa
         </fields>
         <fields>
             <name>text2_nav</name>
-            <extensionName>c:govNavigationButtons</extensionName>
+            <extensionName>uxgovuk:govNavigationButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>buttonActionsString</name>

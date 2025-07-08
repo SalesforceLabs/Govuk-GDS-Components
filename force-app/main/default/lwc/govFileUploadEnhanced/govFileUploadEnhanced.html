@@ -1,8 +1,7 @@
 <template>
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <div class="govuk-width-container js-enabled">
-      <div class="govuk-grid-row" oncontextmenu={handleFocus}> 
-        <div class="govuk-grid-column-two-thirds">
+
           <p role="status" aria-live="assertive" class="govuk-visually-hidden">
             {message}
           </p>
@@ -10,37 +9,31 @@
             <lightning-spinner if:true={loading} alternative-text="Processing..." size="small"></lightning-spinner>
 
             <lightning-layout multiple-rows="true">
-              <div class="content-border">
+
                 <div class={formGroupClass}>
-                    <label class={labelSizeClass} for="uploadFile">
+                    <label class="govuk-label" for="uploadFile">
                         {label}
                     </label>
-                    <div class="govuk-hint" lwc:if={hintText}>
-                        {hintText}
-                    </div>
                     <p id="file-upload-1-error" class="govuk-error-message" if:true={hasErrors}>
                         <span class="govuk-visually-hidden">Error:</span>&nbsp;{errorMessage}
-                    </p>
-                    <div class="body-fix govuk-file-upload" >
+                      </p>
                       <!-- name="upload File" -->
-                      <a href="#" id="fileUploaderSummaryTitle" name="fileUploaderSummaryTitle"></a>
-                        <lightning-file-upload
-                                name="fileUploader"
-                                label=""
-                                accept={acceptedFormats}
-                                file-field-name={fileFieldName}
-                                file-field-value={value}
-                                onuploadfinished={handleUpload_lightningFile}
-                                multiple={allowMultiple}
-                                disabled={disabled}
-                                class="content-fix">
-                            </lightning-file-upload>
-                    </div>
-                  </div>
+                    <lightning-file-upload
+                            name="fileUploader"
+                            accept={acceptedFormats}
+                            file-field-name='uxgovuk__Guest_Record_fileupload__c'
+                            file-field-value={value}
+                            onuploadfinished={handleUpload_lightningFile}
+                            multiple={allowMultiple}
+                            disabled={disabled}
+                            class="govuk-file-upload">
+                        </lightning-file-upload>
                 </div>                
                 
             </lightning-layout>
- 
+
+
+            
          <div if:true={displayFileList}>
             <div>
                 <lightning-layout-item class="slds-form-element__label" size="12">
@@ -60,7 +53,7 @@
                         {objFile.name}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#" onclick={deleteDocument} data-documentid={objFile.documentId} data-contentversionid={objFile.contentVersionId}>
+                        <a class="govuk-link" href="#" onclick={deleteDocument} data-documentid={objFile.documentId} data-contentversionid={objFile.contentVersionId} aria-label="Remove file">
                           Remove<span class="govuk-visually-hidden">{objFile.removeFileAriaLabel}</span>
                         </a>
                       </dd>
@@ -69,8 +62,16 @@
                   </dl>
                 </div>
             </div>
-        </div>       
-      </div> 
-    </div>
-  </div> 
+
+            
+
+        </div>  
+
+
+                 
+
+
+        </div>
+
+    
 </template>

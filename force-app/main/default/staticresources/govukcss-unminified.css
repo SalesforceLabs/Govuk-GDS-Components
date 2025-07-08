@@ -7556,12 +7556,7 @@ td code {
     margin-top: 5px;
     margin-bottom: 20px;
     text-align: center;
-
-    text-decoration: underline;
-    text-decoration-thickness: max(1px, 0.0625rem);
-    text-underline-offset: 0.1578em;
   }
-
   @media print {
     .govuk-button-group .govuk-link {
       font-family: sans-serif;
