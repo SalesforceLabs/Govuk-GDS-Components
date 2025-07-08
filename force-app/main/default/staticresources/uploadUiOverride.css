@@ -1,8 +1,14 @@
+:root {
+    --gds-button-text:'Choose Files';
+    --gds-dropzone-text:'No file chosen';
+}
 span.slds-file-selector__button, span.slds-button span.slds-button_neutral{
     /* background-color: aqua; */
     width: 200px;
+    height: 32px;
+    padding: 4px;
+    font-size: 1rem;
 }
-
 
 /* END hiding slds icons except X */
 svg[data-key="upload"]{
@@ -14,15 +20,14 @@ display: none;
 }
 /* END hiding slds icons except X */
 
-
 label.slds-file-selector__body {
     width: auto;
-    /* background-color: pink; */
+    /* background-color: pink;  */
 }
 
 lightning-file-upload.govuk-file-upload {
-    display: inline; 
-    /* background-color: red; */
+    display: inline;
+     /* background-color: red;  */
 }
 
 lightning-input.slds-form-element {
@@ -105,5 +110,52 @@ span.slds-text-body--small {
     background-color: #00703c;
     height: 100%;
     /* var(--lwc-progressBarColorBackgroundFill,#00703c); */
+}
+
+/* remove the border from dropzone */
+.slds-file-selector__dropzone{
+    border:none !important;
+}
+/* remove the "or drop files" label from the right of the lightning:input type file */
+.slds-file-selector__dropzone .slds-file-selector__text{
+    font-size: 0 !important;
+}
+
+/* insert the text "New Exam" into the button of the lightning:input type file */
+.slds-file-selector__dropzone .slds-file-selector__text:after{
+    content: var(--gds-dropzone-text) !important;
+    font-size: 1.1875rem !important;
+    line-height: 1.31579;
+}
+/* remove the "Upload Files" text from the button of the lightning:input type file */
+span.slds-file-selector__button.slds-button.slds-button_neutral{
+    font-size: 0 !important;
+    display: block;
+    clear: both;
+}
+/* insert the text "Choose files" into the button of the lightning:input type file */
+span.slds-file-selector__button.slds-button.slds-button_neutral:after{
+    font-family:GDS Transport,arial,sans-serif;
+    content: var(--gds-button-text) !important;
+    font-size: 1.1875rem !important;
+    font-weight: 400;
+    line-height: 1.31579;
+    text-align:left;
+    max-width: 100%;
+    color: #0b0c0c !important;
+
+}
+span.slds-file-selector__button, span.slds-button span.slds-button_neutral {
+    background-color:none;
+    width: auto !important;
+    max-height: 2rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align:left;
+}
+/* remove the label spacing */
+span.slds-form-element__label {
+    display: none;
 }
 
