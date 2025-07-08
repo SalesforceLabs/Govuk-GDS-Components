@@ -1,7 +1,7 @@
 /**
  * Component Name: Gov UK Header
  * Derived_From_Frontend_Version:v3.13.1
- * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell Jakub Szelagowski
+ * Created by: Simon Cook Updated by Neetesh Jain/Brenda Campbell
  **/
 import {LightningElement, api, track} from 'lwc';
 import {NavigationMixin} from "lightning/navigation";
@@ -17,7 +17,7 @@ export default class GovHeader extends NavigationMixin(LightningElement) {
     @api headerBannerRole = ''; // deprecated
     @api displayMenu;
     
-    @api headerLabel = "GOV.UK";
+    @api headerLabel = ""; // Deprecated headerLabel GOV.UK
     @api headerURL = "#";
     @api serviceName = "Service Name";
     @api serviceURL = "#";
@@ -35,6 +35,10 @@ export default class GovHeader extends NavigationMixin(LightningElement) {
             strNavigationMenuDevName: this.navigationMenuDevName
         })
             .then(menuItems => {
+                console.log("*** menuItems *** ");
+                console.log("menuItems: " + menuItems);
+                console.log("*** ");
+
                 try {
                     // get the page title
                     let urlParts = window.location.href.split("/");
