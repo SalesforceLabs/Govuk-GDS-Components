@@ -13,9 +13,7 @@ import './govErrorMessages.css';
 import cookiesAccept from '@salesforce/messageChannel/cookiesAccept__c';
 
 export default class ErrorMessages extends LightningElement {
-    // static delegatesFocus = true;
 
-    // static renderMode = 'light';
     // handle the on focus coloring
     @track highlightedLinkClass = '';
     handleLinkFocus() {
@@ -33,6 +31,19 @@ export default class ErrorMessages extends LightningElement {
     errorSubscription;
      
     connectedCallback() {
+        requestAnimationFrame(() => {
+            const nestedTemplate = this.template.querySelector('template');
+            if (nestedTemplate) {
+                const someOtherNameElement = nestedTemplate.content.querySelector('a[name="errorSummaryTitle"]');
+                if (someOtherNameElement) {
+                    console.log('Element found:', someOtherNameElement);
+                } else {
+                    console.error('Element not found.');
+                }
+            } else {
+                console.error('Nested template not found.');
+            }
+        });
         this.subscribeMCs();
     }
 
@@ -73,19 +84,16 @@ export default class ErrorMessages extends LightningElement {
     }
 
     putFocusOnError(){
-        const myComponent = this.template.querySelector('a[name="errorSummaryTitle"]');
-        myComponent.focus();
+        window.setTimeout(()=> {
+            const myComponent = this.template.querySelector('.govuk-error-summary');
+            console.log("myComponent: " + myComponent);
+            if(myComponent){
+                myComponent.focus();
+            }
+        },0);
     }
     // called during validation to update error states and messages
     handleValidationStateMessage(message) {
-        // console.log('9999999999999999999999999999999999999');
-        // console.log('Inside handleValidationStateMessage: ');
-        // console.log('message.componentId: '+ message.componentId);
-        // console.log('message.focusId: '+ message.focusId);
-        // console.log('message.isValid: '+ message.isValid);
-        // console.log('message.error: '+ message.error);
-        // console.log('message.componentType: '+ message.componentType);
-        // console.log('message.componentSelect: '+ message.componentSelect);
         
         const component = this.components.find(component => component.id === message.componentId);
         
@@ -120,7 +128,14 @@ export default class ErrorMessages extends LightningElement {
 
     // called at the start of validation to remove existing errors
     handleValidateMessage(message) {
-        this.putFocusOnError();
+        console.log("message: ");
+        console.log(message);
+        if (message.componentId =="NavigationButtons"){
+            console.log("--- NavigationButtons ---");
+            this.putFocusOnError();
+        }
+        // check if message has error!
+        
         this.components = [];
     }
 
@@ -129,14 +144,8 @@ export default class ErrorMessages extends LightningElement {
         // console.log('event.target.dataset.targetId: ', event.target.dataset.targetId);
         // console.log('event.target.dataset: ', event.target.dataset);
         let myDataSet =  event.target.dataset;
-        // myDataSet.forEach(item => {
-        //     console.log('>>> item: ', item);
-        // });
-        // myDataSet.forEach(myDataSet, (item) => {
-        //     console.log('>>> item: ', item);
-        // });
-          let targetId = event.target.dataset.targetId; // Component id, i.e. input-text-18, date-input-day-47, date-input-month-47
-          // console.log('targetId from govErrorMessages: ', targetId);
-          publish(this.messageContext, SET_FOCUS_MC, { componentId: targetId, focusId: targetId });
+        let targetId = event.target.dataset.targetId; // Component id, i.e. input-text-18, date-input-day-47, date-input-month-47
+        // console.log('targetId from govErrorMessages: ', targetId);
+        publish(this.messageContext, SET_FOCUS_MC, { componentId: targetId, focusId: targetId });
     }
 }
