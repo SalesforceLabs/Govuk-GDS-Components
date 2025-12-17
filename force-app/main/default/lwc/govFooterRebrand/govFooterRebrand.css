@@ -54,6 +54,11 @@
     text-decoration-thickness: max(1px, .0625rem);
 }
 
+.govuk-footer__link {
+    display: inline;
+    padding: 0;
+}
+
 
 .govuk-footer__link:hover {
     text-decoration: underline 3.5px;
@@ -62,7 +67,7 @@
 
 .govuk-footer__copyright-logo{
     display:inline-block;min-width:125px;padding-top:112px;
-    background-image: url(/sfsites/c/resource/uxgovuk__govuk_crest_rebrand);
+    background-image: url(/sfsites/c/resource/uxgovuk_govuk_crest_rebrand);    
     background-repeat:no-repeat;
     background-position:50% 0;
     background-size:125px 102px;
