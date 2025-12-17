@@ -24,7 +24,10 @@
 }
 
 .govuk-header__logo {
-    margin-top : -5px
+    vertical-align: top;
+    width: 33.33%;
+    padding-right: 15px;
+    float: left;
 }
 
 
@@ -33,11 +36,12 @@
     position: relative;
     vertical-align: middle;
     color:#ffff;
+    padding-bottom: 6px;
 }
 
 a:hover {
+    margin-bottom: -3px;
     border-bottom: 3px solid #ffff;
-    padding-bottom: 6px;
 }
 
 .govuk-header__logotype {
@@ -55,3 +59,4 @@ a:hover {
 .govuk-header__link:link, .govuk-header__link:visited {
     text-underline-offset: 5px;
 }
+
