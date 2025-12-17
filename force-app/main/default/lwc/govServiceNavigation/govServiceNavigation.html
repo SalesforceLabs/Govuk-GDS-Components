@@ -1,0 +1,51 @@
+<template>
+  <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+  <section aria-label="Service information" class="govuk-service--navigation govuk-service--navigation-section" data-module="govuk-service-navigation">
+    <div class="govuk-width-container">
+        <div class="govuk-service-navigation__container">
+          <span class="govuk-service-navigation__service-name">
+            <a href={serviceURL} class="govuk-service-navigation__link">{serviceName}</a>
+          </span>
+            <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+              <template lwc:if={showButton}>
+                <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" aria-expanded={openList} onclick={handleButtonExpand}>Menu</button>
+              </template>
+              <template lwc:if={showList}>
+                <ul class="govuk-service-navigation__list" id="navigation">
+                  <template for:each={menuItems} for:item="menuItem">
+                    <li key={menuItem.id} class={menuItem.class}>
+                      <a 
+                        lwc:if={menuItem.selected} 
+                        class="govuk-service-navigation__link" 
+                        href={menuItem.href} 
+                        aria-current="true" 
+                        target={menuItem.target} 
+                        onclick={handleNavigate}
+                        data-target={menuItem.href}
+                        data-label={menuItem.label}
+                        data-type={menuItem.type}
+                        data-pref={menuItem.targetPrefs}
+                      >
+                        <strong class="govuk-service-navigation__active-fallback">{menuItem.label}</strong>
+                    </a>
+                      <a
+                        lwc:else 
+                        class="govuk-service-navigation__link" 
+                        href={menuItem.href} aria-current="true" 
+                        target={menuItem.target}
+                        onclick={handleNavigate}
+                        data-target={menuItem.href}
+                        data-label={menuItem.label}
+                        data-type={menuItem.type}
+                        data-pref={menuItem.targetPrefs}
+                        >{menuItem.label}
+                      </a>
+                    </li>
+                  </template>
+                </ul>
+              </template>
+            </nav>
+        </div>
+    </div>
+  </section>
+</template>

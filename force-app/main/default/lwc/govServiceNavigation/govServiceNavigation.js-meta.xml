@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>Shows a service navigation tabset</description>
+    <masterLabel>Gov UK Service Navigation</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+        <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+        <property name="navigationMenuDevName" type="String" label="Standard Navigation Menu Developer Name" description="The NavigationMenuDeveloperName which used to get the navigation items" default="Default_Navigation"/>
+        <property name="serviceName" type="String" label="Service Name" description="The Service Name to display in the header" default="Service Name"/>
+        <property name="serviceURL" type="String" label="Service Navigation URL" description="The Navigation URL for the given Sefvice, include https:// in starting of a custom url" default="#"/>
+        </targetConfig>
+        </targetConfigs>
+</LightningComponentBundle>
