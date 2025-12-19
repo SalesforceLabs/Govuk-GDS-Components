@@ -1,4 +1,5 @@
 <template>
+    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
     <footer class="govuk-footer">
         <div class="govuk-width-container">
             <div class="govuk-svg-container">
@@ -23,38 +24,33 @@
                     </g>
                 </svg>
             </div>
+ 
             <template lwc:if={secondaryNavigationRequired}>
                 <div class="govuk-footer__navigation">
-                    <div class="govuk-footer__section govuk-grid-column-two-thirds">
-                        <h2 class="govuk-footer__heading govuk-heading-m">{doubleColumnHeader}</h2>
-                        <ul class="govuk-footer__list govuk-footer__list--columns-2">
-                            <template for:each={finalDoubleColumnItems} for:item="columnItem">
-                                <li key={columnItem.metaLinkName} class="govuk-footer__list-item">
-                                    <a class="govuk-footer__link" href={columnItem.metaLinkURL}>{columnItem.metaLinkName}</a>
-                                </li>
-                            </template>
-                        </ul>
-                    </div>
-                    <div class="govuk-footer__section govuk-grid-column-one-third">
-                        <h2 class="govuk-footer__heading govuk-heading-m">{singleColumnHeader}</h2>
-                        <ul class="govuk-footer__list">
-                            <template for:each={finalSingleColumnItems} for:item="columnItem">
-                                <li key={columnItem.metaLinkName} class="govuk-footer__list-item">
-                                    <a class="govuk-footer__link" href={columnItem.metaLinkURL}>{columnItem.metaLinkName}</a>
-                                </li>
-                            </template>
-                        </ul>
+                    <div class="govuk-footer__sections">
+                        <template for:each={finalNavData} for:item="navSection">
+                            <div key={navSection.id} class={navSection.class} >
+                                <h2 class="govuk-footer__heading govuk-heading-m">{navSection.sectionName}</h2>
+                                <ul class={navSection.listClass}>
+                                    <template for:each={navSection.relatedNavItems} for:item="columnItem">
+                                        <li key={columnItem.id} class="govuk-footer__list-item">
+                                            <a class="govuk-footer__link" href={columnItem.metaLinkURL}>{columnItem.metaLinkName}</a>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
                     </div>
                 </div>
+                <hr class="govuk-footer__section-break" lwc:if={footerCustomLink}>
             </template>
-            <hr class="govuk-footer__section-break">
             <div class="govuk-footer__meta">
                 <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
                     <h2 class="govuk-visually-hidden">{visuallyHiddenLinksText}</h2>
                     <template lwc:if={metalinksRequired}>
                         <ul class="govuk-footer__inline-list">
                             <template for:each={finalMetaLinkData} for:item="option">
-                                <li class="govuk-footer__inline-list-item"  key={option.metaLinkName}>
+                                <li class="govuk-footer__inline-list-item"  key={option.id}>
                                     <a class="govuk-footer__link"  href={option.metaLinkURL}>{option.metaLinkName}</a>
                                 </li>
                             </template>

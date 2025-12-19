@@ -10,21 +10,15 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default">
-            <property name="metalinksRequired" type="Boolean" label="Enable Footer with links to Meta information" description="Check the checkbox if you want footer with links as meta information and fill below 2 fields."/>
+            <property name="secondaryNavigationRequired" type="Boolean" label="Enable Footer Secondary Navigation link" description="Check the checkbox if you want a footer with titled columns and links below them"></property>
+            <property name="sectionNames" type="String" label="Section Names" description="Please provide semicolon separated Section Names"/>
+            <property name="navigationNames" type="String" label="Navigation Items" description="Please provide Pipe symbol '|' separated navigation items for each section and semicolon should be used to differentiate between each sections"/>
+            <property name="navigationLinks" type="String" label="Navigation URL's" description="Please provide Pipe symbol '|'  separated navigation URLs in th same order correposding to the navigation item names for each section and semicolon should be used to differentiate between each sections"/>
+            <property name="columnTypes" type="String" label="Column Type" description="Please provide valueas either 1 or 2 corresponding to 1 column and 2 column format"/>
             <property name="crestRequired" type="Boolean" label="Enable Footer with Crown Logo" description="Check the checkbox if you want footer with Crown Logo"/>
+            <property name="metalinksRequired" type="Boolean" label="Enable Footer with links to Meta information" description="Check the checkbox if you want footer with links as meta information and fill below 2 fields."/>
             <property name="metalinkNames" type="String" label="Meta Information Link Names" description="Please provide semicolon list of the display names to the links"/>
             <property name="metalinkURLs" type="String" label="Meta Information Link URL's" description="Please provide semicolon list of the links in same order corresponding to the above mentioned names"/>
-            <property name="secondaryNavigationRequired" type="Boolean" label="Enable Footer Secondary Navigation link" description="Check the checkbox if you want a footer with titled columns and links below them"></property>
-            <property name="doubleColumnHeader" type="String" label="Double Column list header" description="Please provide the relevant header for the double column list in the footer"></property>
-            <property name="singleColumnHeader" type="String" label="Single Column list header" description="Please provide the relevant header for the single column list in the footer"></property>
-            <property name="singleColumnNames" type="String" label="Single Column Meta Information Link Names" description="Please provide semicolon list of the display names to the links"/>
-            <property name="singleColumnURLs" type="String" label="Single Column Meta Information Link URL's" description="Please provide semicolon list of the links in same order corresponding to the above mentioned names"/>
-            <property name="doubleColumnNames" type="String" label="Double Column Meta Information Link Names" description="Please provide semicolon list of the display names to the links"/>
-            <property name="doubleColumnURLs" type="String" label="Double Column Meta Information Link URL's" description="Please provide semicolon list of the links in same order corresponding to the above mentioned names"/>
-            <property name="footerCustomText" type="String" label="Footer Custom Text Value" description="Please enter some text you would like in the footer"></property>
-            <property name="footerCustomLinkText" type="String" label="Footer Custom Link Text Value" description="Please enter some text you would like in the footer specifically for the link"></property>
-            <property name="footerCustomLink" type="String" label="Footer Custom Link Value" description="Please enter the relevant link for the footer custom text"></property>
-            <property name="visuallyHiddenLinksText" type="String" label="Metalinks hidden heading text" description="Please enter relevant text to describe the metalinks provided"></property>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

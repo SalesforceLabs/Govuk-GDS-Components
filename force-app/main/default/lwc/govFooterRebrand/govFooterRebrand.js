@@ -4,63 +4,96 @@
 import { LightningElement, track, api } from 'lwc';
 
 class MetaLinkItem {
+    id;
     metaLinkName;
     metaLinkURL;
     constructor(metaLinkName, metaLinkURL) {
+        this.id = generateId('section');
         this.metaLinkName = metaLinkName;
         this.metaLinkURL = metaLinkURL;
     }
 }
 
+class FooterItem {
+    id;
+    sectionName;
+    sectionType;
+    class;
+    listClass;
+    relatedNavItems = [];
+    constructor(sectionName, sectionType, relatedNavItems) {
+        this.id = generateId('section');
+        this.sectionName = sectionName;
+        this.sectionType = sectionType;
+        this.class = sectionType == 2 ? 'govuk-footer__section govuk-grid-column-two-thirds' : 'govuk-footer__section govuk-grid-column-one-third';
+        this.listClass = sectionType == 2 ? 'govuk-footer__list govuk-footer__list--columns-2' : 'govuk-footer__list' ;
+        this.relatedNavItems = relatedNavItems;
+    }
+}
+
+function generateId(prefix = 'id') {
+    return `${prefix}-${Math.random().toString(36).substring(2, 10)}-${Date.now()}`;
+}
+
 export default class GovFooterRebrand extends LightningElement {
     // Secondary Navigation Input variables
     @api secondaryNavigationRequired = false;
-    @api singleColumnHeader = "";
-    @api doubleColumnHeader = "";
-    @api singleColumnURLs = "";
-    @api singleColumnNames ="";
-    @api doubleColumnURLs = "";
-    @api doubleColumnNames = "";
+    @api sectionNames = "";
+    @api navigationNames = "";
+    @api navigationLinks = "";
+    @api columnTypes = "";
 
     // Links with Meta Information Input variables
     @api metalinkNames = "";
     @api metalinkURLs = "";
     @api metalinksRequired = false;
-    @api visuallyHiddenLinksText = '';
 
     //Crest Copyright Logo input variables
     @api crestRequired = false;
-
-    //Custom text and links for foote
-    @api footerCustomText = "";
-    @api footerCustomLink = "";
-    @api footerCustomLinkText = "";
 
     // fields to show consolidated data on UI
     @track finalNavData = []; 
     @track finalMetaLinkData = [];
     @track isMetalinksPresent = false;
-    @track isNavLLinksPresent = false;
-    @track finalSingleColumnItems = [];
-    @track finalDoubleColumnItems = [];
+    @track finalNavData = [];
 
 
     connectedCallback(){
 
-        this.handleColumnItems();
+        this.handleSecondaryNavigation();
         this.handleMetaLinks();
-
     }
 
-    handleColumnItems() {
-        let singleColumnNameList = this.handleSemicolonSplit(this.singleColumnNames);
-        let singleColumnURLList = this.handleSemicolonSplit(this.singleColumnURLs);
-        let doubleColumnNameList = this.handleSemicolonSplit(this.doubleColumnNames);
-        let doubleColumnURLList = this.handleSemicolonSplit(this.doubleColumnURLs);
+    handleSecondaryNavigation() {
 
-        this.finalSingleColumnItems = this.handleMetaLinkItems(singleColumnNameList, singleColumnURLList);
-        this.finalDoubleColumnItems = this.handleMetaLinkItems(doubleColumnNameList, doubleColumnURLList);
+        let sectionNamesList = this.handleSemicolonSplit(this.sectionNames);
+        let navigationNamesList = this.handleSemicolonSplit(this.navigationNames);
+        let navigationLinksList = this.handleSemicolonSplit(this.navigationLinks);
+        let columnTypeList = this.handleSemicolonSplit(this.columnTypes);
+        
+        this.finalNavData = sectionNamesList.map((sectionName, i) => {
+            const sectionType = Number(columnTypeList[i]);
+            const relatedNavItems = this.buildRelatedNavItems(
+                navigationNamesList[i],
+                navigationLinksList[i]
+            )
 
+            return new FooterItem(sectionName, sectionType, relatedNavItems);
+        })
+        
+    }
+
+    buildRelatedNavItems(names = '', links = '') {
+        if (!names || !links) {
+            return [];
+        }
+
+        let finalList = [];
+
+        const nameList = names.includes('|') ? names.split('|') : [names];
+        const linkList = links.includes('|') ? links.split('|') : [links];
+
+        return finalList = this.handleMetaLinkItems(nameList, linkList);
     }
 
     handleMetaLinks() {
