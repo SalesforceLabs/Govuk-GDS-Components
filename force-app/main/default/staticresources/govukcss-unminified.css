@@ -7641,7 +7641,7 @@ td code {
 
 .govuk-service-navigation__service-name {
   display: inline-block;
-  margin: 10px 0px;
+  /* margin: 10px 0px; */
 }
 
 @media (min-width: 40.0625em) and (min-width: 40.0625em) {
@@ -7692,7 +7692,7 @@ td code {
 }
 .govuk-service-navigation__item, .govuk-service-navigation__service-name {
     position: relative;
-    margin: 10px 0;
+    /* margin: 10px 0; */
     border: 0 solid #1a65a6;
 }
 
@@ -7846,4 +7846,76 @@ td code {
 
 .govuk-service-navigation__link:not(:hover):not(:active) {
     text-decoration: none;
+}
+/* @media (min-width: 40.0625em) {
+  .gov-template-rebranded .govuk-phase-banner__content {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+} */
+
+/* .gov-template--rebranded .govuk-tag .govuk-phase-banner__content__tag{
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25;
+    display: inline-block;
+    max-width: 160px;
+    margin-top: -2px;
+    margin-bottom: -3px;
+    padding: 2px 8px 3px;
+    color: #0c2d4a;
+    background-color: #bbd4ea;
+    text-decoration: none;
+    overflow-wrap: break-word;
+} */
+
+.govuk-phase-banner__content--rebranded { 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25;
+    display: inline-block;
+    max-width: 160px;
+    margin-top: -2px;
+    margin-bottom: -3px;
+    padding: 2px 8px 3px;
+    color: #0c2d4a;
+    background-color: #bbd4ea;
+    text-decoration: none;
+    overflow-wrap: break-word;
+  }
+
+.govuk-tag--rebranded {
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25;
+    display: inline-block;
+    max-width: 160px;
+    margin-top: -2px;
+    margin-bottom: -3px;
+    padding: 2px 8px 3px;
+    color: #0c2d4a;
+    background-color: #bbd4ea;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 40.0625em) {
+    .govuk-phase-banner__content__tag {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+}
+
+.govuk-link--rebranded--phase {
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1578em;
 }
