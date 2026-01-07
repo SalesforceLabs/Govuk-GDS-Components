@@ -4,6 +4,8 @@
 import { LightningElement, api, track } from 'lwc';
 import getDefaultMenuItems from '@salesforce/apex/GovComponentHelper.getDefaultMenuItems';
 import sitePath from '@salesforce/community/basePath';
+import { NavigationMixin } from 'lightning/navigation';
+
 
 class NavigationItem {
     label;
@@ -45,7 +47,7 @@ class ClickedTarget {
     }
 }
                       
-export default class GovServiceNavigation extends LightningElement {
+export default class GovServiceNavigation extends NavigationMixin(LightningElement) {
 
     @api navigationMenuDevName = "Default_Navigation";
     @api serviceName = 'Service Name';
@@ -95,6 +97,9 @@ export default class GovServiceNavigation extends LightningElement {
             event.currentTarget.dataset.type, 
             event.currentTarget.dataset.pref
         )
+
+            const href = event.currentTarget.dataset.target;
+
             this.menuItems = this.menuItems.map(item => {
                 return {
                 ...item,
@@ -102,6 +107,15 @@ export default class GovServiceNavigation extends LightningElement {
                 class: item.href === clickedTarget.href && item.label === clickedTarget.label ? 'govuk-service-navigation__item govuk-service-navigation__item--active' : 'govuk-service-navigation__item'
                 };
             });  
+
+            
+            // This has been added as there is a strange bug with standard href and a tags, when starting a screenflow interview and navigating the interview will remain without the use of the NavigationMixin method
+            this[NavigationMixin.Navigate]({
+                type: 'standard__webPage',
+                attributes: {
+                url: href
+            }
+    });
     }
 
     normaliseTarget(value) {

@@ -1,15 +1,13 @@
 <template>
-    <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
-    <div class="govuk-width-container ">
-        <div class="govuk-phase-banner">
-            <p class="govuk-phase-banner__content">
-                <strong class="govuk-tag govuk-phase-banner__content__tag">
-                    {phaseText}
-                </strong>
-                <span class="govuk-phase-banner__text">
-                    <lightning-formatted-rich-text if:true={bodyText} value={bodyText}></lightning-formatted-rich-text>
-                </span>
-            </p>
-        </div>
+  <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
+  <div class="govuk-width-container ">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag--rebranded govuk-phase-banner__content__tag">{phaseText}</strong>
+        <span class="govuk-phase-banner__text">
+          <lightning-formatted-rich-text lwc:if={bodyText} value={bodyText}></lightning-formatted-rich-text>
+        </span>
+      </p>
     </div>
+  </div>
 </template>
