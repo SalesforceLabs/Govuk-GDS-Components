@@ -2,6 +2,8 @@
  * Component Name: Gov UK Footer Rebrand
  **/
 import { LightningElement, track, api } from 'lwc';
+import crest from '@salesforce/resourceUrl/govuk_crest_rebrand';
+
 
 class MetaLinkItem {
     id;
@@ -56,6 +58,12 @@ export default class GovFooter extends LightningElement {
     @track finalMetaLinkData = [];
     @track isMetalinksPresent = false;
     @track finalNavData = [];
+
+    //Crest variables and getter
+    crestUrl = crest;
+    get crestStyle() {
+        return `--crest-url: url(${crest});`;
+    }
 
 
     connectedCallback(){

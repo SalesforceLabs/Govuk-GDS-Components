@@ -67,12 +67,19 @@
 
 .govuk-footer__copyright-logo{
     display:inline-block;min-width:125px;padding-top:112px;
-    background-image: url(/sfsites/c/resource/govuk_crest_rebrand);   /* namespace__govuk_crest_rebrand */   background-repeat:no-repeat;
-    background-position:50% 0;
-    background-size:125px 102px;
+    /* background-image: url(/sfsites/c/resource/govuk_crest_rebrand);   namespace__govuk_crest_rebrand   background-repeat:no-repeat; */
+    /* background-position:50% 0; */
+    /* background-size:125px 102px; */
     text-align:center;
     text-decoration:none;
     white-space:nowrap;
+}
+
+.govuk-footer__copyright-logo {
+    background-image: var(--crest-url);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 125px 102px;
 }
 
   .govuk-footer__copyright-logo::before {
