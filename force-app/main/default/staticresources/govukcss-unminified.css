@@ -46,6 +46,7 @@
 .govuk-link:hover {
   color: #003078;
 }
+
 .app-prose-scope a:active,
 .govuk-link:active {
   color: #0b0c0c;
@@ -7370,7 +7371,8 @@ td code {
     line-height: 1.25;
     padding-top: 20px;
     border-bottom: 10px solid transparent;
-    background-color: #f3f2f1;
+    /* background-color: #f3f2f1; */
+    background-color: #f4f8fb;
   }
   @media print {
     .govuk-cookie-banner {
@@ -7847,30 +7849,6 @@ td code {
 .govuk-service-navigation__link:not(:hover):not(:active) {
     text-decoration: none;
 }
-/* @media (min-width: 40.0625em) {
-  .gov-template-rebranded .govuk-phase-banner__content {
-    font-size: 1rem;
-    line-height: 1.25;
-  }
-} */
-
-/* .gov-template--rebranded .govuk-tag .govuk-phase-banner__content__tag{
-    font-family: GDS Transport, arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.25;
-    display: inline-block;
-    max-width: 160px;
-    margin-top: -2px;
-    margin-bottom: -3px;
-    padding: 2px 8px 3px;
-    color: #0c2d4a;
-    background-color: #bbd4ea;
-    text-decoration: none;
-    overflow-wrap: break-word;
-} */
 
 .govuk-phase-banner__content--rebranded { 
     -webkit-font-smoothing: antialiased;
@@ -7918,4 +7896,22 @@ td code {
     text-decoration: underline;
     text-decoration-thickness: max(1px, .0625rem);
     text-underline-offset: .1578em;
+}
+
+.govuk-link--rebranded--cookie {
+      text-decoration: underline;
+      text-decoration-thickness: max(1px, .0625rem);
+      text-underline-offset: .1578em;
+}
+
+.govuk-link--rebranded--cookie:hover {
+      text-decoration: underline 3.5px;
+}
+
+.govuk-link:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none;
 }
