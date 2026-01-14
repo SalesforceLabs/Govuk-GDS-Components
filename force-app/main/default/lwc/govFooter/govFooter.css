@@ -80,13 +80,15 @@
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: 125px 102px;
+    /* background: currentColor; */
 }
 
   .govuk-footer__copyright-logo::before {
     content:"";
     display:block;
     width: 100%;
-    background-image: url(/sfsites/c/resource/govuk_crest_rebrand);   /* namespace__govuk_crest_rebrand */   background-repeat:no-repeat;
+    /* background-image: url(/sfsites/c/resource/govuk_crest_rebrand);   namespace__govuk_crest_rebrand   background-repeat:no-repeat; */
+    background-image: var(--crest-url);
     background-repeat: no-repeat;
     background-position: 50% 0%;
     text-align: center;
