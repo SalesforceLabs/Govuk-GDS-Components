@@ -7,7 +7,7 @@
 .govuk-footer__navigation {
     margin-right: -30px;
     margin-left: -30px;
-    display: -webkit-box;
+    display: block;
 }
 
 .govuk-grid-column-two-thirds {
@@ -71,7 +71,6 @@
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: 125px 102px;
-    /* background: currentColor; */
 }
 
   .govuk-footer__copyright-logo::before {
@@ -95,19 +94,26 @@
 
 /* Inner layout only */
 .govuk-footer__sections {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 30px;
-    row-gap: 40px;
+    display: block;
     width: 100%;
+    float: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
 }
 
 /* Prevent GOV.UK floats interfering */
 .govuk-footer__section {
     float: none;
     width: 100%;
+    display: block;
 }
 
 svg {
     color: #0b0c0c;
+}
+
+@media (max-width: 40em) {
+    .govuk-footer__sections {
+        grid-template-columns: 1fr;
+    }
 }
