@@ -54,12 +54,6 @@
     text-decoration-thickness: max(1px, .0625rem);
 }
 
-/* .govuk-footer__link {
-    display: inline;
-    padding: 0;
-} */
-
-
 .govuk-footer__link:hover {
     text-decoration: underline 3.5px;
 }
@@ -67,9 +61,6 @@
 
 .govuk-footer__copyright-logo{
     display:inline-block;min-width:125px;padding-top:112px;
-    /* background-image: url(/sfsites/c/resource/govuk_crest_rebrand);   namespace__govuk_crest_rebrand   background-repeat:no-repeat; */
-    /* background-position:50% 0; */
-    /* background-size:125px 102px; */
     text-align:center;
     text-decoration:none;
     white-space:nowrap;
@@ -87,13 +78,11 @@
     content:"";
     display:block;
     width: 100%;
-    /* background-image: url(/sfsites/c/resource/govuk_crest_rebrand);   namespace__govuk_crest_rebrand   background-repeat:no-repeat; */
     background-image: var(--crest-url);
     background-repeat: no-repeat;
     background-position: 50% 0%;
     text-align: center;
     white-space: nowrap;
-    background: currentColor;
   }
 
 .govuk-footer__heading {
