@@ -1,6 +1,6 @@
 <template>
     <c-gov-c-s-s-provider></c-gov-c-s-s-provider>
-    <footer class="govuk-footer">
+    <div class="govuk-footer">
         <div class="govuk-width-container">
             <div class="govuk-svg-container">
                 <svg
@@ -46,7 +46,6 @@
             </template>
             <div class="govuk-footer__meta">
                 <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-                    <h2 class="govuk-visually-hidden">{visuallyHiddenLinksText}</h2>
                     <template lwc:if={metalinksRequired}>
                         <ul class="govuk-footer__inline-list">
                             <template for:each={finalMetaLinkData} for:item="option">
@@ -79,5 +78,5 @@
                 </template>
             </div>
         </div>
-    </footer>
+    </div>
 </template>
