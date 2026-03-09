@@ -16,7 +16,7 @@ You will need the latest version of the sfdx cli (https://developer.salesforce.c
 
 Please make sure you are running the latest version
 
-`sfdx update`
+`sf update`
 
 ## Getting started
 

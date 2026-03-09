@@ -1,6 +1,3 @@
-/**
- * Component Name: Gov UK Header Rebrand
- **/
 import {LightningElement, api} from 'lwc';
 import {NavigationMixin} from "lightning/navigation";
 

@@ -204,13 +204,11 @@ export default class GovDate extends LightningElement {
         this.updateValue();
     }
     updateValue() {
-        if (this.dayValue && this.monthValue && this.yearValue) {
-            this.value = this.dayValue + "/" + this.monthValue + "/" + this.yearValue;
-            this.formattedDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue;
-    
-            this.salesforceDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue + "T0:00:00.000Z";
-            this.dispatchValueChangedEvent();
-        }
+        this.value = this.dayValue + "/" + this.monthValue + "/" + this.yearValue;
+        this.formattedDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue;
+
+        this.salesforceDate = this.yearValue + "-" + this.monthValue + "-" + this.dayValue + "T0:00:00.000Z";
+        this.dispatchValueChangedEvent();
     }
 
     dispatchValueChangedEvent() {
