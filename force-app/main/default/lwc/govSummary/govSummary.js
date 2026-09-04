@@ -24,9 +24,6 @@ export default class GovSummary extends LightningElement {
     @api confirmationDestinations =[];
 
     sectionFields;
-    getAriaChangeSectionFieldLabel(){
-        return "Change " + this.sectionField.label
-    }
 
     // Styling
 
@@ -85,6 +82,7 @@ export default class GovSummary extends LightningElement {
             sectionField.label = this.confirmationLabels[index];
             sectionField.value = this.confirmationValues[index];
             sectionField.destination = this.confirmationDestinations[index];
+            sectionField.ariaChangeLabel = "Change " + sectionField.label;
             this.sectionFields.push(sectionField);
         }
     }

@@ -29,7 +29,7 @@
                                 </dd>
                                 <template if:true={sectionField.destination}>
                                     <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#" data-destination={sectionField.destination} onclick={handleChange} aria-label={getAriaChangeSectionFieldLabel}>
+                                        <a class="govuk-link" href="#" data-destination={sectionField.destination} onclick={handleChange} aria-label={sectionField.ariaChangeLabel}>
                                             Change<span class="govuk-visually-hidden"> {sectionField.label}</span>
                                         </a>
                                     </dd>
