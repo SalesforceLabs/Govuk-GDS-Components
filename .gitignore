@@ -46,3 +46,5 @@ $RECYCLE.BIN/
 .idea/
 IlluminatedCloud/
 GovUKGDS.iml
+# Local-only developer notes (not shipped with the package)
+localDocs/
