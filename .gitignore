@@ -32,8 +32,9 @@ node_modules/
 # Eslint cache
 .eslintcache
 
-# MacOS system files
+# MacOS system files (never commit; any directory)
 .DS_Store
+**/.DS_Store
 
 # Windows system files
 Thumbs.db
@@ -46,3 +47,5 @@ $RECYCLE.BIN/
 .idea/
 IlluminatedCloud/
 GovUKGDS.iml
+# Local-only developer notes (not shipped with the package)
+localDocs/

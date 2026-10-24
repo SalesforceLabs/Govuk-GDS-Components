@@ -23,8 +23,11 @@ public class FileUploadAdvancedHelper_Test {
         Contact con = getCon();
         ContentVersion cv = getCV();
         cv.Guest_Record_fileupload__c = FileUploadAdvancedHelper.encrypt(con.Id,key);
-        update cv;
-        
+        // SYSTEM_MODE: Guest_Record_fileupload__c (managed) is intentionally
+        // not FLS-granted; under API 67+ user-mode default this DML throws
+        // without an explicit AccessLevel. See FileUploadAdvancedHelper header.
+        Database.update(cv, AccessLevel.SYSTEM_MODE);
+
         system.test.startTest();
             FileUploadAdvancedHelper.createContentDocLink(new List<String>{cv.Id},key,true);
         system.test.stopTest();
@@ -41,8 +44,9 @@ public class FileUploadAdvancedHelper_Test {
         Contact con = getCon();
         ContentVersion cv = getCV();
         cv.Guest_Record_fileupload__c = FileUploadAdvancedHelper.encrypt(con.Id,key);
-        update cv;
-        
+        // SYSTEM_MODE: see note in encrypted_test.
+        Database.update(cv, AccessLevel.SYSTEM_MODE);
+
         system.test.startTest();
             FileUploadAdvancedHelper.createContentDocLink(new List<String>{cv.Id},key,false);
             List<FileUploadAdvancedHelper.objFiles> objFiles = FileUploadAdvancedHelper.getExistingFiles(con.Id); 

@@ -7,5 +7,5 @@
     ],
     "namespace": "uxgovuk",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "52.0"
+    "sourceApiVersion": "66.0"
 }

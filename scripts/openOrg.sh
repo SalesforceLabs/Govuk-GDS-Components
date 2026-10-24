@@ -1,2 +1,2 @@
 #!/bin/zsh
-sfdx force:org:open
+sf org open

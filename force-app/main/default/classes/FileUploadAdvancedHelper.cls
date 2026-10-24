@@ -1,5 +1,40 @@
+/**
+ * FileUploadAdvancedHelper
+ *
+ * Server-side helper for the guest-friendly file upload LWC. Creates
+ * ContentVersion / ContentDocumentLink records on behalf of the caller.
+ *
+ * SECURITY MODEL
+ * The authorisation control for this flow is encryption of the related
+ * record Id (see getKey / encrypt / decrypt below), NOT field-level
+ * security. The Guest_Record_fileupload__c custom field holds an
+ * AES-256 ciphertext of the LinkedEntityId; FLS on that field is
+ * intentionally not granted to users. For that reason the DML calls
+ * below opt out of user-mode enforcement with AccessLevel.SYSTEM_MODE.
+ *
+ * CHANGELOG
+ * 2026-10-24 — API version bumped 56.0 -> 68.0. Starting at API 67,
+ *   Apex DML/SOQL runs in user mode by default, enforcing CRUD + FLS
+ *   on the running user. Guest and standard users do not hold Edit
+ *   FLS on ContentVersion.VersionData or on the managed custom field
+ *   Guest_Record_fileupload__c, so the previously-passing DML now
+ *   throws DmlException ("fields being inaccessible"). Each DML site
+ *   that writes ContentVersion / ContentDocument / ContentDocumentLink
+ *   is now wrapped with AccessLevel.SYSTEM_MODE to preserve the
+ *   encryption-based authorisation model.
+ *
+ * REFERENCES
+ * Apex user mode vs system mode (API 67 default change):
+ *   https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_perms_enforcing.htm
+ * Run SOQL and DML in user mode:
+ *   https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_perms_enforcing_user_mode.htm
+ * Database.AccessLevel enum:
+ *   https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_enum_System_AccessLevel.htm
+ * Winter '27 release notes landing page:
+ *   https://help.salesforce.com/s/articleView?id=release-notes.salesforce_release_notes.htm&release=256&type=5
+ */
 public without sharing class FileUploadAdvancedHelper{
-    
+
     @AuraEnabled(cacheable = true)
     public static String getKey(){
         // System.debug('inside getKey');
@@ -35,7 +70,9 @@ public without sharing class FileUploadAdvancedHelper{
             versions.add(version);
         }
 
-        List<Database.SaveResult> results = Database.insert(versions);
+        // SYSTEM_MODE: writes managed field Guest_Record_fileupload__c (encrypted blob)
+        // which guest/standard users do not hold Edit FLS on. See class header.
+        List<Database.SaveResult> results = Database.insert(versions, AccessLevel.SYSTEM_MODE);
 
         List<Id> versionIds = new List<Id>();
         for(Database.SaveResult result : results){
@@ -69,7 +106,8 @@ public without sharing class FileUploadAdvancedHelper{
         } else {
             vers.VersionData = EncodingUtil.base64Decode(existingVersionData + base64Data);
         }
-        update vers;
+        // SYSTEM_MODE: ContentVersion.VersionData is not Edit-FLS-granted to end users.
+        Database.update(vers, AccessLevel.SYSTEM_MODE);
     }
     
     @AuraEnabled
@@ -97,9 +135,10 @@ public without sharing class FileUploadAdvancedHelper{
             }
 
             if(!links.isEmpty()){
-                insert links;
+                // SYSTEM_MODE: ContentDocumentLink inserts for guest-authored content.
+                Database.insert(links, AccessLevel.SYSTEM_MODE);
             }
-            
+
         } catch (Exception ex) {
             System.debug('*** Error from createContentDocLink: ' + ex.getMessage());
         }
@@ -120,7 +159,8 @@ public without sharing class FileUploadAdvancedHelper{
             }
         }
         if(!docs.isEmpty()){
-            update docs;
+            // SYSTEM_MODE: ContentDocument.Title rename for user-visible file name.
+            Database.update(docs, AccessLevel.SYSTEM_MODE);
         }
     }
 
@@ -129,7 +169,8 @@ public without sharing class FileUploadAdvancedHelper{
         // System.debug('inside deleteContentDoc');
         ContentVersion cv = [SELECT ContentDocumentId FROM ContentVersion WHERE Id = :versId LIMIT 1];
         ContentDocument cd = new ContentDocument(Id=cv.ContentDocumentId);
-        delete cd;
+        // SYSTEM_MODE: deletion of guest-uploaded content documents.
+        Database.delete(cd, AccessLevel.SYSTEM_MODE);
     }
 
    @AuraEnabled
@@ -211,7 +252,8 @@ public without sharing class FileUploadAdvancedHelper{
                 }
             }
             if(!links.isEmpty()){
-                insert links;
+                // SYSTEM_MODE: downstream link creation from invocable flow context.
+                Database.insert(links, AccessLevel.SYSTEM_MODE);
             }
         } else {
             return;

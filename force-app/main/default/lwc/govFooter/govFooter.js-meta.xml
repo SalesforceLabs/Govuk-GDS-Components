@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>65.0</apiVersion>
     <description>A simple GDS footer that can be used at the bottom of a community page.</description>
     <isExposed>true</isExposed>
     <masterLabel>Gov UK Footer</masterLabel>
@@ -10,15 +10,15 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightningCommunity__Default">
-            <property name="secondaryNavigationRequired" type="Boolean" label="Enable Footer with Secondary Navigation" description="Check the checkbox if you want to use footer with secondary navigation and fill below 4 fields."/>
-            <property name="sectionNames" type="String" label="Section Names" description="Please provide semicolon separated Section Names"/>
-            <property name="navigationNames" type="String" label="Navigation Items" description="Please provide Pipe symbol '|' separated navigation items for each section and semicolon should be used to differentiate between each sections"/>
-            <property name="navigationLinks" type="String" label="Navigation URL's" description="Please provide Pipe symbol '|'  separated navigation URLs in th same order correposding to the navigation item names for each section and semicolon should be used to differentiate between each sections"/>
-            <property name="columnTypes" type="String" label="Column Type" description="Please provide valueas either 1 or 2 corresponding to 1 column and 2 column format"/>
-            <property name="metalinksRequired" type="Boolean" label="Enable Footer with links to Meta information" description="Check the checkbox if you want footer with links as meta information and fill below 2 fields."/>
-            <property name="crownLogoRequired" type="Boolean" label="Enable Footer with Crown Logo" description="Check the checkbox if you want footer with Crown Logo"/>
-            <property name="metalinkNames" type="String" label="Meta Information Link Names" description="Please provide semicolon list of the display names to the links"/>
-            <property name="metalinkURL" type="String" label="Meta Information Link URL's" description="Please provide semicolon list of the links in same order corresponding to the above mentioned names"/>
+            <property name="secondaryNavigationRequired" type="Boolean" label="Enable Footer with Secondary Navigation" description="Check to display Secondary Navigation.  If selected, the four following parameters must be completed in full."></property>
+            <property name="sectionNames" type="String" label="Section Names" description="Specify required Section names, separated by semicolons, eg Section1;Section2."/>
+            <property name="navigationNames" type="String" label="Navigation Items" description="Specify Navigation Item names, separated by semicolons.  Group by Section using a pipe symbol.  eg for 3 items in 2 sections enter ItemName1;ItemName2|ItemName3"/>
+            <property name="navigationLinks" type="String" label="Navigation URLs" description="Specify Navigation Item URLs, separated by semicolons (in the same order as the names are entered).  Group by Section using a pipe symbol.  eg for 3 items in 2 sections enter ItemURL1;ItemURL2|ItemURL3"/>
+            <property name="columnTypes" type="String" label="Column Type" description="For each defined Section, specify single column (1) or two column (2) layout for the items in that Section, separated by semicolons, eg for two Sections, enter 1;1, 2;1, 1;2, or 2;2"/>
+            <property name="crownLogoRequired" type="Boolean" label="Enable footer with Coat of Arms" description="Check to display coat of arms image in footer."/>
+            <property name="metalinksRequired" type="Boolean" label="Enable Footer with Links" description="Check to display links.  If selected, the two following parameters must be completed in full."/>
+            <property name="metalinkNames" type="String" label="Link Names" description="Specify Link names, separated by semicolons, eg Privacy;Accessibility Statement"/>
+            <property name="metalinkURL" type="String" label="Link URLs" description="Specify Link URLs, separated by semicolons (in the same order as the names are entered), eg Privacy page URL;Accessibility Statement page URL"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <description>Shows a header on the community using the default menu to provide links if available</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Gov UK Header Rebrand</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="serviceURL" type="String" label="Service Navigation URL" description="The Navigation URL for the given Service, include https:// in starting of a custom url" default="#"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

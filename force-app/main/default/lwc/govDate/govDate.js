@@ -5,7 +5,7 @@
  **/
 import { LightningElement, api, track, wire } from 'lwc';
 import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
-import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
+import { MessageContext, publish, subscribe, unsubscribe, createMessageContext } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import UNREGISTER_MC from '@salesforce/messageChannel/unregistrationMessage__c';
 import VALIDATE_MC from '@salesforce/messageChannel/validateMessage__c';

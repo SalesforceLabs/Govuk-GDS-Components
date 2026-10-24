@@ -1,11 +1,11 @@
 /**
- * Component Name: Gov UK Warning Text
+ * Component Name: Gov UK Text Area
  * Derived_From_Frontend_Version:v3.13.1
  * Created by: Simon Cook Updated by Harshpreet Singh Chhabra/Brenda Campbell, Jakub Szelagowski
  **/
 import {LightningElement, api, track, wire} from 'lwc';
 import {FlowAttributeChangeEvent} from 'lightning/flowSupport';
-import { MessageContext, publish, subscribe, unsubscribe } from 'lightning/messageService';
+import { MessageContext, publish, subscribe, unsubscribe, createMessageContext } from 'lightning/messageService';
 import REGISTER_MC from '@salesforce/messageChannel/registrationMessage__c';
 import UNREGISTER_MC from '@salesforce/messageChannel/unregistrationMessage__c';
 import VALIDATION_MC from '@salesforce/messageChannel/validateMessage__c';
@@ -192,16 +192,16 @@ export default class GovTextArea extends LightningElement {
     register(){
         // publish the registration message after 0.1 sec to give other components time to initialise
         setTimeout(() => {
-            publish(this.messageContext, REGISTER_MC, {componentId:this.fieldId});
+            publish(this.messageContext, REGISTER_MC, { componentId: this.textAreaFieldId });
         }, 100);
     }
 
     //inform subscribers that this comoponent is no longer available
     unregister() {
-        console.log('govTextArea: unregister',this.fieldId);
+        console.log('govTextArea: unregister',this.textAreaFieldId);
 
         //have to create a new message context to unregister
-        publish(createMessageContext(), UNREGISTER_MC, { componentId: this.fieldId });
+        publish(createMessageContext(), UNREGISTER_MC, { componentId: this.textAreaFieldId });
     }
 
     handleSetFocusMessage(message){
@@ -227,7 +227,7 @@ export default class GovTextArea extends LightningElement {
         }
 
         publish(this.messageContext, VALIDATION_STATE_MC, {
-            componentId: this.fieldId,
+            componentId: this.textAreaFieldId,
             isValid: !this.hasErrors,
             error: this.errorMessage,
             focusId: this.textAreaFieldId
